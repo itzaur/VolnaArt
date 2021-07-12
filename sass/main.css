@@ -1,0 +1,48 @@
+/*
+0 - 600px: phone
+600 - 900px: tablet-portrait
+900 - 1200px: tablet-landscape
+1200 - 1800px: our styles
+1800px+: big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+600px = 37.5em
+900px = 56.25em
+1200px = 75em
+1800px = 112.5em
+*/
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: lightsalmon;
+}
+
+::-moz-selection {
+  background-color: khaki;
+  color: #e6add5;
+}
+
+::selection {
+  background-color: khaki;
+  color: #e6add5;
+}
+/*# sourceMappingURL=main.css.map */

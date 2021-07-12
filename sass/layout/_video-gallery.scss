@@ -1,0 +1,15 @@
+.video-gallery {
+  position: relative;
+  // height: 100vh;
+  margin-bottom: 10rem;
+  padding: 5rem 8rem 6rem 8rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 0;
+    padding: 2rem 0.5rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 0.5rem;
+  }
+}

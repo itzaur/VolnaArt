@@ -1,0 +1,103 @@
+.scrollbar {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: -2rem;
+  margin: 0 auto;
+  max-width: 100rem * 0.8;
+  height: 0.2rem;
+  background-color: rgba($color-black, 0.2);
+  overflow: hidden;
+
+  @include respond(phone) {
+    position: relative;
+    width: 80%;
+    left: 0;
+    margin-top: 1rem;
+  }
+
+  .dark & {
+    background-color: rgba($color-white, 0.2);
+  }
+
+  &__handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+    transform: translateX(-100%);
+    transition: transform 1s;
+
+    .dark & {
+      background-color: $color-dark-4;
+    }
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+  padding: 3rem 0 3rem 0;
+
+  @include respond(tab-port) {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  @include respond(phone) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2.9rem 0 0 0;
+  }
+}
+
+.slider {
+  position: relative;
+  max-width: 100rem;
+  height: 40rem;
+  max-height: 50rem;
+  margin: 0 auto;
+
+  border-radius: 1rem;
+  box-shadow: 2rem 1.5rem 5rem #b8b8b8, -2rem -1.5rem 5rem #fff;
+  // display: flex;
+  overflow: hidden;
+
+  @include respond(phone) {
+    width: 100%;
+    height: 20rem;
+  }
+
+  .dark & {
+    box-shadow: 0 0px 0.6px rgba($color-blue, 0.036),
+      0 0px 1.3px rgba($color-blue, 0.052), 0 0px 2.1px rgba($color-blue, 0.065),
+      0 0px 3.3px rgba($color-blue, 0.075), 0 0px 4.9px rgba($color-blue, 0.085),
+      0 0px 7.1px rgba($color-blue, 0.095),
+      0 0px 10.7px rgba($color-blue, 0.108),
+      0 0px 17.1px rgba($color-blue, 0.124), 0 0px 32px rgba($color-blue, 0.16);
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.8s cubic-bezier(1, 0.82, 0.165, 1);
+
+  & > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

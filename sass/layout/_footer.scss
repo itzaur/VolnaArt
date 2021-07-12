@@ -1,0 +1,306 @@
+.footer {
+  position: relative;
+  padding: 0 5rem;
+  min-height: 40vh;
+  // background-image: url('../images/wave/wavered-2.png');
+  // background-size: cover;
+  // background-repeat: repeat-x;
+  overflow: hidden;
+
+  @include flex-center;
+  align-items: flex-end;
+
+  @include respond(phone) {
+    height: 100%;
+    padding: 0;
+    align-content: flex-end;
+  }
+
+  &__box {
+    position: relative;
+
+    width: 90%;
+    margin: 0 auto 5rem auto;
+
+    @include flex-center;
+
+    @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) min-content 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 1rem;
+      justify-items: center;
+    }
+
+    // @include respond(tab-port) {
+    //   grid-template-columns: repeat(4, min-content);
+    //   grid-gap: 0;
+    // }
+
+    @include respond(phone) {
+      @include flex-center;
+      justify-content: center;
+      // flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__logo {
+    @include respond(tab-port) {
+      grid-row: 1 / -1;
+    }
+
+    @include respond(phone) {
+      // @include abs-center;
+      // opacity: 0.3;
+      margin-top: 2rem;
+      padding: 0;
+    }
+
+    &-img {
+      height: 7rem;
+      filter: invert(1);
+
+      .dark & {
+        filter: invert(18%) sepia(26%) saturate(1246%) hue-rotate(179deg)
+          brightness(93%) contrast(88%);
+      }
+
+      @include respond(tab-port) {
+        height: 11rem;
+      }
+
+      @include respond(phone) {
+        height: 8rem;
+      }
+    }
+  }
+
+  &__nav {
+    width: 50%;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      grid-row: 1 / -1;
+    }
+
+    &-item {
+      @include flex-center;
+
+      @include respond(tab-port) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @include respond(phone) {
+        @include flex-center;
+        flex-direction: column;
+      }
+    }
+
+    &-list {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-right: 5rem;
+
+        @include respond(tab-land) {
+          margin-right: 1rem;
+        }
+
+        @include respond(tab-port) {
+          margin-right: 0;
+          margin-bottom: 2rem;
+        }
+
+        @include respond(phone) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $color-black;
+      transition: all 0.3s;
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
+
+      .dark & {
+        color: $color-dark-4;
+        backface-visibility: hidden;
+      }
+
+      &:hover {
+        color: $color-light;
+        transform: rotate(-10deg);
+
+        .dark & {
+          color: $color-dark-4;
+        }
+      }
+    }
+  }
+
+  &__line {
+    height: 5rem;
+    width: 0.2rem;
+    background-color: $color-black;
+
+    @include respond(tab-port) {
+      grid-row: 1 / -1;
+      height: 100%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    .dark & {
+      background-color: $color-dark-4;
+    }
+  }
+
+  &__icons {
+    @include flex-center;
+    justify-content: space-around;
+
+    @include respond(tab-port) {
+      grid-row: 1 / -1;
+      flex-direction: column;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      // flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    @include respond(nokia3310) {
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    &-item:not(:last-child) {
+      margin-right: 5rem;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      @include respond(phone) {
+        margin: 0 0 1rem 0;
+      }
+
+      @include respond(nokia3310) {
+        margin: 0 1.2rem 0 0;
+      }
+    }
+
+    &-img {
+      height: 2rem;
+      filter: invert(0%) sepia(2%) saturate(17%) hue-rotate(96deg)
+        brightness(108%) contrast(100%);
+      transition: all 0.3s;
+
+      .dark & {
+        filter: invert(73%) sepia(4%) saturate(6860%) hue-rotate(171deg)
+          brightness(101%) contrast(98%);
+      }
+
+      &:hover {
+        filter: invert(90%) sepia(2%) saturate(740%) hue-rotate(314deg)
+          brightness(103%) contrast(80%);
+        transform: scale(1.2);
+
+        .dark & {
+          filter: invert(73%) sepia(4%) saturate(6860%) hue-rotate(171deg)
+            brightness(101%) contrast(98%);
+        }
+      }
+
+      @include respond(nokia3310) {
+        height: 1.7rem;
+      }
+    }
+  }
+
+  &__copyright {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    font-size: 1.4rem;
+
+    .dark & {
+      color: $color-dark-4;
+    }
+
+    @include respond(phone-bg) {
+      right: 0;
+    }
+
+    @include respond(phone) {
+      position: relative;
+      display: block;
+      width: 100%;
+      right: 0;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  &__waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+    // background-color: black;
+  }
+
+  &__wave {
+    position: relative;
+    width: 100%;
+    height: clamp(10rem, 12vh, 45rem);
+    margin-bottom: -7px;
+    min-height: 10rem;
+    max-height: 10rem;
+  }
+}
+
+.parallax > use {
+  animation: moveInfinite 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -1s;
+  animation-duration: 8s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}

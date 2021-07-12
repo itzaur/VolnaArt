@@ -1,0 +1,56 @@
+.waves {
+  position: absolute;
+  width: 100%;
+  height: clamp(18rem, 25vh, 45rem);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  //   background-color: bisque;
+
+  @include respond(phone) {
+    width: 200%;
+  }
+}
+
+.wave {
+  position: absolute;
+  width: 640rem;
+  height: 18rem;
+  bottom: -0.3rem;
+  //   top: -20rem;
+  background: url('../images/wave/wave2.svg');
+  opacity: 1;
+
+  //   background-size: cover;
+  background-repeat: repeat-x;
+  transform: translate3d(0, 0, 0);
+  animation: waveMove 55s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+
+  .dark & {
+    background: url('../images/wave/wave1.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+  }
+
+  // @include respond(nokia3310) {
+  //   height: 20rem;
+  // }
+}
+
+.wave:nth-of-type(2) {
+  //   top: -19rem;
+  opacity: 0.8;
+  margin-bottom: -2.5rem;
+  animation: waveMove1 55s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.225s infinite,
+    waveMove2 55s ease 0.75s infinite;
+}
+
+.footer-waves {
+  height: 40vh;
+}
+
+.footer-wave {
+  height: 35rem;
+  background-size: 160rem 34rem;
+  background-repeat: repeat-x;
+}

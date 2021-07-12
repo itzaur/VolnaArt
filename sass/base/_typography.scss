@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap');
+
+body {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.65),
+      rgba(#fbfaf7, 0.4)
+    ),
+    url('../images/bg/bg.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+body.dark {
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%),
+    url('../images/bg/bg.jpg');
+}
+
+.heading {
+  position: relative;
+  grid-row: 5 / 7;
+  grid-column: 2 / span 7;
+
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-start;
+  justify-content: center;
+  margin-left: 5.5rem;
+  padding: 1rem 0;
+
+  z-index: 1;
+
+  @include respond(big-desktop) {
+    margin-top: 9rem;
+  }
+
+  @include respond(tab-land2) {
+    margin-left: 0;
+  }
+
+  @include respond(tab-land) {
+    grid-column: 2 / span 7;
+    grid-row: 2 / span 5;
+    margin-top: 8rem;
+  }
+
+  @include respond(tab-port) {
+    grid-row: 8 / 10;
+    grid-column: 1 / -1;
+    margin-top: 6.5rem;
+    text-align: center;
+  }
+
+  // @include respond(phone-bg) {
+  //   grid-row: 7 / 8;
+  //   grid-column: 2 / span 8;
+  // }
+
+  @include respond(phone) {
+    // grid-row: 8 / 10;
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+
+    margin: 0;
+  }
+
+  &-primary {
+    display: inline-block;
+    font-size: 10.5rem;
+    // line-height: 1;
+
+    // color: rgba($color-black, 0.3);
+    color: transparent;
+    // background-color: hsl(0, 22%, 93%);
+    background-image: url('../images/wave/wavered-3.png');
+    background-size: 773.91px 100%;
+    // background-position: 0 0;
+    background-repeat: repeat-x;
+
+    // -webkit-text-stroke: 1px hsl(0, 19%, 87%);
+
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-transform: uppercase;
+
+    animation: wave linear 5.5s infinite;
+
+    .dark & {
+      background-image: url('../images/wave/wavered-4.png');
+
+      transition: all 0.6s;
+    }
+
+    @include respond(big-fucking-desktop) {
+      font-size: 13rem;
+    }
+
+    @include respond(big-desktop) {
+      font-size: 10rem;
+      background-size: 773.91px 100%;
+    }
+
+    @include respond(tab-land2) {
+      font-size: 8rem;
+      background-size: 773.91px 130px;
+    }
+
+    @include respond(tab-land) {
+      font-size: 7rem;
+      background-size: 773.91px 100px;
+    }
+
+    // @include respond(tab-port) {
+    //   font-size: 8rem;
+    // }
+
+    @include respond(phone) {
+      font-size: 4rem;
+      background-size: 513.91px 60px;
+    }
+
+    span {
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+
+    &--rus {
+      font-size: 10.5rem;
+
+      @include respond(big-fucking-desktop) {
+        font-size: 12rem;
+      }
+
+      @include respond(big-desktop) {
+        font-size: 9rem;
+        background-size: 773.91px 100%;
+      }
+
+      @include respond(tab-land2) {
+        font-size: 8rem;
+        background-size: 773.91px 130px;
+      }
+
+      @include respond(tab-land) {
+        font-size: 6rem;
+        background-size: 773.91px 100px;
+      }
+
+      // @include respond(tab-port) {
+      //   font-size: 8rem;
+      // }
+
+      @include respond(phone) {
+        font-size: 4rem;
+        background-size: 513.91px 60px;
+      }
+    }
+  }
+
+  &-secondary {
+    font-size: 2.8rem;
+    font-weight: 500;
+
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+
+    padding: 2rem 0;
+
+    .dark & {
+      color: $color-dark-4;
+      // text-shadow: 0 1rem 1rem rgba($color-dark-1, 0.6);
+      transition: all 0.6s;
+    }
+
+    @include respond(tab-land2) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+
+    @include respond(phone) {
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  height: 10rem;
+  text-align: center;
+  filter: invert(1);
+
+  .dark & {
+    filter: invert(48%) sepia(128%) saturate(359%) hue-rotate(159deg)
+      brightness(110%) contrast(63%);
+  }
+
+  @include respond(phone-bg) {
+    margin-left: 3rem;
+
+    // filter: invert(67%) sepia(83%) saturate(6212%) hue-rotate(336deg)
+    //   brightness(82%) contrast(83%);
+  }
+
+  @include respond(phone) {
+    height: 5rem;
+  }
+}
+
+.heading-2 {
+  // @include flex-center;
+  // justify-content: flex-start;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+
+  margin-bottom: 4rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: max-content;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  @include respond(phone) {
+    margin-bottom: 0.2rem;
+    margin-top: 1rem;
+  }
+
+  &__title {
+    font-size: 10.5rem;
+    font-weight: 600;
+    line-height: 1;
+
+    padding-right: 4rem;
+
+    .dark & {
+      color: $color-dark-4;
+      transition: all 0.4s ease-in-out;
+    }
+
+    @include respond(tab-land) {
+      font-size: 8rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+      padding-right: 0;
+    }
+
+    @include respond(phone) {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include respond(nokia3310) {
+      font-size: 2rem;
+    }
+  }
+
+  &__line {
+    max-width: 100%;
+    height: 0.2rem;
+    margin-top: 2.5rem;
+    background-color: $color-black;
+
+    .dark & {
+      background-color: $color-dark-4;
+      transition: all 0.4s ease-in-out;
+    }
+
+    @include respond(tab-land) {
+      margin-top: 0;
+    }
+  }
+}

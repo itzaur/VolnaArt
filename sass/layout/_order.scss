@@ -1,0 +1,197 @@
+.order {
+  padding: 5rem 8rem 5rem 8rem;
+  background-image: url('../images/girl.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  // height: 100vh;
+
+  @include respond(tab-port) {
+    padding: 2rem 5rem;
+  }
+
+  @include respond(phone) {
+    padding: 2rem 0 0 0;
+  }
+
+  &-box {
+    @include flex-center;
+    padding: 4rem 8rem;
+
+    @include respond(tab-land) {
+      padding: 2rem 5rem;
+      flex-direction: column;
+    }
+
+    @include respond(phone) {
+      padding: 2rem 0.5rem;
+    }
+  }
+
+  &-price {
+    @include flex-center;
+    // flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-right: 5rem;
+
+    @include respond(tab-land2) {
+      margin-bottom: 3rem;
+      margin-right: 0;
+    }
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+
+    &__item {
+      @include flex-center;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      height: 8rem;
+
+      font-size: 1.8rem;
+      text-align: justify;
+      border-radius: 1rem;
+      // border-top-right-radius: 10rem;
+      background-color: rgba($color-primary, 0.1);
+      overflow: hidden;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      .dark & {
+        background-color: $color-dark-1;
+        transition: all 0.5s;
+      }
+    }
+
+    &__text {
+      @include flex-center;
+      padding-left: 4rem;
+      width: 50%;
+      border-right: 0.1rem solid $color-black;
+      height: 100%;
+
+      font-size: 2rem;
+
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 0%,
+        rgba($color-primary, 0.2) 0%
+      );
+      background-size: 0%;
+      background-repeat: no-repeat;
+      background-position: right;
+      transition: all 0.4s;
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+        padding-left: 1rem;
+      }
+
+      &:hover {
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+
+      .dark & {
+        color: $color-dark-4;
+        padding-left: 2rem;
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 0%,
+          rgba($color-dark-5, 0.5) 0%
+        );
+        border-right: 0.1rem solid $color-dark-4;
+        transition: all 0.5s;
+      }
+    }
+
+    &__numb {
+      @include flex-center;
+      justify-content: flex-end;
+      padding-right: 4rem;
+      width: 50%;
+      height: 100%;
+
+      background-image: linear-gradient(
+        -90deg,
+        transparent 0%,
+        transparent 50%,
+        rgba($color-primary, 0.2) 50%
+      );
+      background-size: 0%;
+      // background-position: left;
+      background-repeat: no-repeat;
+      transition: all 0.4s;
+
+      span {
+        font-size: 2.5rem;
+        transform: translateY(-0.5rem);
+      }
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+        padding-right: 1rem;
+      }
+
+      &:hover {
+        background-size: 220%;
+        background-repeat: no-repeat;
+      }
+
+      .dark & {
+        color: $color-dark-4;
+        padding-right: 2rem;
+        background-image: linear-gradient(
+          -90deg,
+          transparent 0%,
+          transparent 50%,
+          rgba($color-dark-5, 0.5) 50%
+        );
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &-video {
+    width: 50%;
+    // flex: 0;
+
+    border: 1.5rem solid $color-white;
+    border-radius: 1rem;
+    box-shadow: 1.5rem 1rem 2rem rgba($color-black, 0.1);
+
+    @include respond(tab-land) {
+      width: 100%;
+      @include flex-center;
+      justify-content: center;
+    }
+
+    .dark & {
+      border: 1.5rem solid $color-dark-1;
+      box-shadow: 0 0px 0.6px rgba($color-blue, 0.036),
+        0 0px 1.3px rgba($color-blue, 0.052),
+        0 0px 2.1px rgba($color-blue, 0.065),
+        0 0px 3.3px rgba($color-blue, 0.075),
+        0 0px 4.9px rgba($color-blue, 0.085),
+        0 0px 7.1px rgba($color-blue, 0.095),
+        0 0px 10.7px rgba($color-blue, 0.108),
+        0 0px 17.1px rgba($color-blue, 0.124),
+        0 0px 32px rgba($color-blue, 0.16);
+      transition: all 0.6s;
+    }
+  }
+
+  .dark & {
+    background-image: none;
+  }
+}
+
+.video-js {
+  width: 100%;
+}

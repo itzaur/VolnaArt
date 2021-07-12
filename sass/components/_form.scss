@@ -1,0 +1,221 @@
+.form {
+  //   background-color: cadetblue;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-blue, 0.2),
+      rgba($color-primary, 0.2)
+    ),
+    url('../images/girl.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  width: 100%;
+  min-width: 15rem;
+  padding: 3rem;
+  border-radius: 3rem;
+
+  @include respond(tab-port) {
+    min-width: 45rem;
+  }
+
+  @include respond(phone) {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 10rem;
+    padding: 0 0.5rem;
+  }
+
+  &__group {
+    position: relative;
+    padding: 1rem;
+
+    &:not(:last-child) {
+      padding-top: 2rem;
+      margin-bottom: 1rem;
+
+      @include respond(nokia3310) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include respond(phone) {
+      width: 100%;
+
+      @include flex-center;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 0.5rem;
+    }
+
+    @include respond(nokia3310) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.6;
+    // width: 45%;
+    // max-width: 40rem;
+    // min-width: 15rem;
+    width: clamp(20rem, 65%, 40rem);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    border-bottom: 0.2rem solid transparent;
+
+    transition: all 0.5s ease-in-out;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 1rem rgba($color-blue, 0.2);
+      border-bottom: 0.2rem solid $color-blue;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba($color-black, 0.2);
+
+      .dark & {
+        color: $color-dark-4;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+
+    .dark & {
+      background-color: $color-dark-1;
+      color: $color-dark-4;
+      transition: all 0.4s ease-in-out;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    @include respond(nokia3310) {
+      min-width: 10rem;
+    }
+  }
+
+  &__group.error input,
+  &__group.error textarea {
+    border: 1px solid $color-primary;
+  }
+
+  &__group.error label {
+    color: $color-primary;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    .dark & {
+      color: $color-dark-5;
+    }
+  }
+
+  &__group.success label {
+    transform: translateY(-4.8rem) !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  &__group.success input,
+  &__group.success textarea {
+    border: 1px solid $color-blue;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+
+    margin-top: 0.6rem;
+    margin-left: 1rem;
+    // @include flex-center;
+    // justify-content: flex-start;
+
+    font-size: 1.6rem;
+    color: $color-primary;
+
+    overflow: hidden;
+
+    transition: all 0.3s;
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 0;
+    //   transform: translate(-100%, -50%);
+    //   width: 100%;
+    //   height: 0.2rem;
+    //   background: $color-primary;
+    //   transition: transform 2s ease-out;
+    // }
+
+    // &.label-valid::before {
+    //   transform: translate(0%, -50%);
+    // }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $color-blue;
+    }
+
+    .dark & {
+      color: $color-dark-5;
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4.8rem);
+  }
+
+  &__input:placeholder-shown + &__label.label-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dark & {
+    background-image: linear-gradient(
+        to bottom right,
+        rgba($color-dark-2, 0.1),
+        rgba($color-dark-1, 0.1)
+      ),
+      url('../images/girl.png');
+    box-shadow: 0 0px 0.6px rgba($color-blue, 0.036),
+      0 0px 1.3px rgba($color-blue, 0.052), 0 0px 2.1px rgba($color-blue, 0.065),
+      0 0px 3.3px rgba($color-blue, 0.075), 0 0px 4.9px rgba($color-blue, 0.085),
+      0 0px 7.1px rgba($color-blue, 0.095),
+      0 0px 10.7px rgba($color-blue, 0.108),
+      0 0px 17.1px rgba($color-blue, 0.124), 0 0px 32px rgba($color-blue, 0.16);
+  }
+
+  // &__succsess-email {
+  //   position: absolute;
+  //   top: 60%;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   font-size: 1.6rem;
+  //   color: $color-blue;
+  //   padding-left: 2rem;
+  // }
+}
+
+// .label-visible {
+//   opacity: 1;
+//   visibility: visible;
+//   transform: translateY(0);
+// }

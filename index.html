@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/logo/logo-pink.png"
+      sizes="192x192"
+    />
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <!-- In the head of your document with your other CSS includes... -->
+    <!-- Video.js base CSS -->
+    <link
+      href="https://unpkg.com/video.js@7/dist/video-js.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- City -->
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+      rel="stylesheet"
+    />
+    <!-- <script src="script.js" defer></script> -->
+
+    <title>VOLNA | Art</title>
+  </head>
+  <body>
+    <!-- <div class="cursor"></div> -->
+    <header class="header" id="header">
+      <!-- <div class="video-bg">
+        <video class="video-bg__content" autoplay muted loop>
+          <source src="video/Paint - 38660.mp4" type="video/mp4" />
+        </video>
+      </div> -->
+
+      <span class="strip-long">
+        <img class="logo" src="images/logo/logo.png" alt="logo" />
+        <!-- <img class="strip" src="images/header/long-strip2.png" alt="" /> -->
+      </span>
+      <div class="heading">
+        <h1 class="heading-primary" lang="english">
+          Volna&ensp;<span>|&ensp;Art</span>
+        </h1>
+        <h1 class="heading-primary heading-primary--rus" lang="russian">
+          Волна&ensp;<span>|&ensp;Арт</span>
+        </h1>
+        <h3 class="heading-secondary" lang="english">
+          Each gallery has its own works of art
+        </h3>
+        <h3 class="heading-secondary" lang="russian">
+          В каждой галерее свои художества
+        </h3>
+      </div>
+      <span class="strip-short"></span>
+      <div class="header__nav">
+        <nav class="header__nav-box">
+          <ul class="header__nav-item">
+            <li class="header__nav-list">
+              <a class="header__nav-link" href="#gallery" lang="english">
+                <div class="header__nav-link--mask"><span>Gallery</span></div>
+                Gallery</a
+              >
+              <a class="header__nav-link" href="#gallery" lang="russian">
+                <div class="header__nav-link--mask"><span>Галерея</span></div>
+                Галерея</a
+              >
+            </li>
+            <li class="header__nav-list">
+              <a class="header__nav-link" href="#interesting" lang="english">
+                <div class="header__nav-link--mask">
+                  <span>It is interesting...</span>
+                </div>
+                It is interesting...</a
+              >
+              <a class="header__nav-link" href="#interesting" lang="russian">
+                <div class="header__nav-link--mask">
+                  <span>Это интересно...</span>
+                </div>
+                Это интересно...</a
+              >
+            </li>
+            <li class="header__nav-list">
+              <a class="header__nav-link" href="#video-gallery" lang="english">
+                <div class="header__nav-link--mask"><span>Video</span></div>
+                Video</a
+              >
+              <a class="header__nav-link" href="#video-gallery" lang="russian">
+                <div class="header__nav-link--mask"><span>Видео</span></div>
+                Видео</a
+              >
+            </li>
+            <li class="header__nav-list">
+              <a class="header__nav-link" href="#contacts" lang="english">
+                <div class="header__nav-link--mask">
+                  <span>Contacts</span>
+                </div>
+                Contacts</a
+              >
+              <a class="header__nav-link" href="#contacts" lang="russian">
+                <div class="header__nav-link--mask">
+                  <span>Контакты</span>
+                </div>
+                Контакты</a
+              >
+            </li>
+            <li class="header__nav-list change-lang">
+              <a class="header__nav-link header__nav-link--6" href="#">
+                <div class="header__nav-link--mask"><span>En</span></div>
+                <span class="header__nav-link--span">En</span>
+                <i class="fas fa-sort-down"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <span class="header__nav-line"></span>
+        <div class="header__nav-icons">
+          <ul class="header__nav-item">
+            <li class="header__nav-list-icon">
+              <a class="header__nav-icon" href="#">
+                <img src="images/icons/vk.svg" alt="" />
+              </a>
+            </li>
+            <li class="header__nav-list-icon">
+              <a class="header__nav-icon" href="#"
+                ><img src="images/icons/youtube.svg" alt=""
+              /></a>
+            </li>
+            <li class="header__nav-list-icon">
+              <a class="header__nav-icon" href="#"
+                ><img src="images/icons/inst.svg" alt=""
+              /></a>
+            </li>
+            <li class="header__nav-list-icon">
+              <a class="header__nav-icon" href="#"
+                >
+                <div class="toggle-menu-sunmoon--header">
+                  <svg class="toggle-menu-sun" viewBox="0 0 24 24">
+                    <path
+                      d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z"
+                    />
+                  </svg>
+                  <svg class="toggle-menu-moon" viewBox="0 0 24 24">
+                    <path
+                      d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z"
+                    />
+                  </svg>
+                </div>
+            </a>
+            </li>
+
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div class="top-gallery">
+        <div class="full-content" id="popup-1">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/1.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--1">
+          <img
+            class="top-gallery-square2 layer"
+            data-speed="-0.6"
+            src="images/header/square6-2.png"
+            alt=""
+          />
+          <img
+            class="top-gallery-square3 layer"
+            data-speed="-0.9"
+            src="images/header/square3-1.svg"
+            alt=""
+          />
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--1
+              "
+              src="images/top-gallery/1.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/1.jpg"
+              alt=""
+            />
+            <a href="#popup-1">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-2">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/2.png"
+            alt=""
+          />
+        </div>
+
+        <figure class="top-gallery__item top-gallery__item--2">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--2
+              "
+              src="images/top-gallery/2.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/2.jpg"
+              alt=""
+            />
+            <a href="#popup-2">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-3">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/3.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--3">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--3
+              "
+              src="images/top-gallery/3.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/3.jpg"
+              alt=""
+            />
+            <a href="#popup-3">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-4">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/4.png"
+            alt=""
+          />
+        </div>
+
+        <figure class="top-gallery__item top-gallery__item--4">
+          <img
+            class="top-gallery-square1 layer"
+            data-speed="-0.9"
+            src="images/header/square4-1s.svg"
+            alt=""
+          />
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--4
+              "
+              src="images/top-gallery/4.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img top-gallery__img--back top-gallery__img--back-4
+              "
+              src="images/top-gallery-back/small/4.jpg"
+              alt=""
+            />
+            <a href="#popup-4">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-5">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/5.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--5">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--5
+              "
+              src="images/top-gallery/5.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/5.jpg"
+              alt=""
+            />
+            <a href="#popup-5">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-6">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/6.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--6">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--6
+              "
+              src="images/top-gallery/6.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/6.jpg"
+              alt=""
+            />
+            <a href="#popup-6">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-7">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/7.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--7">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--7
+              "
+              src="images/top-gallery/7.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img top-gallery__img--back top-gallery__img--back-7
+              "
+              src="images/top-gallery-back/small/7.jpg"
+              alt=""
+            />
+            <a href="#popup-7">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-8">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/8.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--8">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--8
+              "
+              src="images/top-gallery/8.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img top-gallery__img--back top-gallery__img--back-8
+              "
+              src="images/top-gallery-back/small/8.jpg"
+              alt=""
+            />
+            <a href="#popup-8">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-9">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/9.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--9">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--9
+              "
+              src="images/top-gallery/9.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/9.jpg"
+              alt=""
+            />
+            <a href="#popup-9">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-10">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/10.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--10">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--10
+              "
+              src="images/top-gallery/10.png"
+              alt=""
+            />
+            <img
+              class="top-gallery__img top-gallery__img--back"
+              src="images/top-gallery-back/small/10.jpg"
+              alt=""
+            />
+            <a href="#popup-10">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-11">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/11.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--11">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--11
+              "
+              src="images/top-gallery/11.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img
+                top-gallery__img--back
+                top-gallery__img--back-11
+              "
+              src="images/top-gallery-back/small/11.jpg"
+              alt=""
+            />
+            <a href="#popup-11">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-12">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/12.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--12">
+          <img
+            class="top-gallery-square4 layer"
+            data-speed="1"
+            src="images/header/square4-1s.svg"
+            alt=""
+          />
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--12
+              "
+              src="images/top-gallery/12.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img
+                top-gallery__img--back
+                top-gallery__img--back-12
+              "
+              src="images/top-gallery-back/small/12.jpg"
+              alt=""
+            />
+            <a href="#popup-12">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-13">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/13.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--13">
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--13
+              "
+              src="images/top-gallery/13.png"
+              alt=""
+            />
+            <img
+              class="
+                top-gallery__img
+                top-gallery__img--back
+                top-gallery__img--back-13
+              "
+              src="images/top-gallery-back/small/13.jpg"
+              alt=""
+            />
+            <a href="#popup-13">Text</a>
+          </div>
+        </figure>
+
+        <div class="full-content" id="popup-14">
+          <a class="full-content__link" href="#header" lang="english"
+            >&#9747; Close</a
+          >
+          <a class="full-content__link" href="#header" lang="russian"
+            >&#9747; Закрыть</a
+          >
+          <img
+            class="full-content__img"
+            src="images/top-gallery-back/14.png"
+            alt=""
+          />
+        </div>
+        <figure class="top-gallery__item top-gallery__item--14">
+          <img
+            class="top-gallery-square5 layer"
+            data-speed="-0.5"
+            src="images/header/square4-1s.svg"
+            alt=""
+          />
+          <img
+            class="top-gallery-square6 layer"
+            data-speed="0.95"
+            src="images/header/square6-2.png"
+            alt=""
+          />
+          <div class="top-gallery-card">
+            <img
+              class="
+                top-gallery__img top-gallery__img--front top-gallery__img--14
+              "
+              src="images/top-gallery/14.png"
+              alt=""
+            />
+
+            <img
+              class="
+                top-gallery__img
+                top-gallery__img--back
+                top-gallery__img--back-14
+              "
+              src="images/top-gallery-back/small/14.jpg"
+              alt=""
+            />
+            <a href="#popup-14">Text</a>
+          </div>
+        </figure>
+      </div>
+    </header>
+
+    <input class="toggle-btn" type="checkbox" id="toggle-btn" />
+    <label class="toggle-icon" for="toggle-btn" id="toggle-icon">
+      <span class="el1 element"></span>
+      <span class="el2 element"></span>
+      <span class="el3 element"></span>
+    </label>
+
+    <div class="toggle-menu" id="toggle-menu">
+      <div class="toggle-menu-sunmoon">
+        <svg class="toggle-menu-sun" viewBox="0 0 24 24">
+          <path
+            d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z"
+          />
+        </svg>
+        <svg class="toggle-menu-moon" viewBox="0 0 24 24">
+          <path
+            d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z"
+          />
+        </svg>
+      </div>
+
+      
+
+      <ul class="toggle-nav" id="toggle-nav">
+        <li class="toggle-nav__list">
+          <a class="toggle-nav__link menu-gallery" href="#gallery">
+            <svg
+              class="link-graphic"
+              width="300%"
+              height="100%"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path>
+            </svg>
+          </a>
+        </li>
+
+        <li class="toggle-nav__list">
+          <a class="toggle-nav__link menu-interesting" href="#interesting">
+            <svg
+              class="link-graphic"
+              width="300%"
+              height="100%"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path></svg
+          ></a>
+        </li>
+
+        <li class="toggle-nav__list">
+          <a class="toggle-nav__link menu-video" href="#video-gallery">
+            <svg
+              class="link-graphic"
+              width="300%"
+              height="100%"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path>
+            </svg>
+          </a>
+        </li>
+
+        <li class="toggle-nav__list">
+          <a class="toggle-nav__link menu-contacts" href="#contacts">
+            <svg
+              class="link-graphic"
+              width="300%"
+              height="100%"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path>
+            </svg>
+          </a>
+        </li>
+
+        <li class="toggle-nav__list">
+          <a class="toggle-nav__link menu-language" href="#language">
+            <svg
+              class="link-graphic"
+              width="300%"
+              height="100%"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- <a class="header__nav-link header__nav-link--6" href="#">
+      <div class="header__nav-link--mask"><span>En</span></div>
+      <span class="header__nav-link--span">En</span>
+      <i class="fas fa-sort-down"></i
+    ></a> -->
+
+    <!--GALLERY-->
+    <section class="gallery" id="gallery">
+      <div class="heading-2">
+        <h2 class="heading-2__title" lang="english">Gallery</h2>
+        <h2 class="heading-2__title" lang="russian">Галерея</h2>
+        <span class="heading-2__line"></span>
+      </div>
+      <div class="gallery-box">
+        <div class="gallery-box__item">
+          <div class="gallery-box__imgs">
+            <img
+              class="gallery-box__img"
+              src="images/gallery/portrait/71.jpg"
+              alt=""
+            />
+            <img
+              class="gallery-box__img"
+              src="images/gallery/portrait/46.jpg"
+              alt=""
+            />
+            <img
+              class="gallery-box__img"
+              src="images/gallery/portrait/88.jpg"
+              alt=""
+            />
+          </div>
+          <div class="gallery-box__link">
+            <a class="gallery-box__subtitle" href="portrait.html" lang="english"
+              >Portrait</a
+            >
+            <a class="gallery-box__subtitle" href="portrait.html" lang="russian"
+              >Портрет</a
+            >
+            <!-- <img class="gallery-box__icon" src="images/icons/1.svg" alt="" /> -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="gallery-box__icon"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="gallery-box__item">
+          <img
+            class="gallery-box__img"
+            src="images/gallery/fullGrowth/47.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/fullGrowth/54.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/fullGrowth/31.jpg"
+            alt=""
+          />
+          <div class="gallery-box__link">
+            <a
+              class="gallery-box__subtitle"
+              href="full-growth.html"
+              lang="english"
+              >Full growth</a
+            >
+            <a class="gallery-box__subtitle" href="portrait.html" lang="russian"
+              >В полный рост</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="gallery-box__icon"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="gallery-box__item">
+          <img
+            class="gallery-box__img"
+            src="images/gallery/multipleCharacters/53.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/multipleCharacters/76.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/multipleCharacters/57.jpg"
+            alt=""
+          />
+          <div class="gallery-box__link">
+            <a
+              class="gallery-box__subtitle"
+              href="multiple-characters.html"
+              lang="english"
+              >Multiple characters</a
+            >
+            <a class="gallery-box__subtitle" href="portrait.html" lang="russian"
+              >Несколько персонажей</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="gallery-box__icon"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="gallery-box__item">
+          <img
+            class="gallery-box__img"
+            src="images/gallery/other/30.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/other/19.jpg"
+            alt=""
+          />
+          <img
+            class="gallery-box__img"
+            src="images/gallery/other/82.jpg"
+            alt=""
+          />
+          <div class="gallery-box__link">
+            <a class="gallery-box__subtitle" href="other.html" lang="english"
+              >Other</a
+            >
+            <a class="gallery-box__subtitle" href="portrait.html" lang="russian"
+              >Другое</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="gallery-box__icon"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--./GALLERY-->
+
+    <section class="interesting section" id="interesting">
+      <div class="heading-2">
+        <h2 class="heading-2__title" lang="english">
+          It&nbsp;is&nbsp;interesting
+        </h2>
+        <h2 class="heading-2__title" lang="russian">Это интересно</h2>
+        <span class="heading-2__line"></span>
+      </div>
+
+      <div class="interesting-box">
+        <div class="interesting-item">
+          <!-- <div class="interesting-item__date">08/03/2021</div> -->
+          <div class="interesting-item__content interesting-item__content--1">
+            <div class="interesting-item__content-text">
+              <h3 class="interesting-item__content-title" lang="english">
+                Sorry
+              </h3>
+              <h3 class="interesting-item__content-title" lang="russian">
+                30 полезных советов и лайфхаков в Photoshop
+              </h3>
+              <p class="interesting-item__content-paragraphe" lang="english">
+                These stories are still only in russian
+              </p>
+              <p class="interesting-item__content-paragraphe" lang="russian">
+                Полезный материал по программе Photoshop: хоткеи и сочетания
+                  клавиш, полезные фишки, а также различные техники.
+              </p>
+            </div>
+            <div class="interesting-item__content-link">
+              <a href="https://infogra.ru/design/30-poleznyh-sovetov-i-lajfhakov-v-photoshop" target="_blank" lang="english">Read more</a>
+              <a href="https://infogra.ru/design/30-poleznyh-sovetov-i-lajfhakov-v-photoshop" target="_blank" lang="russian">Подробнее</a>
+              <svg
+                viewBox="0 0 32 32"
+                class="gallery-box__icon"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!--./interesting-item-->
+
+        <div class="interesting-item">
+          <!-- <div class="interesting-item__date">08/03/2021</div> -->
+          <div class="interesting-item__content interesting-item__content--2">
+            <div class="interesting-item__content-text">
+              <h3 class="interesting-item__content-title" lang="english">
+                Sorry
+              </h3>
+              <h3 class="interesting-item__content-title" lang="russian">
+                Соня
+              </h3>
+              <p class="interesting-item__content-paragraphe" lang="english">
+                These stories are still only in russian <br>
+                Please change language and click read more
+              </p>
+              <p class="interesting-item__content-paragraphe" lang="russian">
+                Солнце уже давно встало и вовсю игралось со стаканом воды, а
+                  забавы их игр отражались яркими бликами по всей комнате.
+                  Сегодня Соня проснулась необычно рано. "Наконец-то!" - первая
+                  мысль, что пришла ей в голову, и, радостно выпригивая из
+                  кровати, схватила...
+              </p>
+            </div>
+            <div class="interesting-item__content-link">
+              <a href="#" lang="english">Read more</a>
+              <a id="story-link" href="" lang="russian">Подробнее</a>
+              <svg
+                viewBox="0 0 32 32"
+                class="gallery-box__icon"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"
+                />
+              </svg>
+            </div>
+            
+          </div>
+
+          <div class="story story--home-page">
+            <button class="btn-story" type="button"
+                  >&#9747;</button
+                >
+            <div class="story__inner story__inner--home-page">
+              <img
+                class="full-content__img"
+                src="images/gallery/other/11.jpg"
+                alt=""
+              />
+              <div class="story__text">
+                <p>
+                  Солнце уже давно встало и вовсю игралось со стаканом
+                  воды, а забавы их игр отражались яркими бликами по всей
+                  комнате. Сегодня Соня проснулась необычно рано.
+                </p>
+                <p>
+                  "Наконец-то!" - первая мысль, что пришла ей в голову, и,
+                  радостно выпригивая из кровати, схватила Мистера Кьюта,
+                  уютно лежавшего возле подушки.
+                </p>
+                <p>
+                  - Вставай, Мистер Кьют! Не время спать, сегодня важный
+                  день!
+                </p>
+                <p>
+                  Соня в одном, почти слетевшем с ноги, носке, мятой
+                  пижаме и растрепанными волосами, радостно кружилась с
+                  плюшевым зайцем по комнате. Любопытные птички то и дело
+                  заглядывали в окна, громко щебеча, радуясь чему-то
+                  вместе с девочкой. Затем она широко распахнула окно,
+                  вытянув игрушку вперед:
+                </p>
+                <p>
+                  - Привет, Солнышко! Поздаровайся с Мистером Кюьтом! И
+                  ты, Мистер Кьют, поздоровайся с Солнышком! - затем она
+                  резко опустила игрушку ближе к земле, - смотри, какие
+                  цветочки! Здравствуйте, цветочки, это Мистер Кьют, у нас
+                  сегодня важный день!
+                </p>
+                <p>
+                  Затем она посадила игрушку на стул, а сама наспех
+                  принялась расчесываться, напевая выдуманную, знакомую
+                  только ей, мелодию. Распахнула шкаф, быстро переоделась,
+                  схватила Мистера Кьюта и выбежала из комнаты.
+                </p>
+                <p>
+                  - Не уверен, что получится, - послышалось из гостиной. -
+                  Но мы ведь ей обещали... - Ничего страшного, потерпит.
+                </p>
+                <p>
+                  Соня остановилась за перилами лестницы, не решаясь
+                  спуститься вниз.
+                </p>
+                <p>
+                  - Дорогой, ну что я ей скажу, мы ведь ее только недавно
+                  удочерили, а тут не сдержали слово, она так ждала этого.
+                </p>
+                <p>
+                  - Я понимаю, милая, - мужской голос тяжело вздохнул, -
+                  но без меня там не справятся. Нужно закончить
+                  исследования. И чуть строже добавил:
+                </p>
+                <p>
+                  - В конце концов, она уже немаленькая, должна понимать.
+                </p>
+                <p>
+                  Девочка крепко сжала игрушку, что казалось, если бы она
+                  была живая, в этот момент лишилась бы кислорода. Мир под
+                  ногами провалился. Счастливая картинка с любящей семьей
+                  треснула на мелкие кусочки. Ее маленькая ладонь сжалась
+                  в кулак.
+                </p>
+                <p>
+                  - Ничего. Подумаешь. Я сама, - Соня решила, что лучше
+                  вернется в комнату и устроит праздник с Митером Кьютом,
+                  - никто нам не нужен.
+                </p>
+                <p>
+                  И в этот момент пол предательски скрипнул. Голоса
+                  замолчали, а спустя несколько секунд послышалось:
+                </p>
+                <p>
+                  - Соня? Девочка, ты уже проснулась? - спросил женский
+                  голос, - спускайся, милая.
+                </p>
+                <p>
+                  Девочке ничего не оставалось как спуститься вниз в
+                  надежде, что она быстро вернется в свою комнату, в свой
+                  мир, добрый и нисколько не по-детски, а вполне серьезный
+                  настоящий волшебный мир. И они отпразднуют этот день с
+                  Мистером Кьютом так, как захотят, и никто им не
+                  помешает.
+                </p>
+                <p>
+                  - Мы с папой хотим тебе кое-что сказать, - взрослые
+                  переглянусь. На их лицах выражалось чувство вины и
+                  неловкости.
+                </p>
+                <p>
+                  Соня без особых эмоций, даже как-то безразлично смотрела
+                  на них по очереди, поняв, что этот день будет совсем не
+                  таким, каким она его себе представляла. Ей хотелось
+                  поскорей вернуться в свою комнату и забыть об этом
+                  разочаровании.
+                </p>
+                <p>
+                  - Видишь ли, милая, - подбирая слова, осторожно начала
+                  говорить новая мама Сони, - ты ведь знаешь, кем папа
+                  работает?
+                </p>
+                <p>Соня кивнула.</p>
+                <p>
+                  - У него много работы, - все так же осторожно продолжала
+                  женщина, переглядываясь со своим супругом. - Он
+                  заботится о нас, а для этого нужно много работать.
+                  Понимаешь?
+                </p>
+                <p>Соня снова кивнула.</p>
+                <p>
+                  - Мы знаем, что сегодня особенный день, и ты очень его
+                  ждала. Но к нашему большому сожалению, сегодня у нас не
+                  получится провести его так, как мы тебе обещали.
+                </p>
+                <p>Соня все так же безучастно смотрела на взрослых.</p>
+                <p>
+                  - В общем, милая, мы не сможем сегодня поехать в детский
+                  центр юных следопытов,- женщина взяла за руки девочку,
+                  пытаясь утешить ее, и хоть как-то оправдаться, -
+                  Нет-нет! Ты только не переживай, мы обязательно туда
+                  поедем! Но не сегодня... и не в ближайшее время...-
+                  новая мама Сони запнулась, подбирая слова, и
+                  обернувшись, глянула на супруга.
+                </p>
+                <p>
+                  - В общем так! - строго отозвался тот, стукнув руками
+                  себя по коленям, - я должен закончить свои исследования
+                  по работе, и для этого должен уехать, дело не терпит
+                  отлагателсьтв, а потому нужно сегодня собираться, и твой
+                  праздник придется отложить. Поездка будет долгой. Мы
+                  отметим твой день рождения как вернемся. Поэтому сегодня
+                  мы собираем вещи, а завтра летим в Африку. Никаких
+                  возражений, ясно?
+                </p>
+                <p>
+                  Девочка сжала Мистера Кьюта еще сильнее, и по розовой
+                  щечке потекли слезы:
+                </p>
+                <p>
+                  - У меня как раз есть розовый чемодачик... - еле
+                  сдерживая улыбку от распирающих ее эмоций, Соня снова
+                  кивнула в ответ.
+                </p>
+                <img src="images/stories/1503558.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--./interesting-item-->
+
+        <div class="interesting-item">
+          <!-- <div class="interesting-item__date">08/03/2021</div> -->
+          <div class="interesting-item__content interesting-item__content--3">
+            <div class="interesting-item__content-text">
+              <h3 class="interesting-item__content-title" lang="english">
+                Sorry
+              </h3>
+              <h3 class="interesting-item__content-title" lang="russian">
+                Здесь могла быть и ваша история
+              </h3>
+              <p class="interesting-item__content-paragraphe" lang="english">
+                These stories are still only in russian
+              </p>
+              <p class="interesting-item__content-paragraphe" lang="russian">
+                Если готовы рассказать свою, милости прошу ко мне в гости (;
+              </p>
+            </div>
+            <div class="interesting-item__content-link">
+              <a href="#" lang="english">Read more</a>
+              <a id='story-link--2' href="#" lang="russian">Подробнее</a>
+              <svg
+                viewBox="0 0 32 32"
+                class="gallery-box__icon"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="story story--home-page--2">
+            <button class="btn-story--2" type="button"
+                  >&#9747;</button
+                >
+            <div class="story__inner story__inner--home-page--2">
+              <img
+                class="full-content__img full-content__img--null"
+                src="images/interesting/1975147.svg"
+                alt=""
+              />
+              <div class="story__text">
+                <p>
+                  Ну, не буду же я за вас ее писать) Обязательно
+                  опубликую, только пишите!
+                </p>
+                <p>Не стесняйтесь!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--./interesting-item-->
+      </div>
+      <div class="interesting-item__view">
+        <a class="interesting-item__link" href="interesting.html" lang="english">View all</a>
+        <a class="interesting-item__link" href="interesting.html" lang="russian">Посмотреть все</a>
+        <svg
+          viewBox="0 0 32 32"
+          class="gallery-box__icon gallery-box__icon--up"
+          viewBox="0 0 32 32"
+          aria-hidden="true"
+        >
+          <path
+            d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"
+          />
+        </svg>
+      </div>
+
+      
+    </section>
+
+    <section class="video-gallery section" id="video-gallery">
+      <div class="heading-2">
+        <h2 class="heading-2__title" lang="english">Video</h2>
+        <h2 class="heading-2__title" lang="russian">Видео</h2>
+        <span class="heading-2__line"></span>
+      </div>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <video
+              id="videoPlayer"
+              class="video-js vjs-theme-city"
+              controls
+              width="640"
+              height="364"
+              poster="video/Mag_.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Mag_.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              id="videoPlayer"
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/ezhyk_.jpg"
+              data-setup="{}"
+            >
+              <source src="video/ezhyk_.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="images/video/1s.jpg"
+              data-setup="{}"
+            >
+              <source src="video/fanart_pw_.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Band.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Band.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Beznazvanyia.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Beznazvanyia.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/BlackCat.jpg"
+              data-setup="{}"
+            >
+              <source src="video/BlackCat.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/CherepashkayzNemopoymenyPrysk.jpg"
+              data-setup="{}"
+            >
+              <source
+                src="video/CherepashkayzNemopoymenyPrysk.mp4"
+                type="video/mp4"
+              />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Chobyt_Chyy.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Chobyt_Chyy.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Devushka_MadamosenD.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Devushka_MadamosenD.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Druyd.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Druyd.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/FanArt_PWShamka.jpg"
+              data-setup="{}"
+            >
+              <source src="video/FanArt_PWShamka.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/forest.jpg"
+              data-setup="{}"
+            >
+              <source src="video/forest.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Grosielli.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Grosielli.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/khellouyn.jpg"
+              data-setup="{}"
+            >
+              <source src="video/khellouyn.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/KhumanyzatsyiarastenyiaBrunfelsia.jpg"
+              data-setup="{}"
+            >
+              <source
+                src="video/KhumanyzatsyiarastenyiaBrunfelsia.mp4"
+                type="video/mp4"
+              />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/KhumanyzatsyiarastenyiaNochnoitsvetushchyiEkhynotseryus.jpg"
+              data-setup="{}"
+            >
+              <source
+                src="video/KhumanyzatsyiarastenyiaNochnoitsvetushchyiEkhynotseryus.mp4"
+                type="video/mp4"
+              />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Kompiuternyimotylek.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Kompiuternyimotylek.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/MononoKe.jpg"
+              data-setup="{}"
+            >
+              <source src="video/MononoKe.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Pliazh.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Pliazh.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/SandalkayTrix.jpg"
+              data-setup="{}"
+            >
+              <source src="video/SandalkayTrix.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="slide">
+            <video
+              class="video-js vjs-theme-city"
+              controls
+              preload="auto"
+              width="640"
+              height="364"
+              poster="video/Spring.jpg"
+              data-setup="{}"
+            >
+              <source src="video/Spring.mp4" type="video/mp4" />
+
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar__handle"></div>
+        </div>
+        <div class="slider__btn-box">
+          <button class="slider__btn slider__btn--left">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="64.8546mm"
+                height="58.5111mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 4186.2 3776.74"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g>
+                  <path
+                    class="fil0"
+                    d="M947.86 590.99c334.21,-193.89 468.75,-558.43 726.55,-588.85 257.8,-30.42 638.85,273.28 1048.55,356.81 409.7,83.54 848.03,-53.08 1097.29,200.54 249.26,253.63 309.43,897.51 346.43,1472.47 37,574.97 50.84,1081.03 -238.43,1341.41 -289.26,260.39 -881.62,275.11 -1527.32,333.5 -645.69,58.38 -1344.72,160.43 -1633.71,-97.45 -288.99,-257.87 -167.94,-875.68 -303.15,-1398.68 -135.22,-522.99 -526.7,-951.18 -455.5,-1176.89 71.2,-225.71 605.07,-248.95 939.28,-442.85z"
+                  />
+                </g>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="63.7684mm"
+                height="63.3685mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 5756.25 5720.15"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g>
+                  <path
+                    class="fil0"
+                    d="M1371.45 634.51c489.8,-266.52 853.04,-636.14 1290.9,-634.5 437.85,1.63 950.32,374.53 1555.53,661.01 605.21,286.48 1303.15,486.55 1484.94,843.63 181.78,357.08 -152.58,871.16 -228.22,1454.61 -75.64,583.46 107.47,1236.27 -158.05,1613.1 -265.51,376.84 -979.65,477.72 -1526.69,685.52 -547.04,207.81 -926.97,522.55 -1278.44,452.22 -351.48,-70.34 -674.48,-525.76 -1106.67,-831.89 -432.19,-306.13 -973.55,-462.97 -1167.33,-741.19 -193.79,-278.22 -40,-677.85 -80.16,-1182.94 -40.16,-505.09 -274.29,-1115.67 -83.15,-1502.66 191.12,-386.98 807.5,-550.38 1297.31,-816.9z"
+                  />
+                </g>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="38.0481mm"
+                height="11.9155mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 19432.17 6085.56"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g>
+                  <path
+                    class="fil0"
+                    d="M17118.94 2669.62c-1610.32,304.04 -4628.2,686.88 -7454.72,540.5 -2826.46,-146.37 -5461.45,-822.07 -5675.45,-1261.24 -213.94,-439.17 1993.21,-641.83 3062.98,-1013.43 1069.77,-371.6 1002.2,-912.16 -416.7,-934.68 -1418.85,-22.52 -4188.98,472.98 -5551.55,844.59 -1362.57,371.6 -1317.52,619.31 -540.5,1767.93 776.97,1148.62 2285.96,3198.07 2894.03,3445.82 608.07,247.75 315.32,-1306.29 123.85,-2184.63 -191.42,-878.35 -281.51,-1081 754.45,-810.73 1036.01,270.23 3198.12,1013.43 6024.58,1283.71 2826.46,270.23 6317.33,67.57 7893.84,-416.65 1576.51,-484.22 1238.72,-1249.95 968.44,-1520.18 -270.28,-270.28 -472.93,-45.1 -2083.25,258.99z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+          <button class="slider__btn slider__btn--right">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="64.8546mm"
+                height="58.5111mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 4186.2 3776.74"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g>
+                  <path
+                    class="fil0"
+                    d="M947.86 590.99c334.21,-193.89 468.75,-558.43 726.55,-588.85 257.8,-30.42 638.85,273.28 1048.55,356.81 409.7,83.54 848.03,-53.08 1097.29,200.54 249.26,253.63 309.43,897.51 346.43,1472.47 37,574.97 50.84,1081.03 -238.43,1341.41 -289.26,260.39 -881.62,275.11 -1527.32,333.5 -645.69,58.38 -1344.72,160.43 -1633.71,-97.45 -288.99,-257.87 -167.94,-875.68 -303.15,-1398.68 -135.22,-522.99 -526.7,-951.18 -455.5,-1176.89 71.2,-225.71 605.07,-248.95 939.28,-442.85z"
+                  />
+                </g>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="63.7684mm"
+                height="63.3685mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 5756.25 5720.15"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g>
+                  <path
+                    class="fil0"
+                    d="M1371.45 634.51c489.8,-266.52 853.04,-636.14 1290.9,-634.5 437.85,1.63 950.32,374.53 1555.53,661.01 605.21,286.48 1303.15,486.55 1484.94,843.63 181.78,357.08 -152.58,871.16 -228.22,1454.61 -75.64,583.46 107.47,1236.27 -158.05,1613.1 -265.51,376.84 -979.65,477.72 -1526.69,685.52 -547.04,207.81 -926.97,522.55 -1278.44,452.22 -351.48,-70.34 -674.48,-525.76 -1106.67,-831.89 -432.19,-306.13 -973.55,-462.97 -1167.33,-741.19 -193.79,-278.22 -40,-677.85 -80.16,-1182.94 -40.16,-505.09 -274.29,-1115.67 -83.15,-1502.66 191.12,-386.98 807.5,-550.38 1297.31,-816.9z"
+                  />
+                </g>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="33.3829mm"
+                height="10.7969mm"
+                version="1.1"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 1140.84 368.98"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <style type="text/css"></style>
+                </defs>
+                <g>
+                  <metadata />
+                  <path
+                    class="fil0"
+                    d="M820.2 83.92c14.6,34.06 -81.09,58.39 -197.87,64.88 -116.78,6.49 -254.64,-4.87 -362.5,-27.58 -107.86,-22.71 -185.71,-56.76 -227.88,-47.84 -42.17,8.92 -48.66,60.82 17.84,107.04 66.5,46.22 205.99,86.77 342.23,94.07 136.24,7.3 269.24,-18.65 354.59,-44.6 85.35,-25.95 123.07,-51.9 146.79,-55.95 23.72,-4.06 33.45,13.79 32.24,38.52 -1.22,24.74 -13.38,56.36 -33.86,93.67 -20.48,37.3 -49.27,80.28 -8.52,55.55 40.75,-24.74 151.04,-117.18 211.5,-178.6 60.45,-61.42 71.07,-91.81 -27.06,-123.44 -98.13,-31.63 -304.99,-64.49 -345.98,-59.03 -40.99,5.46 83.9,49.26 98.49,83.32z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts section" id="contacts">
+      <div class="heading-2">
+        <h2 class="heading-2__title" lang="english">Contacts</h2>
+        <h2 class="heading-2__title" lang="russian">Контакты</h2>
+        <span class="heading-2__line"></span>
+      </div>
+      <div class="contacts-box">
+        <div class="contacts-box__item">
+          <p lang="russian">
+            Спасибо, что долистали до конца (: <br />
+            Если вам понравились мои работы, то по вопросам сотрудничества
+            обращайтесь незамедлительно, отправив мне сообщение, нажав на эту
+            чудесную кнопочку справа!
+          </p>
+          <a
+            class="contacts-item"
+            href="tel:+7 (999) 888-77-66"
+            rel="nofollow"
+            lang="english"
+            >Telephone: <span>+7(999)888-77-66</span></a
+          >
+          <a
+            class="contacts-item"
+            href="tel:+7 (999) 888-77-66"
+            rel="nofollow"
+            lang="russian"
+            >Телефон: <span>+7(999)888-77-66</span></a
+          >
+          <a
+            class="contacts-item"
+            href="mailto:volnaart@gmail.com"
+            lang="english"
+            >E-mail: <span>volnaart@gmail.com</span></a
+          >
+          <a
+            class="contacts-item"
+            href="mailto:volnaart@gmail.com"
+            lang="russian"
+            >Электронная почта: <span>volnaart@gmail.com</span></a
+          >
+        </div>
+        <div class="contacts-box__item">
+          <form class="form" action="/" method="POST">
+            <div class="form__group" lang="english">
+              <input
+                class="form__input"
+                type="text"
+                name="user_name"
+                placeholder="Your name"
+                id="name-eng"
+                
+              />
+              <label class="form__label" for="name-eng">Your name</label>
+            </div>
+            <div class="form__group" lang="russian">
+              <input
+                class="form__input"
+                type="text"
+                name="user_name"
+                placeholder="Ваше имя"
+                id="name-rus"
+                
+              />
+              <label class="form__label" for="name-rus">Ваше имя</label>
+            </div>
+
+            <div class="form__group" lang="english">
+              <input
+                class="form__input"
+                type="email"
+                name="user_email"
+                placeholder="Your e-mail"
+                id="mail-eng"
+                
+              />
+              <label class="form__label form__label--email" for="mail-eng">Your e-mail </label>
+              
+            </div>
+            <div class="form__group" lang="russian">
+              <input
+                class="form__input"
+                type="email"
+                name="user_email"
+                placeholder="Ваша электронная почта"
+                id="mail-rus"
+                
+              />
+              <label class="form__label form__label--email" for="mail-rus">Ваша электронная почта</label>
+            </div>
+
+            <div class="form__group" lang="english">
+              <textarea
+                class="form__input"
+                id="message-eng"
+                
+                placeholder="Message"
+              ></textarea>
+              <label class="form__label" for="message-eng">Message</label>
+            </div>
+            <div class="form__group" lang="russian">
+              <textarea
+                class="form__input"
+                id="message-rus"
+                
+                placeholder="Сообщение"
+              ></textarea>
+              <label class="form__label" for="message-rus">Сообщение</label>
+            </div>
+
+            <div class="form__group" lang="english">
+              <div class="btn-box">
+                <button class="btn-send" type="submit">
+                  <span class="btn">
+                    Send
+                    <div class="btn__blobs">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      style="display: block; height: 0; width: 0"
+                    >
+                      <defs>
+                        <filter id="goo">
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"
+                          ></feColorMatrix>
+                          <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="form__group" lang="russian">
+              <div class="btn-box">
+                <button class="btn-send" type="submit">
+                  <span class="btn">
+                    Отправить
+                    <div class="btn__blobs">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      style="display: block; height: 0; width: 0"
+                    >
+                      <defs>
+                        <filter id="goo">
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"
+                          ></feColorMatrix>
+                          <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <span class="contacts-square1 layer" data-speed="10"></span>
+      <span class="contacts-square2 layer" data-speed="-3"></span>
+      <span class="contacts-square3 layer" data-speed="-2"></span>
+    </section>
+
+    <footer class="footer">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 14 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <linearGradient id="linearGradient1" x1="50%" x2="50%" y1="-10.959%" y2="100%">
+            <stop stop-color="rgba(205, 208, 208, 0.5)" stop-opacity=".95" offset="0%" />
+            <stop stop-color="rgba(221, 239, 187, 0.2)" offset="100%" />
+          </linearGradient>
+          <linearGradient id="linearGradient2" x1="50%" x2="50%" y1="-10.959%" y2="100%">
+            <stop stop-color="rgba(229, 57, 53, 0.5)" stop-opacity=".95" offset="0%" />
+            <stop stop-color="rgba(221, 214, 243, 0.8)" offset="100%" />
+          </linearGradient>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          ></path>
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="-10" fill="url(#linearGradient2)"></use>
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="-4"
+            fill="url(#linearGradient1)"
+          ></use>
+      <!-- <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="-7"
+            fill="rgba(195, 70, 64, 0.3)"
+          ></use> -->
+      <!-- <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="-10"
+            fill="rgba(195, 70, 64, 0.7)"
+          ></use>
+        </g>
+      </svg>
+
+      <!-- <div class="waves footer-waves">
+        <div class="wave footer-wave"></div>
+        <div class="wave footer-wave"></div>
+      </div> -->
+
+      <div class="footer__box">
+        <div class="footer__logo">
+          <img class="footer__logo-img" src="images/logo/logo.png" alt="logo" />
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-item">
+            <li class="footer__nav-list">
+              <a class="footer__nav-link" href="#header" lang="english">Home</a>
+              <a class="footer__nav-link" href="#header" lang="russian"
+                >Вернуться назад</a
+              >
+            </li>
+            <li class="footer__nav-list">
+              <a class="footer__nav-link" href="#gallery" lang="english"
+                >Gallery</a
+              >
+              <a class="footer__nav-link" href="#header" lang="russian"
+                >Галерея</a
+              >
+            </li>
+            <li class="footer__nav-list">
+              <a class="footer__nav-link" href="#video-gallery" lang="english"
+                >Video</a
+              >
+              <a class="footer__nav-link" href="#header" lang="russian"
+                >Видео</a
+              >
+            </li>
+            <li class="footer__nav-list">
+              <a class="footer__nav-link" href="#contacts" lang="english"
+                >Contact</a
+              >
+              <a class="footer__nav-link" href="#header" lang="russian"
+                >Контакты</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <span class="footer__line"></span>
+        <div class="footer__icons">
+          <a class="footer__icon-item" href="#">
+            <img class="footer__icon-img" src="images/icons/vk.svg" alt="" />
+          </a>
+          <a class="footer__icon-item" href="#">
+            <img
+              class="footer__icon-img"
+              src="images/icons/youtube.svg"
+              alt=""
+            />
+          </a>
+          <a class="footer__icon-item" href="#">
+            <img class="footer__icon-img" src="images/icons/inst.svg" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__copyright" lang="english">
+        Developed by PashaNatasha &#166; 2021
+      </div>
+      <div class="footer__copyright" lang="russian">Все права защищены</div>
+    </footer>
+
+    <script>
+      'fixloadpage';
+    </script>
+    <script src="script.js"></script>
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/dc24b309df.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

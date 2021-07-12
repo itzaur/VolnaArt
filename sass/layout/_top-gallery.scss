@@ -1,0 +1,526 @@
+.top-gallery {
+  position: relative;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  padding: 3rem 0 3rem 0;
+  grid-column: 9 / span 6;
+  grid-row: 2 / span 8;
+
+  display: grid;
+  grid-template-columns: repeat(19, 3rem);
+  // grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+  grid-template-rows: repeat(21, 2.95rem);
+  // grid-template-rows: repeat(auto-fit, minmax(2.95rem, 1fr));
+  gap: 0.2rem;
+
+  z-index: 1;
+
+  @include respond(big-fucking-desktop) {
+    grid-template-columns: repeat(19, 3.4rem);
+    grid-template-rows: repeat(21, 3.34rem);
+
+    padding: 0;
+  }
+
+  // @include respond(big-desktop) {
+  //   grid-column: 8 / span 6;
+  // }
+
+  @include respond(tab-land3) {
+    grid-column: 8 / span 6;
+  }
+
+  @include respond(tab-land2) {
+    grid-template-columns: repeat(19, 2.8rem);
+    grid-template-rows: repeat(21, 2.75rem);
+  }
+
+  @include respond(tab-land) {
+    grid-column: 7 / span 6;
+    grid-row: 1 / span 8;
+    grid-template-columns: repeat(19, 2.5rem);
+    grid-template-rows: repeat(21, 2.46rem);
+
+    margin-top: 5rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(19, 2.2rem);
+    grid-template-rows: repeat(21, 2.163rem);
+    grid-row: 1 / span 8;
+    grid-column: 5 / span 6;
+    margin-top: 6rem;
+  }
+
+  @include respond(phone-bg) {
+    grid-column: 3 / span 6;
+  }
+
+  @include respond(phone) {
+    display: none;
+    // grid-template-columns: repeat(19, 1.3rem);
+    // grid-template-rows: repeat(21, 1.28rem);
+    // grid-column: 1 / span 6;
+    // margin-top: 8rem;
+    // margin-left: 3rem;
+  }
+
+  // @include respond(nokia3310) {
+  //   margin: 5rem 0 0 4rem;
+  // }
+
+  & > * {
+    width: 100%;
+  }
+
+  &__item {
+    perspective: 250rem;
+    position: relative;
+    z-index: 2;
+    // overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+
+    &--1 {
+      grid-column: 1 / span 4;
+      grid-row: 3 / span 5;
+
+      @include respond(nokia3310) {
+        display: none;
+      }
+    }
+
+    &--2 {
+      grid-column: 5 / span 3;
+      grid-row: 2 / span 7;
+
+      @include respond(nokia3310) {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &--3 {
+      grid-column: 8 / span 4;
+      grid-row: 1 / span 3;
+
+      @include respond(nokia3310) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    &--4 {
+      grid-column: 12 / span 5;
+      grid-row: 1 / span 4;
+
+      @include respond(nokia3310) {
+        grid-column: 9 / span 5;
+      }
+    }
+
+    &--5 {
+      grid-column: 8 / span 4;
+      grid-row: 4 / span 6;
+
+      @include respond(nokia3310) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    &--6 {
+      grid-column: 12 / span 4;
+      grid-row: 5 / span 5;
+
+      @include respond(nokia3310) {
+        grid-column: 9 / span 5;
+      }
+    }
+
+    &--7 {
+      grid-column: 16 / span 3;
+      grid-row: 5 / span 5;
+
+      @include respond(nokia3310) {
+        display: none;
+      }
+    }
+
+    &--8 {
+      grid-column: 1 / span 4;
+      grid-row: 8 / span 4;
+
+      @include respond(nokia3310) {
+        display: none;
+      }
+    }
+
+    &--9 {
+      grid-column: 5 / span 3;
+      grid-row: 9 / span 5;
+
+      @include respond(nokia3310) {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &--10 {
+      grid-column: 8 / span 4;
+      grid-row: 10 / span 6;
+
+      @include respond(nokia3310) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    &--11 {
+      grid-column: 12 / span 4;
+      grid-row: 10 / span 4;
+
+      @include respond(nokia3310) {
+        grid-column: 9 / span 5;
+      }
+    }
+
+    &--12 {
+      grid-column: 5 / span 3;
+      grid-row: 14 / span 6;
+
+      @include respond(nokia3310) {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &--13 {
+      grid-column: 8 / span 4;
+      grid-row: 16 / span 5;
+
+      @include respond(nokia3310) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    &--14 {
+      grid-column: 12 / span 4;
+      grid-row: 14 / span 4;
+
+      @include respond(nokia3310) {
+        grid-column: 9 / span 4;
+      }
+    }
+  }
+
+  &-card {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    transition: all 2s;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    a {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+    }
+  }
+
+  &-card:hover &__img--front {
+    transform: translateZ(5rem) rotateY(-180deg);
+  }
+
+  &-card:hover &__img--back {
+    opacity: 1;
+    transform: translateZ(5rem) rotateY(0);
+  }
+
+  // &-card:hover &__img {
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+
+  &__img--front {
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  &__img--back {
+    // width: 100%;
+    // height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    transform: rotateY(180deg);
+
+    // opacity: 0;
+    // backface-visibility: hidden;
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    //height: auto;
+    height: 100%;
+    max-height: 100%;
+    backface-visibility: hidden;
+    cursor: pointer;
+    transition: all 1.3s ease;
+  }
+
+  &-square1 {
+    position: absolute;
+    top: -12%;
+    right: -12%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    z-index: 3;
+    transition: left 1s linear;
+
+    @include respond(tab-port) {
+      top: -20%;
+      right: -20%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &-square2 {
+    position: absolute;
+    top: -20%;
+    left: -56%;
+    width: 12rem;
+    height: 10rem;
+    border-radius: 1.3rem;
+    filter: blur(0.6rem);
+    z-index: -1;
+    transition: left 0.6s linear;
+
+    @include respond(tab-land) {
+      top: -10%;
+      left: -36%;
+      width: 10rem;
+      height: 8rem;
+    }
+
+    @include respond(tab-port) {
+      width: 8rem;
+      height: 6rem;
+      top: -10%;
+      left: -40%;
+      border-radius: 1rem;
+    }
+
+    @include respond(phone) {
+      // width: 6rem;
+      // height: 5rem;
+      // left: -50%;
+      display: none;
+    }
+  }
+
+  &-square3 {
+    position: absolute;
+    top: -45%;
+    left: 30%;
+    width: 4.5rem;
+    height: 10rem;
+    border-radius: 0.6rem;
+    z-index: 3;
+    transition: left 0.5s linear;
+
+    @include respond(tab-port) {
+      top: -45%;
+      left: 10%;
+      height: 7rem;
+    }
+
+    @include respond(phone) {
+      // width: 3.5rem;
+      // top: -75%;
+      // left: 10%;
+      display: none;
+    }
+  }
+
+  &-square4 {
+    position: absolute;
+    bottom: 33%;
+    left: -50%;
+    width: 8rem;
+    height: 7rem;
+    border-radius: 1.5rem;
+    z-index: 3;
+
+    @include respond(tab-land) {
+      width: 6rem;
+      height: 5rem;
+      bottom: 35%;
+      left: -50%;
+    }
+
+    @include respond(phone) {
+      // border-radius: 0.5rem;
+      // width: 4rem;
+      // height: 3rem;
+      display: none;
+    }
+  }
+
+  &-square5 {
+    position: absolute;
+    top: -25%;
+    right: -15%;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.2rem;
+    z-index: 1;
+
+    @include respond(tab-port) {
+      width: 5rem;
+      height: 5rem;
+      top: -40%;
+      right: -28%;
+    }
+
+    @include respond(phone) {
+      // width: 4rem;
+      // height: 4rem;
+      // right: -45%;
+      display: none;
+    }
+  }
+
+  &-square6 {
+    position: absolute;
+    top: -80%;
+    right: -70%;
+    width: 12rem;
+    height: 10rem;
+    border-radius: 0.5rem;
+    filter: blur(0.6rem);
+
+    z-index: 5;
+
+    @include respond(tab-land) {
+      width: 11rem;
+      height: 9rem;
+      top: -75%;
+      right: -80%;
+    }
+
+    @include respond(tab-port) {
+      width: 7.5rem;
+      height: 6rem;
+      top: -85%;
+      right: -69%;
+    }
+
+    @include respond(phone) {
+      // width: 6rem;
+      // height: 4rem;
+      // top: -70%;
+      // right: -100%;
+      display: none;
+    }
+  }
+}
+
+.full-content {
+  position: fixed;
+  @include flex-center;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  background: rgba(248, 209, 190, 0.95);
+  // background: linear-gradient(
+  //   to right bottom,
+  //   rgba(253, 240, 240, 0.16) 10%,
+  //   rgba(248, 209, 190, 0.5) 100%
+  // );
+  visibility: hidden;
+  opacity: 0;
+
+  @include respond(phone) {
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  &:target {
+    height: calc(100% + 0.1rem);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:target &__img {
+    animation: moveUp 1.2s ease-in-out;
+    backface-visibility: hidden;
+  }
+
+  &__link:link,
+  &__link:visited {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -140%);
+    padding: 0.2rem 3rem;
+
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: $color-white;
+    background-color: rgba(73, 146, 219, 0.9);
+
+    @include respond(phone) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    margin: 0 auto;
+
+    // height: 80vh;
+    max-height: 80vh;
+    max-width: 100%;
+
+    @include respond(phone) {
+      height: auto;
+    }
+  }
+
+  .dark & {
+    background: rgba($color-dark-1, 0.95);
+  }
+}
+
+.layer {
+  box-shadow: 0.6rem 0.6rem 1rem rgba($color-black, 0.2);
+}

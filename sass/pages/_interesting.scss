@@ -1,0 +1,353 @@
+body {
+  font-size: clamp(1.3rem, 3vw, 3rem);
+}
+
+p {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5vw 2vw;
+
+  @include respond(tab-land) {
+    padding-top: 10rem;
+  }
+
+  @include respond(nokia3310) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.grid {
+  display: grid;
+  place-items: center;
+  // background-color: rgb(216, 241, 191);
+
+  &__content {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(18ch, 40vw, 30rem), 1fr)
+    );
+    grid-auto-rows: 1fr;
+    // grid-template-rows: repeat(8, minmax(max-content, 1fr));
+    grid-gap: 2rem;
+
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+  }
+
+  &__item {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    padding: clamp(1rem, 1.5vw, 3rem);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
+
+.int-link {
+  height: 100%;
+
+  text-decoration: none;
+  color: currentColor;
+  //   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  backface-visibility: hidden;
+  //   overflow: hidden;
+
+  & > * + * {
+    margin-top: 2vw;
+  }
+
+  :is(h2, p) {
+    color: $color-light;
+    line-height: 1.5;
+
+    .dark & {
+      color: $color-dark-4;
+    }
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 4rem);
+    line-height: 1.2;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    background: linear-gradient(to top, hsl(0, 0%, 45%), hsl(0, 0%, 16%));
+    // background: linear-gradient(to left, #7f7fd5, #86a8e7, #91eae4);
+    transition: opacity 0.6s linear;
+  }
+
+  &::after {
+    background: linear-gradient(to top, #654ea3, #eaafc8);
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    .dark & {
+      background: linear-gradient(to top, #654ea3, #2b3fee);
+    }
+  }
+
+  & > * {
+    z-index: 1;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: 50% 40%;
+    z-index: 0;
+    filter: grayscale(0.5) blur(0.2rem);
+    opacity: 0.4;
+    transition: filter 0.6s, transform 0.6s, opacity 0.5s ease;
+    backface-visibility: hidden;
+
+    .dark & {
+      filter: blur(0.2rem) invert(0%) sepia(50%) saturate(95%)
+        hue-rotate(1264deg) brightness(72%) contrast(70%);
+    }
+  }
+
+  p:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    margin-bottom: auto;
+  }
+
+  p:nth-child(3) {
+    transform: translateY(10ex);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.4s linear;
+  }
+
+  &:focus {
+    outline: 1.5vw solid #fff;
+  }
+
+  &:hover img {
+    filter: grayscale(0) blur(0);
+    transform: scale(1.05) rotate(1deg);
+    opacity: 1;
+
+    .dark & {
+      filter: blur(0) invert(0%) sepia(0%) saturate(95%) hue-rotate(1464deg)
+        brightness(82%) contrast(70%);
+    }
+  }
+
+  &:hover::after,
+  &:hover::before,
+  &:hover:focus::after,
+  &:hover:focus::before {
+    opacity: 0.6;
+  }
+
+  &:hover :is(h2, p) {
+    color: $color-white;
+
+    .dark & {
+      color: $color-dark-4;
+    }
+  }
+
+  &:hover p:nth-child(3) {
+    transform: translateY(0);
+    opacity: 1;
+    // transition: transform 3s;
+  }
+}
+
+.story {
+  position: relative;
+  width: 80%;
+  height: 75%;
+
+  margin: 8rem auto;
+
+  background: #fff2e5;
+  overflow: hidden;
+
+  border-radius: 1rem;
+  backface-visibility: hidden;
+
+  &--home-page,
+  &--home-page--2 {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: calc(100% + 0.3em);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: circle(0.5rem at center);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    background: rgba(248, 209, 190, 0.95);
+    border-radius: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: 500;
+    // transition: all 0.8s;
+
+    transition: clip-path 0.8s ease-in, opacity 0.5s ease,
+      visibility 0.3s ease-out;
+
+    &.active {
+      clip-path: circle(100% at center);
+      // transform: translate(-50%, -50%) scale(1);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    height: calc(100% + 0.5em);
+    margin: 0;
+  }
+
+  .dark & {
+    background: $color-dark-2;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    padding: 4rem;
+    border-radius: 2rem 0 0 2rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &--home-page,
+    &--home-page--2 {
+      width: 80%;
+      height: 70%;
+      margin: 0 auto;
+
+      background: #fff2e5;
+
+      .dark & {
+        background: $color-dark-1;
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 5rem;
+
+      backface-visibility: hidden;
+    }
+
+    @include respond(nokia3310) {
+      padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .full-content__img {
+      display: block;
+      width: 25rem;
+      max-width: 100%;
+      height: auto;
+      padding: 1rem 0;
+      float: right;
+      shape-outside: ellipse(50% 45% at center);
+      -webkit-clip-path: ellipse(20% 60% at center);
+      clip-path: ellipse(92% 58% at right);
+      backface-visibility: hidden;
+
+      &--null {
+        .dark & {
+          filter: invert(43%) sepia(59%) saturate(2703%) hue-rotate(164deg)
+            brightness(90%) contrast(109%);
+        }
+      }
+
+      @include respond(tab-port) {
+        width: 15rem;
+      }
+
+      @include respond(nokia3310) {
+        float: none;
+        clip-path: none;
+        margin-bottom: 1rem;
+        padding: 0;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    color: $color-dark-1;
+    text-align: justify;
+
+    .dark & {
+      color: $color-dark-4;
+    }
+
+    p:nth-child(1)::first-letter {
+      font-size: 6rem;
+      color: $color-secondary;
+      float: left;
+      line-height: 0.7;
+
+      .dark & {
+        color: $color-dark-5;
+      }
+    }
+
+    p + p {
+      text-indent: 3rem;
+    }
+
+    img {
+      position: relative;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      width: 30rem;
+      height: 10rem;
+      margin-top: 4rem;
+
+      .dark & {
+        filter: invert(43%) sepia(59%) saturate(2703%) hue-rotate(164deg)
+          brightness(90%) contrast(109%);
+      }
+    }
+  }
+}

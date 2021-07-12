@@ -1,0 +1,24 @@
+{
+    "version": 3,
+    "mappings": "ACCA;;;;;;;;;;;;;;;;;;EAkBE;AGnBF,AAAA,IAAI,CAAC;EACH,SAAS,EAAE,KAAK;CACjB;;AAED,AAAA,CAAC;AACD,CAAC,AAAA,QAAQ;AACT,CAAC,AAAA,OAAO,CAAC;EACP,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACpB;;AAED,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,UAAU;EACtB,gBAAgB,EAAE,WAAW;CAC9B;;AAED,AAAA,WAAW,CAAC;EACV,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,OAAkB;CAC1B",
+    "sources": [
+        "main.scss",
+        "abstracts/_mixins.scss",
+        "abstracts/_functions.scss",
+        "abstracts/_variables.scss",
+        "base/_base.scss",
+        "base/_animations.scss",
+        "base/_typography.scss",
+        "base/_utilities.scss",
+        "components/_button.scss",
+        "components/_form.scss",
+        "layout/_header.scss",
+        "layout/_top-gallery.scss",
+        "layout/_footer.scss",
+        "pages/_gallery.scss",
+        "pages/_faq.scss",
+        "pages/_contacts.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
