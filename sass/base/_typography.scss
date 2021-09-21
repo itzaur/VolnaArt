@@ -33,7 +33,7 @@ body.dark {
   z-index: 1;
 
   @include respond(big-desktop) {
-    margin-top: 9rem;
+    margin-top: 18rem;
   }
 
   @include respond(tab-land2) {
@@ -43,13 +43,13 @@ body.dark {
   @include respond(tab-land) {
     grid-column: 2 / span 7;
     grid-row: 2 / span 5;
-    margin-top: 8rem;
+    margin-top: -33rem;
   }
 
   @include respond(tab-port) {
     grid-row: 8 / 10;
     grid-column: 1 / -1;
-    margin-top: 6.5rem;
+    margin-top: 0.5rem;
     text-align: center;
   }
 
@@ -74,7 +74,7 @@ body.dark {
     // color: rgba($color-black, 0.3);
     color: transparent;
     // background-color: hsl(0, 22%, 93%);
-    background-image: url('../images/wave/wavered-3.png');
+    background-image: url('../images/wave/wave3.png');
     background-size: 773.91px 100%;
     // background-position: 0 0;
     background-repeat: repeat-x;
@@ -91,7 +91,7 @@ body.dark {
     animation: wave linear 5.5s infinite;
 
     .dark & {
-      background-image: url('../images/wave/wavered-4.png');
+      background-image: url('../images/wave/wave4.png');
 
       transition: all 0.6s;
     }
@@ -122,6 +122,10 @@ body.dark {
     @include respond(phone) {
       font-size: 4rem;
       background-size: 513.91px 60px;
+    }
+
+    @include respond(nokia3310) {
+      font-size: 2.5rem;
     }
 
     span {
@@ -159,6 +163,11 @@ body.dark {
         font-size: 4rem;
         background-size: 513.91px 60px;
       }
+
+      @include respond(nokia3310) {
+        font-size: 2.5rem;
+        background-size: 215px 40px;
+      }
     }
   }
 
@@ -194,6 +203,10 @@ body.dark {
       font-size: 1.2rem;
       text-align: center;
     }
+
+    @include respond(nokia3310) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -213,9 +226,6 @@ body.dark {
 
   @include respond(phone-bg) {
     margin-left: 3rem;
-
-    // filter: invert(67%) sepia(83%) saturate(6212%) hue-rotate(336deg)
-    //   brightness(82%) contrast(83%);
   }
 
   @include respond(phone) {
@@ -224,8 +234,6 @@ body.dark {
 }
 
 .heading-2 {
-  // @include flex-center;
-  // justify-content: flex-start;
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;

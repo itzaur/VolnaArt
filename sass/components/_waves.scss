@@ -10,6 +10,14 @@
   @include respond(phone) {
     width: 200%;
   }
+
+  .dark & stop:nth-child(1) {
+    stop-color: #2d8394;
+  }
+
+  .dark & stop:nth-child(2) {
+    stop-color: #03647e;
+  }
 }
 
 .wave {

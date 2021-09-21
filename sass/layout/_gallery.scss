@@ -27,7 +27,7 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
     grid-template-rows: 40rem auto;
 
     column-gap: 10rem;
@@ -43,11 +43,13 @@
     @include respond(phone) {
       grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
       column-gap: 5rem;
+
       padding: 3rem 4rem;
     }
 
     @include respond(nokia3310) {
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      padding: 2rem 1.5rem;
     }
 
     &__subtitle {
@@ -65,7 +67,7 @@
       }
 
       @include respond(nokia3310) {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
     }
 

@@ -80,6 +80,7 @@
       background-color: $color-blue;
       transform: scale(1.5) translateY(25%) translateZ(0);
       transition: all 0.7s cubic-bezier(0.35, 0.72, 0.95, 0.93);
+      will-change: transform;
 
       &:nth-child(1) {
         left: -5%;
@@ -127,10 +128,7 @@
 
   &-story,
   &-story--2 {
-    // position: absolute;
-    // top: 10%;
-    // left: 50%;
-    // transform: translateX(-50%);
+    font-size: 1.6rem;
     padding: 0.5em 2em;
     color: $color-white;
     background-color: rgba(73, 146, 219, 0.9);
@@ -190,6 +188,7 @@
       height: 100%;
       top: 0;
       left: 0;
+      backface-visibility: hidden;
     }
 
     &::before {
@@ -335,6 +334,11 @@
             fill: #368897;
             // filter: invert(45%) sepia(97%) saturate(1479%) hue-rotate(194deg)
             //   brightness(94%) contrast(112%);
+          }
+
+          @include respond(phone) {
+            width: 4rem;
+            height: 4rem;
           }
         }
 

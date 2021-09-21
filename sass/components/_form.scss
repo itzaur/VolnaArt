@@ -1,11 +1,16 @@
 .form {
   //   background-color: cadetblue;
+  // background-image: linear-gradient(
+  //     to bottom right,
+  //     rgba($color-blue, 0.2),
+  //     rgba($color-primary, 0.2)
+  //   ),
+  //   url('../images/girl.png');
   background-image: linear-gradient(
-      to bottom right,
-      rgba($color-blue, 0.2),
-      rgba($color-primary, 0.2)
-    ),
-    url('../images/girl.png');
+    to bottom right,
+    rgba($color-blue, 0.2),
+    rgba($color-primary, 0.2)
+  );
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top right;
@@ -62,9 +67,7 @@
     font-family: inherit;
     font-weight: 400;
     line-height: 1.6;
-    // width: 45%;
-    // max-width: 40rem;
-    // min-width: 15rem;
+
     width: clamp(20rem, 65%, 40rem);
     padding: 1rem;
     border: none;
@@ -137,8 +140,6 @@
 
     margin-top: 0.6rem;
     margin-left: 1rem;
-    // @include flex-center;
-    // justify-content: flex-start;
 
     font-size: 1.6rem;
     color: $color-primary;
@@ -146,22 +147,6 @@
     overflow: hidden;
 
     transition: all 0.3s;
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 0;
-    //   transform: translate(-100%, -50%);
-    //   width: 100%;
-    //   height: 0.2rem;
-    //   background: $color-primary;
-    //   transition: transform 2s ease-out;
-    // }
-
-    // &.label-valid::before {
-    //   transform: translate(0%, -50%);
-    // }
 
     span {
       position: absolute;
@@ -188,12 +173,17 @@
   }
 
   .dark & {
+    // background-image: linear-gradient(
+    //     to bottom right,
+    //     rgba($color-dark-2, 0.1),
+    //     rgba($color-dark-1, 0.1)
+    //   ),
+    //   url('../images/girl.png');
     background-image: linear-gradient(
-        to bottom right,
-        rgba($color-dark-2, 0.1),
-        rgba($color-dark-1, 0.1)
-      ),
-      url('../images/girl.png');
+      to bottom right,
+      rgba($color-dark-2, 0.7),
+      rgba($color-dark-1, 0.1)
+    );
     box-shadow: 0 0px 0.6px rgba($color-blue, 0.036),
       0 0px 1.3px rgba($color-blue, 0.052), 0 0px 2.1px rgba($color-blue, 0.065),
       0 0px 3.3px rgba($color-blue, 0.075), 0 0px 4.9px rgba($color-blue, 0.085),
@@ -201,21 +191,65 @@
       0 0px 10.7px rgba($color-blue, 0.108),
       0 0px 17.1px rgba($color-blue, 0.124), 0 0px 32px rgba($color-blue, 0.16);
   }
-
-  // &__succsess-email {
-  //   position: absolute;
-  //   top: 60%;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   font-size: 1.6rem;
-  //   color: $color-blue;
-  //   padding-left: 2rem;
-  // }
 }
 
-// .label-visible {
-//   opacity: 1;
-//   visibility: visible;
-//   transform: translateY(0);
-// }
+.falling {
+  animation: feather 2s ease-in-out 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling1 {
+  animation: feather1 1.6s ease-in-out 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling2 {
+  animation: feather2 1.2s ease-in-out 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling3 {
+  animation: feather3 0.6s ease-in-out;
+  animation-delay: 1.1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling4 {
+  animation: feather4 1s ease-in-out !important;
+  animation-delay: 1.8s !important;
+  animation-direction: alternate !important;
+  animation-fill-mode: forwards !important;
+  transform-origin: 0% 50% !important;
+}
+
+.falling5 {
+  animation: feather5 1.95s ease-in-out;
+  animation-delay: 2.5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling6 {
+  animation: feather6 1.95s ease-in-out;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}
+
+.falling7 {
+  animation: feather7 1.95s ease-in-out;
+  animation-delay: 3.5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
+}

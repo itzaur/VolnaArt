@@ -14,10 +14,16 @@
   backface-visibility: hidden;
 
   .dark & {
-    background-image: url('../images/background-no.jpg');
+    background-image: url('../images/bg/background-dark.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 -1rem 1rem #0f6d85 inset;
+  }
+
+  @media (max-width: 37.5em) and (min-resolution: 192dpi) {
+    .dark & {
+      background-image: url('../images/bg/background-dark-small.jpg');
+    }
   }
 
   // background-image: url('../images/bg/bg1.jpg');
@@ -45,7 +51,7 @@
       transition: all 0.4s;
     }
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       justify-content: flex-start;
       display: none;
     }
@@ -55,6 +61,10 @@
       flex: 1 1 0;
       margin-right: 5rem;
       // width: 70%;
+
+      @include respond(tab-land) {
+        margin-right: 1rem;
+      }
     }
 
     &-item {
@@ -183,6 +193,10 @@
     &-list-icon {
       position: relative;
       margin-right: 3rem;
+
+      &:nth-child(3) img {
+        height: 1.6rem;
+      }
     }
 
     &-icons {
@@ -190,6 +204,10 @@
       margin: 0 5rem;
       // padding: 1rem;
       // border-left: 2px solid $color-black;
+
+      @include respond(tab-land) {
+        margin: 0 0 0 1rem;
+      }
     }
 
     &-icon {
@@ -197,8 +215,8 @@
       padding: 1rem 0;
 
       img {
-        width: 1.8rem;
-        height: 1.8rem;
+        // width: 1.8rem;
+        height: 1.35rem;
         opacity: 0.8;
         transition: all 0.3s;
 
@@ -220,6 +238,11 @@
         filter: invert(83%) sepia(12%) saturate(6266%) hue-rotate(306deg)
           brightness(94%) contrast(94%);
       }
+    }
+
+    &-icon:hover svg {
+      filter: brightness(200%);
+      transition: filter 2s ease;
     }
   }
 }

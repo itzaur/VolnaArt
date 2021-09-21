@@ -37,6 +37,7 @@
     }
 
     @include respond(nokia3310) {
+      margin-bottom: 2rem;
       padding: 1rem;
     }
 
@@ -97,21 +98,21 @@
       }
 
       &--1::before {
-        background: url('../images/gallery/other/19.jpg');
+        background: url('../images/gallery/other/small/19.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 100% 10%;
       }
 
       &--2::before {
-        background: url('../images/gallery/other/11.jpg');
+        background: url('../images/gallery/other/small/11.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 100% 10%;
       }
 
       &--3::before {
-        background: url('../images/gallery/fullGrowth/28.jpg');
+        background: url('../images/gallery/fullGrowth/small/28.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 100% 10%;
@@ -154,6 +155,10 @@
       &-title {
         font-size: 3rem;
         line-height: 1.2;
+
+        @include respond(nokia3310) {
+          font-size: 2rem;
+        }
       }
 
       &-paragraphe {
@@ -161,8 +166,9 @@
         font-size: 1.6rem;
         font-weight: 400;
 
-        @include respond(phone) {
+        @include respond(nokia3310) {
           margin-bottom: 1rem;
+          font-size: 1.4rem;
         }
       }
 
@@ -179,6 +185,10 @@
 
           .dark & {
             color: $color-dark-4;
+          }
+
+          @include respond(nokia3310) {
+            font-size: 1.4rem;
           }
         }
       }
@@ -215,7 +225,10 @@
       padding-left: 7rem;
 
       @include respond(phone) {
+        margin-top: -2rem;
         padding-left: 4rem;
+
+        font-size: 1.5rem;
       }
     }
 

@@ -2,7 +2,7 @@
   --menu-gallery: 'Gallery';
   --menu-interesting: 'It is interesting...';
   --menu-video: 'Video';
-  --menu-contacts: 'Contacts';
+  --menu-contacts: 'Contact';
   --menu-language: 'Change language';
 }
 
@@ -38,7 +38,7 @@
   border-bottom: 0.2rem solid $color-black;
 
   cursor: pointer;
-  z-index: 35;
+  z-index: 36;
 
   //   @include flex-center;
   // justify-content: center;
@@ -47,7 +47,7 @@
 
   transition: all 0.6s ease-in-out;
 
-  @include respond(tab-land) {
+  @include respond(tab-port) {
     // left: 1rem;
     // left: 96.26%;
     // top: 3rem;
@@ -126,6 +126,7 @@
   @include flex-center;
   position: fixed;
   animation: toggleBtnMove 0.6s ease-in-out;
+  z-index: 40;
 
   @include respond(nokia3310) {
     top: 2rem;
@@ -232,6 +233,7 @@
 
   // animation: fadeInMenu 0.9s ease-in-out cubic-bezier(0, 0.98, 0.99, 0);
   opacity: 0;
+
   transform: translateY(-120%);
   transition: all 0.8s ease;
   // display: none;
@@ -243,6 +245,11 @@
     height: 3rem;
     left: 2rem;
     top: 2rem;
+
+    &:hover svg {
+      filter: brightness(200%);
+      transition: filter 2s ease;
+    }
   }
 
   &-sunmoon--header {
@@ -497,4 +504,101 @@
   position: absolute;
   top: -120%;
   right: 0;
+}
+
+.toggle-scroll {
+  position: fixed;
+  right: 2rem;
+  bottom: 5.5rem;
+
+  visibility: hidden;
+  opacity: 0;
+
+  @include respond(phone) {
+    right: 1.5rem;
+  }
+
+  &.active-scroll {
+    visibility: visible;
+    opacity: 1;
+
+    // background: red;
+    z-index: 1;
+    animation: scrollBtn 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+    // scrollInfinity 2s infinite;
+  }
+
+  &.hidden-scroll {
+    visibility: visible;
+    opacity: 1;
+    animation: scrollBtnBack 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 0.4rem;
+    transform: rotate(45deg);
+    // border-width: 2px;
+    // border-style: solid;
+    border-right: none;
+    border-bottom: none;
+    // border-image: linear-gradient(
+    //     to bottom,
+    //     $color-blue,
+    //     $color-secondary,
+    //     transparent
+    //   )
+    //   1 100%;
+    // border-image-slice: 1;
+    // border-image-source: linear-gradient(
+    //   494deg,
+    //   $color-blue,
+    //   $color-secondary,
+    //   transparent
+    // );
+
+    // border-image-source: linear-gradient(494deg, $color-black, transparent);
+    // border-image-slice: 1;
+    &:hover .toggle-scroll__item {
+      animation: moveBackground 12s ease-out infinite;
+    }
+  }
+
+  &__item {
+    width: 1rem;
+    height: 1rem;
+    // border: 2px solid;
+    // border-top: 2px solid;
+    // border-left: 2px solid;
+    // background: linear-gradient(
+    //   310deg,
+    //   transparent 30%,
+    //   rgb(49, 102, 172 / 0.3) 100%
+    // );
+
+    // border: 2px solid;
+    background: $color-black;
+    // border-image-source: linear-gradient(
+    //   494deg,
+    //   $color-blue,
+    //   $color-secondary,
+    //   transparent
+    // );
+    // border-image-slice: 1;
+
+    // filter: blur(0.6px);
+
+    &:nth-child(3),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7) {
+      visibility: hidden;
+    }
+
+    .dark & {
+      background: $color-dark-4;
+    }
+  }
 }
