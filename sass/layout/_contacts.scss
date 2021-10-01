@@ -1,13 +1,14 @@
 .contacts {
   position: relative;
+
   padding: 5rem 8rem 2rem 8rem;
   z-index: 0;
-  // height: 100vh;
 
   @include respond(tab-port) {
     @include flex-center;
     flex-direction: column;
     justify-content: center;
+
     padding-bottom: 0;
     padding: 5rem 2rem 0 2rem;
   }
@@ -22,6 +23,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
+
     padding: 3rem 5rem;
 
     @include respond(tab-port) {
@@ -59,14 +61,52 @@
     }
 
     &__item:nth-child(1) {
-      margin-top: 3rem;
+      position: relative;
+
       display: flex;
       justify-content: flex-start;
       align-self: stretch;
-      background-image: url('../images/girl.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: right bottom;
+
+      margin-top: 3rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        background-image: url('../images/girl.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right bottom;
+
+        .dark & {
+          background-image: url('../images/girl.png'),
+            url('../images/bg/bg-dark2.jpg');
+          background-repeat: no-repeat, repeat;
+          background-size: contain, 3.55rem;
+          background-position: right bottom, left top;
+          background-blend-mode: color-burn;
+
+          z-index: -1;
+
+          @include respond(tab-land3) {
+            background-position: center center;
+          }
+
+          @include respond(tab-port) {
+            background: none;
+          }
+        }
+
+        @include respond(tab-land3) {
+          background-position: center center;
+        }
+
+        @include respond(tab-port) {
+          background: none;
+        }
+      }
 
       @include respond(tab-land3) {
         background-position: center center;
@@ -122,7 +162,7 @@
     }
 
     .dark & {
-      color: #84c9fb;
+      color: $color-dark-4;
       transition: all 0.4s ease-in-out;
     }
 
@@ -136,12 +176,17 @@
     position: absolute;
     left: 13rem;
     bottom: 10rem;
+
     width: 10rem;
     height: 10rem;
+
     border-radius: 0.5rem;
     box-shadow: 1rem 1rem 2rem rgba($color-black, 0.3);
+
     background-color: $color-primary;
+
     filter: blur(0.6rem);
+
     z-index: 2;
 
     @include respond(tab-port) {
@@ -157,16 +202,20 @@
     position: absolute;
     left: 20rem;
     bottom: 4rem;
+
     width: 16rem;
     height: 8rem;
+
     border-radius: 0.5rem;
     box-shadow: 1rem 1rem 2rem rgba($color-black, 0.4);
+
     background-color: $color-blue;
+
     z-index: 1;
 
     @include respond(tab-port) {
-      left: 5rem;
       width: 10rem;
+      left: 5rem;
       filter: blur(0.6rem);
     }
 
@@ -179,10 +228,13 @@
     position: absolute;
     top: 30%;
     right: 8rem;
+
     width: 6rem;
     height: 6rem;
+
     border-radius: 0.5rem;
     box-shadow: 1rem 1rem 2rem rgba($color-black, 0.4);
+
     background-color: $color-primary;
 
     @include respond(phone-bg) {
@@ -194,8 +246,4 @@
 textarea {
   height: 15rem;
   resize: vertical;
-}
-
-:focus {
-  outline: none;
 }

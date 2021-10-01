@@ -1,5 +1,5 @@
 'use strict';
-let lastScrollTop = 0;
+
 const toggleBtn = document.querySelector('.toggle-btn');
 const toggleIcon = document.querySelector('.toggle-icon');
 const sliderBtn = document.querySelectorAll('.slider__btn');
@@ -17,6 +17,7 @@ const toggleSun = document.querySelector('.toggle-menu-sun');
 const toggleMoon = document.querySelector('.toggle-menu-moon');
 const fullContent = document.querySelector('.top-gallery__img');
 const links = document.querySelectorAll('.toggle-nav__link');
+let lastScrollTop = 0;
 
 //////////////////////////HOME PAGE POPUP///////////////////////////////////
 document.getElementById('story-link').addEventListener('click', function (e) {
@@ -78,12 +79,26 @@ if (window.performance) {
   toggleBtn.checked = false;
 }
 
-///////////////////////////////////////////////Change language//////////////////////////////////////////
+///////////////////////////////////////////////Change language and show/hide required attribute in form//////////////////
 const htmlElement = document.querySelector('html');
 const languageLink = document.querySelector('.header__nav-link--6 span');
 const languageLinkMask = document.querySelector('.header__nav-link--span');
 const russianLang = document.querySelectorAll('[lang="russian"]');
 const englishLang = document.querySelectorAll('[lang="english"]');
+const formItem = document.querySelectorAll('.form__group');
+const formInput = document.querySelectorAll('.form__input');
+
+const changeAttribute = function () {
+  formInput.forEach(input => {
+    if (input.closest('div[style="display: none;"]')) {
+      input.removeAttribute('required');
+    } else if (input.closest('div[style="display: block;"]')) {
+      input.setAttribute('required', 'required');
+    }
+  });
+};
+
+changeAttribute();
 
 let changeLang = localStorage.getItem('[lang="ru"]');
 
@@ -142,11 +157,13 @@ if (changeLang === 'enabled') {
 }
 
 languageLink.addEventListener('click', changeLanguage);
+languageLink.addEventListener('click', changeAttribute);
 
 languageLinkMask.addEventListener('click', function (e) {
   e.preventDefault();
   changeLanguage();
   changeHTMLLang();
+  changeAttribute();
 });
 
 languageLink.addEventListener('click', changeHTMLLang);
@@ -278,6 +295,8 @@ window.addEventListener('load', () => {
   if (scrollPos === 0) {
     toggleMenu.classList.remove('transforming');
   }
+
+  changeAttribute();
 });
 
 ///////////////////////////////////////////////////////////Parallax////////////////////////////////////////////////////
@@ -423,13 +442,13 @@ goToSlide(0);
 
 const nextSlide = function () {
   curSlide === slides.length - 1 ? (curSlide = 0) : curSlide++;
-  // videoPause();
+
   goToSlide(curSlide);
 };
 
 const prevSlide = function () {
   curSlide === 0 ? (curSlide = slides.length - 1) : curSlide--;
-  // videoPause();
+
   goToSlide(curSlide);
 };
 
@@ -444,43 +463,103 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = '//www.youtube.com/player_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+window.addEventListener('load', function () {
+  const slides = document.querySelectorAll('.slide');
 
-let iframeIds = [];
-let playerId = [];
+  slides.forEach(slide => {
+    slide.style.display = 'block';
+  });
 
-for (let i = 0; i < iframeIds.length; i++) {
-  playerId.push('player' + i);
-}
-
-iframes.forEach(iframe => {
-  iframeIds.push(iframe.id);
+  document.querySelector('.scrollbar__handle').style.display = 'block';
 });
 
-window.onYouTubeIframeAPIReady = function () {
-  for (let i = 0; i < iframeIds.length; i++) {
-    playerId[i] = new YT.Player(iframeIds[i], {
-      events: {
-        onStateChange: onPlayerStateChange,
-      },
-    });
-  }
-};
+function findVideos() {
+  let videos = document.querySelectorAll('.video');
 
-function onPlayerStateChange(event) {
-  for (let i = 0; i < iframeIds.length; i++) {
-    sliderBtnRight.addEventListener('click', function () {
-      playerId[i].pauseVideo();
-    });
-    sliderBtnLeft.addEventListener('click', function () {
-      playerId[i].pauseVideo();
-    });
+  for (let i = 0; i < videos.length; i++) {
+    setupVideo(videos[i]);
   }
 }
+
+function setupVideo(video) {
+  let link = video.querySelector('.video__link');
+  let media = video.querySelector('.video__media');
+  let button = video.querySelector('.video__btn');
+  let url = parseMediaURL(media);
+
+  let id = video.id;
+
+  video.addEventListener('click', () => {
+    let iframe = createIframe(url);
+    iframe.id = id;
+    video.id = '';
+
+    link.remove();
+    button.remove();
+    video.appendChild(iframe);
+
+    let iframeIds = [];
+    let playerId = [];
+
+    iframeIds.push(iframe.id);
+    playerId.push(iframe.id.replace('video', 'player'));
+
+    //Inject YouTube API script
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/player_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    const onYouTubeIframeAPIReady = function () {
+      playerId[0] = new YT.Player(iframeIds[0], {
+        events: {
+          onStateChange: onPlayerStateChange,
+        },
+      });
+    };
+    onYouTubeIframeAPIReady();
+
+    function onPlayerStateChange(event) {
+      sliderBtnRight.addEventListener('click', function () {
+        playerId[0].pauseVideo();
+      });
+      sliderBtnLeft.addEventListener('click', function () {
+        playerId[0].pauseVideo();
+      });
+    }
+  });
+
+  link.removeAttribute('href');
+  video.classList.add('video--enabled');
+}
+
+function parseMediaURL(media) {
+  let regexp =
+    /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+  let urlLink = media.src;
+  let match = urlLink.match(regexp);
+
+  return match[1];
+}
+
+function createIframe(url) {
+  let iframe = document.createElement('iframe');
+
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('allow', 'autoplay');
+  iframe.setAttribute('src', generateURL(url));
+  iframe.classList.add('video__media');
+
+  return iframe;
+}
+
+function generateURL(url) {
+  let query = '?enablejsapi=1&showinfo=0&autoplay=1';
+
+  return 'https://www.youtube.com/embed/' + url + query;
+}
+
+findVideos();
 
 //////////////////////////////////////////////////Form//////////////////////////////////////////
 const form = document.querySelector('.form');
@@ -495,11 +574,25 @@ const messageElEng = document.getElementById('message-eng');
 const messageElRus = document.getElementById('message-rus');
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
-
   checkInputs();
   checkEmail();
 });
+
+if (document.querySelector('.alert-success')) {
+  document
+    .querySelector('.alert-success__close')
+    .addEventListener('click', function () {
+      document.querySelector('.alert-success').style.display = 'none';
+    });
+}
+
+if (document.querySelector('.alert-error')) {
+  document
+    .querySelector('.alert-error__close')
+    .addEventListener('click', function () {
+      document.querySelector('.alert-error').style.display = 'none';
+    });
+}
 
 function checkInputs() {
   const usernameValueEng = nameElEng.value.trim();
@@ -608,3 +701,15 @@ dontClickBtnEn.addEventListener('click', function (e) {
   document.querySelector('.el2').classList.toggle('falling6');
   document.querySelector('.el3').classList.toggle('falling7');
 });
+
+///////Fix Error (The service worker navigation preload request was cancelled before 'preloadResponse' settled)///////
+addEventListener(
+  'fetch',
+  event =>
+    event.request.mode === 'navigate' &&
+    new URL(event.request.url, location.origin).pathname !== '/test' &&
+    event.respondWith(event.preloadResponse)
+);
+
+document.cookie = 'cookie1=value1; SameSite=Lax';
+document.cookie = 'cookie2=value2; SameSite=None; Secure';

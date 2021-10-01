@@ -1,12 +1,17 @@
 .scrollbar {
   position: absolute;
-  left: 20%;
-  right: 20%;
+
+  left: 10%;
+  right: 10%;
   bottom: -2rem;
-  margin: 0 auto;
-  max-width: 100rem * 0.8;
+
+  max-width: 100rem * 0.66;
   height: 0.2rem;
+
+  margin: 0 auto;
+
   background-color: rgba($color-black, 0.2);
+
   overflow: hidden;
 
   @include respond(phone) {
@@ -21,12 +26,17 @@
   }
 
   &__handle {
+    display: none;
+
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background-color: $color-blue;
+
     transform: translateX(-100%);
     transition: transform 1s;
 
@@ -40,11 +50,13 @@
   position: relative;
   width: 100%;
   height: 100%;
+
   margin-top: 5rem;
   padding: 3rem 0 3rem 0;
 
   @include respond(tab-port) {
     width: 80%;
+
     margin: 0 auto;
     padding: 1rem 0;
   }
@@ -54,25 +66,33 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
+
     padding: 2.9rem 0 0 0;
   }
 }
 
 .slider {
   position: relative;
+
   max-width: 100rem;
-  height: 40rem;
-  max-height: 50rem;
+  max-height: 40rem;
+
   margin: 0 auto;
 
   border-radius: 1rem;
+
   box-shadow: 2rem 1.5rem 5rem #b8b8b8, -2rem -1.5rem 5rem #fff;
-  // display: flex;
+
   overflow: hidden;
+
+  aspect-ratio: 16 / 9;
+
+  & > * + * {
+    display: none;
+  }
 
   @include respond(phone) {
     width: 100%;
-    height: 20rem;
   }
 
   .dark & {
@@ -89,7 +109,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+
+  width: calc(100% + 0.1em);
   height: 100%;
 
   transition: transform 0.8s cubic-bezier(1, 0.82, 0.165, 1);
@@ -99,5 +120,74 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.video {
+  position: relative;
+  cursor: pointer;
+
+  &--enabled {
+    cursor: pointer;
+
+    & .video__btn {
+      display: block;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__media {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+  }
+
+  &__btn {
+    @include abs-center;
+
+    display: none;
+
+    width: 6.8rem;
+    height: 4.8rem;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    z-index: 200;
+
+    @include respond(phone) {
+      width: 5.8rem;
+      height: 4.1rem;
+    }
+
+    @include respond(nokia3310) {
+      width: 3.8rem;
+      height: 2.68rem;
+    }
+
+    &-shape {
+      fill: $color-black-shape;
+      fill-opacity: 0.8;
+      transition: fill 0.3s ease;
+    }
+
+    &-icon {
+      fill: $color-white;
+    }
+  }
+
+  &:hover .video__btn-shape,
+  &__btn:focus .video__btn-shape {
+    fill: $color-red;
+    fill-opacity: 1;
   }
 }

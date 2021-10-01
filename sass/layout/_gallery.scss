@@ -9,7 +9,7 @@
 
   .dark & {
     box-shadow: 0 -1rem 1rem #256474;
-    // box-shadow: 2rem 2rem 5rem hsl(192, 80%, 29%) inset;
+
     background: linear-gradient(
       to bottom,
       rgba(hsl(192, 97%, 25%), 3rem),
@@ -23,16 +23,16 @@
 
   &-box {
     position: relative;
-    padding: 5rem 10rem 5rem 10rem;
-    margin: 0 auto;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
     grid-template-rows: 40rem auto;
-
     column-gap: 10rem;
     row-gap: 8rem;
     justify-items: center;
+
+    margin: 0 auto;
+    padding: 5rem 10rem 5rem 10rem;
 
     z-index: 0;
 
@@ -73,44 +73,49 @@
 
     &__item {
       position: relative;
-      width: 100%;
-      min-height: 40rem;
       display: flex;
 
-      // border: 1.6rem solid $color-white;
+      width: 100%;
+      min-height: 40rem;
 
       &:hover .gallery-box__img:nth-child(1) {
         box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
         transform: rotate(-14deg);
         transition: all 0.5s ease;
       }
 
       &:hover .gallery-box__img:nth-child(2) {
         box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.15);
+
         transform: rotate(6deg);
         transition: all 0.9s ease;
       }
 
       &:hover .gallery-box__img:nth-child(3) {
         box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
         transform: rotate(-4deg);
       }
 
       &:nth-child(2) {
         &:hover .gallery-box__img:nth-child(1) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
           transform: rotate(14deg);
           transition: all 0.5s ease;
         }
 
         &:hover .gallery-box__img:nth-child(2) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.15);
+
           transform: rotate(-6deg);
           transition: all 0.9s ease;
         }
 
         &:hover .gallery-box__img:nth-child(3) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
           transform: rotate(4deg);
         }
       }
@@ -118,18 +123,21 @@
       &:nth-child(4) {
         &:hover .gallery-box__img:nth-child(1) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
           transform: rotate(14deg);
           transition: all 0.5s ease;
         }
 
         &:hover .gallery-box__img:nth-child(2) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.15);
+
           transform: rotate(-6deg);
           transition: all 0.9s ease;
         }
 
         &:hover .gallery-box__img:nth-child(3) {
           box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.3);
+
           transform: rotate(4deg);
         }
       }
@@ -138,15 +146,14 @@
     &__icon {
       width: 2rem;
       height: 2rem;
+
       margin: 0 0 0 0.5rem;
       fill: $color-black;
-      // transform: rotate(-90deg);
+
       transition: all 0.4s;
 
       .dark & {
         fill: $color-dark-4;
-        // filter: invert(75%) sepia(91%) saturate(2637%) hue-rotate(185deg)
-        //   brightness(114%) contrast(97%);
       }
 
       @include respond(nokia3310) {
@@ -156,15 +163,15 @@
     }
 
     &__link {
-      @include flex-center;
-      justify-content: center;
-      width: 100%;
       position: absolute;
       bottom: -5rem;
       left: 50%;
       transform: translateX(-50%);
 
-      // margin-top: 3rem;
+      width: 100%;
+
+      @include flex-center;
+      justify-content: center;
 
       transition: all 0.4s;
     }
@@ -174,8 +181,6 @@
     }
 
     &__subtitle:hover ~ &__icon {
-      // filter: invert(73%) sepia(99%) saturate(2484%) hue-rotate(312deg)
-      // brightness(99%) contrast(82%);
       fill: $color-primary;
       transform: translateX(1rem);
       transition: all 0.4s;
@@ -201,13 +206,17 @@
 
     &__img {
       display: block;
+
       position: absolute;
       top: 0;
       left: 0;
+
       width: 100%;
       height: 100%;
+
       border: 1rem solid $color-white;
       border-radius: 1rem;
+
       box-shadow: 0.5rem 0.5rem 0.5rem rgba($color-black, 0.1);
 
       object-fit: cover;
@@ -226,10 +235,6 @@
       &:nth-child(3) {
         z-index: 2;
       }
-
-      // &:hover {
-      //   transform: scale(1.1);
-      // }
 
       .dark & {
         border: 1rem solid $color-dark-2;

@@ -1,34 +1,43 @@
 .other-gallery {
-  width: 100%;
-
-  padding: 2rem 6rem;
   display: grid;
   grid-template-columns: repeat(30, 1fr);
   grid-auto-rows: 4rem 5rem;
   grid-auto-flow: dense;
-
   gap: 1rem;
   justify-content: center;
   justify-self: center;
   place-content: center;
 
+  width: 100%;
+
+  padding: 2rem 6rem;
+
   &__img {
     display: block;
+
     width: 100%;
     height: 100%;
+
     border-radius: 0.5rem;
+
     object-fit: cover;
     object-position: 30% 5%;
-    transition: all 0.4s ease-out;
+
     backface-visibility: hidden;
+
+    transition: all 0.4s ease-out;
   }
 
   &__item {
     position: relative;
+
     width: 100%;
     height: 100%;
+
     border-radius: 0.5rem;
+
     cursor: pointer;
+
     overflow: hidden;
 
     &:target {
@@ -151,17 +160,6 @@
       }
     }
 
-    // &--23 {
-    //   grid-row: 5 / span 3;
-    //   grid-column: 21 / 22;
-
-    //   background-color: $color-primary;
-
-    //   @include respond(phone) {
-    //     display: none;
-    //   }
-    // }
-
     &--24 {
       grid-row: 15 / 16;
       grid-column: 16 / span 3;
@@ -196,16 +194,17 @@
   }
 
   &__link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    @include abs-center;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
     opacity: 0;
   }
 
@@ -216,6 +215,7 @@
   @include respond(phone) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+
     margin-top: 10rem;
     padding: 0 0.5rem;
   }

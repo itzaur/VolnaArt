@@ -1,11 +1,6 @@
 .form {
-  //   background-color: cadetblue;
-  // background-image: linear-gradient(
-  //     to bottom right,
-  //     rgba($color-blue, 0.2),
-  //     rgba($color-primary, 0.2)
-  //   ),
-  //   url('../images/girl.png');
+  position: relative;
+
   background-image: linear-gradient(
     to bottom right,
     rgba($color-blue, 0.2),
@@ -17,6 +12,7 @@
 
   width: 100%;
   min-width: 15rem;
+
   padding: 3rem;
   border-radius: 3rem;
 
@@ -28,17 +24,20 @@
     @include flex-center;
     flex-direction: column;
     justify-content: center;
+
     min-width: 10rem;
+
     padding: 0 0.5rem;
   }
 
   &__group {
     position: relative;
+
     padding: 1rem;
 
     &:not(:last-child) {
-      padding-top: 2rem;
       margin-bottom: 1rem;
+      padding-top: 2rem;
 
       @include respond(nokia3310) {
         margin-bottom: 0;
@@ -51,6 +50,7 @@
       @include flex-center;
       flex-direction: column;
       justify-content: center;
+
       padding: 0 0.5rem;
     }
 
@@ -63,13 +63,15 @@
     display: flex;
     flex-direction: column;
 
+    width: clamp(20rem, 65%, 40rem);
+
+    padding: 1rem;
+
     font-size: 1.6rem;
     font-family: inherit;
     font-weight: 400;
     line-height: 1.6;
 
-    width: clamp(20rem, 65%, 40rem);
-    padding: 1rem;
     border: none;
     border-radius: 0.5rem;
     border-bottom: 0.2rem solid transparent;
@@ -78,8 +80,10 @@
 
     &:focus {
       outline: none;
+
       box-shadow: 0 1rem 1rem rgba($color-blue, 0.2);
       border-bottom: 0.2rem solid $color-blue;
+
       transition: all 0.5s ease-in-out;
     }
 
@@ -114,8 +118,11 @@
 
   &__group.error label {
     color: $color-primary;
+
     transform: translateY(0) !important;
+
     visibility: visible !important;
+
     opacity: 1 !important;
 
     .dark & {
@@ -125,7 +132,9 @@
 
   &__group.success label {
     transform: translateY(-4.8rem) !important;
+
     visibility: hidden !important;
+
     opacity: 0 !important;
   }
 
@@ -136,12 +145,14 @@
 
   &__label {
     position: relative;
+
     display: inline-block;
 
     margin-top: 0.6rem;
     margin-left: 1rem;
 
     font-size: 1.6rem;
+
     color: $color-primary;
 
     overflow: hidden;
@@ -152,6 +163,7 @@
       position: absolute;
       top: 0;
       left: 0;
+
       color: $color-blue;
     }
 
@@ -163,22 +175,18 @@
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(-4.8rem);
   }
 
   &__input:placeholder-shown + &__label.label-visible {
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
   }
 
   .dark & {
-    // background-image: linear-gradient(
-    //     to bottom right,
-    //     rgba($color-dark-2, 0.1),
-    //     rgba($color-dark-1, 0.1)
-    //   ),
-    //   url('../images/girl.png');
     background-image: linear-gradient(
       to bottom right,
       rgba($color-dark-2, 0.7),
@@ -252,4 +260,121 @@
   animation-direction: alternate;
   animation-fill-mode: forwards;
   transform-origin: 0% 50%;
+}
+
+.alert-success,
+.alert-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100%;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 1rem;
+
+    cursor: pointer;
+
+    border-bottom-left-radius: 1.4rem;
+
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.75));
+
+    @include respond(nokia3310) {
+      padding: 0.5rem;
+    }
+  }
+
+  & div {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 34rem;
+    min-width: 18rem;
+    height: 23vh;
+
+    margin: 0 1rem;
+    padding: 2rem 4rem;
+
+    font-size: 18px;
+
+    border-radius: 1.4rem;
+
+    opacity: 0.8;
+
+    overflow: hidden;
+
+    mask-image: radial-gradient(circle, white, black);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+    @include respond(nokia3310) {
+      padding: 2rem 1rem;
+    }
+  }
+}
+
+.alert-success {
+  background: rgba($color-light, 0.5);
+
+  .dark & {
+    background: rgba($color-dark-1, 0.6);
+  }
+
+  &__close {
+    background: $color-dark-4;
+
+    .dark & {
+      background: $color-dark-2;
+    }
+  }
+
+  & div {
+    background: $color-blue;
+    color: $color-white;
+
+    .dark & {
+      background: $color-alert-success;
+    }
+  }
+}
+
+.alert-error {
+  background: rgba($color-light, 0.9);
+
+  .dark & {
+    background: rgba($color-dark-1, 0.7);
+  }
+
+  &__close {
+    background: $color-secondary;
+
+    .dark & {
+      background: $color-dark-3;
+      color: $color-white;
+    }
+  }
+
+  & div {
+    background: $color-primary;
+    color: $color-white;
+
+    .dark & {
+      background: $color-dark-5;
+    }
+  }
 }

@@ -3,9 +3,8 @@
   &:link,
   &:visited {
     position: relative;
+
     display: inline-block;
-    // min-width: 20rem;
-    // height: 8rem;
 
     padding: 0 5rem;
     padding-top: 1.9rem;
@@ -23,9 +22,12 @@
 
     cursor: pointer;
     border-bottom: 0.3rem solid $color-blue;
+
     color: $color-blue;
+
     overflow: hidden;
     backface-visibility: hidden;
+
     transition: border-radius 0.8s ease, color 1.2s; // color
 
     @include respond(phone) {
@@ -41,7 +43,7 @@
 
     .dark & {
       color: $color-dark-4;
-      border-bottom: 0.3rem solid $color-dark-5;
+      border-bottom: 0.3rem solid $color-btn-border;
     }
   }
 
@@ -49,6 +51,10 @@
     border: none;
     outline: none;
     background: none;
+
+    &:focus {
+      outline-style: revert;
+    }
   }
 
   &-box {
@@ -62,22 +68,36 @@
   &__blobs {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    top: 90%;
-    right: -1rem;
 
-    filter: url(#goo);
+    position: absolute;
+
+    top: 90%;
+    left: 0;
+    right: -1rem;
 
     z-index: -1;
 
+    &--en {
+      filter: url(#goo-eng);
+      -webkit-filter: url(#goo-eng);
+    }
+
+    &--rus {
+      top: 92%;
+      filter: url(#goo-rus);
+      -webkit-filter: url(#goo-rus);
+    }
+
     span {
       position: absolute;
+
       width: 34%;
       height: 100%;
+
       border-radius: 100%;
+
       background-color: $color-blue;
+
       transform: scale(1.5) translateY(25%) translateZ(0);
       transition: all 0.7s cubic-bezier(0.35, 0.72, 0.95, 0.93);
       will-change: transform;
@@ -97,13 +117,14 @@
       }
 
       .dark & {
-        background-color: $color-dark-5;
+        background-color: $color-btn-border;
       }
     }
   }
 
   &:hover {
     color: $color-white;
+
     border-radius: 1rem;
     overflow: hidden;
 
@@ -120,18 +141,17 @@
         }
       }
     }
-
-    .dark & {
-      color: $color-dark-1;
-    }
   }
 
   &-story,
   &-story--2 {
     font-size: 1.6rem;
+
     padding: 0.5em 2em;
+
     color: $color-white;
-    background-color: rgba(73, 146, 219, 0.9);
+    background-color: $color-btn-stories;
+
     border: 0;
     cursor: pointer;
 
@@ -151,33 +171,35 @@
   &:link,
   &:visited {
     display: inline-block;
+
     position: absolute;
-    // top: 2rem;
-    // left: 1rem;
+
     width: 13rem;
     height: 9rem;
-    // margin-top: -1rem;
-    // padding: 1.5rem 3rem;
+
     color: $color-white;
     background: none;
+
     border: none;
     cursor: pointer;
-    // background-color: salmon;
 
     a {
       display: block;
+
       height: 100%;
+
       @include flex-center;
       justify-content: center;
-      font-size: 1.2rem;
 
+      font-size: 1.2rem;
       font-family: inherit;
       font-weight: 500;
       text-decoration: none;
+
       mix-blend-mode: difference;
       color: $color-white;
+
       transition: transform 0.3s ease;
-      // z-index: 30;
     }
 
     &::before,
@@ -192,15 +214,11 @@
     }
 
     &::before {
-      // background: $color-white;
-      background: rgba(248, 209, 190, 1);
+      background: $color-background;
       background-size: cover;
       background-repeat: no-repeat;
-      clip-path: ellipse(38% 34% at 50% 50%);
 
-      // clip-path: path(
-      //   'M154.5,88.5 C131,113.5 62.5,110 30,89.5 C-2.5,69 -3.5,42 4.5,25.5 C12.5,9 33.5,-6 85,3.5 C136.5,13 178,63.5 154.5,88.5 Z'
-      // );
+      clip-path: ellipse(38% 34% at 50% 50%);
 
       transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55),
         -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55),
@@ -214,10 +232,13 @@
     &::after {
       height: 66%;
       width: 75%;
+
       top: 12%;
       left: 10%;
+
       border-radius: 58% 51% 55% 45% / 56% 45% 55% 44%;
       border: 1px solid $color-blue;
+
       transform: rotate(-20deg);
       z-index: -1;
       transition: transform 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55);
@@ -235,9 +256,6 @@
     &:hover::before {
       background: $color-dark-2;
       clip-path: ellipse(37% 30% at 46% 48%);
-      // clip-path: path(
-      //   'M143,77 C117,96 74,100.5 45.5,91.5 C17,82.5 -10.5,57 5.5,31.5 C21.5,6 79,-5.5 130.5,4 C182,13.5 169,58 143,77 Z'
-      // );
 
       .dark & {
         background: $color-dark-1;
@@ -251,12 +269,10 @@
         border: 1px solid $color-dark-5;
       }
     }
+  }
 
-    @include respond(phone) {
-      // padding: 0;
-      // width: 10rem;
-      // height: 6rem;
-    }
+  &:focus {
+    outline: none;
   }
 }
 
@@ -269,7 +285,6 @@
     left: 3rem;
     width: 15rem;
     height: 15rem;
-    // @include flex-center;
 
     @include respond(phone) {
       width: 8rem;
@@ -278,6 +293,10 @@
       left: 0;
     }
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 /* SLIDER */
@@ -285,12 +304,13 @@
 .slider__btn-box {
   @include abs-center;
   width: 100%;
-  // height: 100%;
-  // padding: 0 2rem;
+
   @include respond(phone) {
     position: relative;
+
     display: flex;
     justify-content: center;
+
     margin-top: 6rem;
   }
 }
@@ -300,40 +320,45 @@
   &:link,
   &:visited {
     position: absolute;
+
     top: 50%;
-    transform: translate(0, -50%);
-    cursor: pointer;
+
     width: 8rem;
     height: 8rem;
+
     padding: 1rem;
+
+    cursor: pointer;
+
     border: none;
-    background: none;
     outline: none;
+
+    background: none;
+
+    transform: translate(0, -50%);
 
     @include respond(phone) {
       position: relative;
       top: 0;
       left: 0;
       right: 0;
-      transform: translate(0, 0);
+
       width: 6rem;
       height: 6rem;
       padding: 0;
+
+      transform: translate(0, 0);
     }
 
     span {
       svg {
         &:nth-of-type(1) {
-          // filter: invert(89%) sepia(34%) saturate(230%) hue-rotate(11deg)
-          //   brightness(101%) contrast(98%);
           fill: $color-light;
           opacity: 1;
           animation: btnRightRotate 20s ease-in-out infinite;
 
           .dark & {
-            fill: #368897;
-            // filter: invert(45%) sepia(97%) saturate(1479%) hue-rotate(194deg)
-            //   brightness(94%) contrast(112%);
+            fill: $color-btn-slider;
           }
 
           @include respond(phone) {
@@ -345,16 +370,15 @@
         &:nth-of-type(2) {
           width: 7rem;
           height: 7rem;
-          // filter: invert(89%) sepia(34%) saturate(65%) hue-rotate(11deg)
-          //   brightness(101%) contrast(98%);
+
           fill: $color-light;
+
           opacity: 0.6;
+
           animation: btnLeftRotate 20s ease-in-out infinite;
 
           .dark & {
-            // filter: invert(45%) sepia(97%) saturate(1479%) hue-rotate(194deg)
-            //   brightness(94%) contrast(112%);
-            fill: #368897;
+            fill: $color-btn-slider;
           }
 
           @include respond(phone) {
@@ -366,23 +390,23 @@
     }
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &--left {
-    left: calc((100vw - 100rem) / 5);
+    left: calc((100vw - 90rem) / 3);
 
     &:active span svg:nth-of-type(3) {
       transform: translate(-50%, -50%) rotate(20deg);
     }
 
-    @include respond(tab-land3) {
-      left: 0;
-    }
-
     @include respond(tab-land2) {
-      left: -5rem;
+      left: 9rem;
     }
 
     @include respond(tab-land) {
-      left: -7.2rem;
+      left: 0;
     }
 
     @include respond(tab-port) {
@@ -396,22 +420,18 @@
   }
 
   &--right {
-    right: calc((100vw - 100rem) / 5);
+    right: calc((100vw - 90rem) / 3);
 
     &:active span svg:nth-of-type(3) {
       transform: translate(-50%, -53%) rotate(-20deg);
     }
 
-    @include respond(tab-land3) {
-      right: 0;
-    }
-
     @include respond(tab-land2) {
-      right: -5rem;
+      right: 9rem;
     }
 
     @include respond(tab-land) {
-      right: -7.2rem;
+      right: 0;
     }
 
     @include respond(tab-port) {
@@ -424,11 +444,13 @@
   }
 
   span {
-    @include flex-center;
-    justify-content: center;
     position: relative;
+
     width: 100%;
     height: 100%;
+
+    @include flex-center;
+    justify-content: center;
 
     transition: all 0.5s;
 
@@ -444,9 +466,7 @@
         transition: all 0.5s ease-in-out;
 
         .dark & {
-          fill: #5ec9fd;
-          // filter: invert(45%) sepia(97%) saturate(1479%) hue-rotate(194deg)
-          //   brightness(124%) contrast(112%);
+          fill: $color-btn-slider-arrow;
         }
       }
     }

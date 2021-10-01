@@ -11,13 +11,8 @@ const toggleNavList = document.querySelectorAll('.toggle-nav li');
 const toggleSunMoon = document.querySelector('.toggle-menu-sunmoon');
 const toggleSun = document.querySelector('.toggle-menu-sun');
 const toggleMoon = document.querySelector('.toggle-menu-moon');
-// const container = document.querySelector('.full-content');
 
 ///////////////////////////////////////////////////////////Dark mode////////////////////////////////////////////////////
-//Var 1
-// toggleSunMoon.addEventListener('click', () => {
-//   document.body.classList.toggle('dark');
-// });
 let darkMode = localStorage.getItem('dark');
 
 const enableDarkMode = () => {

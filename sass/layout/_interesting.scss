@@ -1,6 +1,5 @@
 .interesting {
   padding: 5rem 8rem 10rem 8rem;
-  // height: 100vh;
 
   @include respond(tab-land) {
     padding: 5rem 8rem 2rem 8rem;
@@ -28,12 +27,14 @@
   &-item {
     height: 50rem;
     min-height: 30rem;
+
     padding: 4rem;
 
     @include respond(phone) {
       height: auto;
-      padding: 1rem 4.5rem;
+
       margin-bottom: 4rem;
+      padding: 1rem 4.5rem;
     }
 
     @include respond(nokia3310) {
@@ -71,7 +72,6 @@
 
       border-radius: 1rem;
 
-      // background-color: $color-white;
       background: transparent;
 
       box-shadow: 0px 45px 61px -37px rgba($color-black, 0.4);
@@ -84,11 +84,14 @@
         content: '';
         position: absolute;
         inset: 0;
+
         width: 100%;
         height: 100%;
 
         z-index: -1;
+
         opacity: 0.2;
+
         backface-visibility: hidden;
 
         .dark & {
@@ -123,15 +126,19 @@
         position: absolute;
         top: -120%;
         left: -2rem;
+
         width: 200%;
         height: 100%;
+
         background: linear-gradient(
           to top,
           transparent,
           $color-white 15%,
           rgba($color-white, 0.5)
         );
+
         opacity: 0.2;
+
         transform: rotate(45deg);
         transition: top 0.5s, left 0.5s;
       }
@@ -144,6 +151,7 @@
       &:hover::after {
         top: -40%;
         left: 0;
+
         transform: rotate(25deg);
         opacity: 0.25;
       }
@@ -163,6 +171,7 @@
 
       &-paragraphe {
         margin: 1.2rem 0 4rem 0;
+
         font-size: 1.6rem;
         font-weight: 400;
 
@@ -180,7 +189,9 @@
         a {
           font-size: 1.6rem;
           text-decoration: none;
+
           color: $color-black;
+
           transition: all 0.3s;
 
           .dark & {
@@ -211,6 +222,7 @@
       .dark & {
         color: $color-dark-4;
         background: transparent;
+
         transition: all 0.5s;
       }
     }
@@ -221,7 +233,6 @@
 
       font-size: 1.8rem;
 
-      // margin-top: 2rem;
       padding-left: 7rem;
 
       @include respond(phone) {
@@ -234,7 +245,9 @@
 
     &__link {
       text-decoration: none;
+
       color: $color-black;
+
       transition: all 0.3s;
 
       &:hover {

@@ -18,67 +18,42 @@
   position: absolute;
   top: 0;
   right: 0;
+
   display: none;
 }
 
 .toggle-icon {
-  // grid-column: last-col / span 1;
-  // grid-row: 1 / 2;
+  display: none;
+
   position: absolute;
-  right: 2rem;
   top: 2rem;
-  // transform: translate(-50%, -50%);
-  // right: 15%;
+  right: 2rem;
+
   width: $toggle-element-width * 4.5;
   height: $toggle-element-height * 3;
-  background: transparent;
-  //   background-color: cadetblue;
 
-  // border-top: 0.2rem solid $color-black;
+  background: transparent;
+
   border-bottom: 0.2rem solid $color-black;
 
   cursor: pointer;
+
   z-index: 36;
-
-  //   @include flex-center;
-  // justify-content: center;
-
-  display: none;
 
   transition: all 0.6s ease-in-out;
 
   @include respond(tab-port) {
-    // left: 1rem;
-    // left: 96.26%;
-    // top: 3rem;
     display: block;
     @include flex-center;
-    // grid-row: 1 / 2;
-    // top: 23%;
-    // right: 28%;
   }
-
-  // @include respond(phone-bg) {
-  //   // top: 2rem;
-  //   // left: -1rem;
-  //   // right: 2rem;
-  // }
 
   @include respond(phone) {
     width: $toggle-element-width * 3.5;
     height: $toggle-element-height * 2.5;
+
     top: 2rem;
     right: 1.5rem;
-    // top: 3rem;
-    // left: 85%;
-    // left: -2rem;
-    // right: 2rem;
   }
-
-  // @include respond(nokia3310) {
-  //   width: $toggle-element-width * 2.4;
-  //   height: $toggle-element-height * 2;
-  // }
 
   span {
     width: $toggle-element-width;
@@ -92,29 +67,13 @@
       width: $toggle-element-width * 0.8;
       height: $toggle-element-height * 0.8;
     }
-
-    // @include respond(nokia3310) {
-    //   width: $toggle-element-width * 0.6;
-    //   height: $toggle-element-height * 0.6;
-    // }
   }
-
-  // span:not(:last-child) {
-  //   // margin-right: 0.5rem;
-
-  //   @include respond(nokia3310) {
-  //     // margin-right: 0.36rem;
-  //   }
-  // }
 
   &.scrolled {
     @include flex-center;
     position: fixed;
+
     animation: toggleBtnMove 0.6s ease-in-out;
-    // top: 2.2rem;
-    // top: 3rem;
-    // left: auto;
-    // right: 1rem;
 
     @include respond(nokia3310) {
       top: 2rem;
@@ -125,7 +84,9 @@
 .scrollItem {
   @include flex-center;
   position: fixed;
+
   animation: toggleBtnMove 0.6s ease-in-out;
+
   z-index: 40;
 
   @include respond(nokia3310) {
@@ -133,28 +94,8 @@
   }
 }
 
-// .element {
-//   width: $toggle-element-width;
-//   height: $toggle-element-height;
-//   background-color: $color-black;
-// }
-// .el1 {
-//   left: 0;
-// }
-
-// .el2 {
-//   top: 30%;
-//   right: 26%;
-// }
-
-// .el3 {
-//   top: 30%;
-//   right: 0;
-// }
-
 .toggle-icon:checked + .toggle-nav,
 .toggle-btn:checked + .toggle-nav {
-  // display: block;
   transform: translateX(0);
   opacity: 1;
 }
@@ -221,30 +162,24 @@
   position: fixed;
   top: 0;
   right: 0;
-  // width: calc(10% + 3rem);
-  // height: calc(40% + 1rem);
-  // max-height: 30rem;
-  // min-width: 17rem;
-  // height: 30rem;
+
   background-color: $color-white;
-  z-index: 30;
   border-bottom-left-radius: 0.3rem;
   box-shadow: 1rem 1rem 2rem rgba($color-black, 0.3);
 
-  // animation: fadeInMenu 0.9s ease-in-out cubic-bezier(0, 0.98, 0.99, 0);
   opacity: 0;
+  z-index: 30;
 
   transform: translateY(-120%);
   transition: all 0.8s ease;
-  // display: none;
-  // visibility: hidden;
 
   &-sunmoon {
     position: absolute;
+    top: 2rem;
+    left: 2rem;
+
     width: 3rem;
     height: 3rem;
-    left: 2rem;
-    top: 2rem;
 
     &:hover svg {
       filter: brightness(200%);
@@ -254,10 +189,11 @@
 
   &-sunmoon--header {
     position: absolute;
+    top: -0.1rem;
+    left: 0;
+
     width: 2.2rem;
     height: 2.2rem;
-    left: 0;
-    top: -0.1rem;
   }
 
   &-sunmoon--portrait {
@@ -269,19 +205,17 @@
   &-sun,
   &-moon {
     position: absolute;
-    // height: 3rem;
-    // left: 10%;
-    // top: 8%;
+
     fill: rgba($color-primary, 0.8);
     cursor: pointer;
-    // animation: toggleBtnMove 0.6s ease-in-out;
 
     transition: all 0.4s;
 
     @include respond(nokia3310) {
       height: 2.5rem;
-      left: 10%;
+
       top: 3%;
+      left: 10%;
     }
   }
 
@@ -311,15 +245,16 @@
 }
 
 .toggle-nav {
-  width: 100%;
-  height: 100%;
-  margin-top: 6rem;
-  padding: 0.5rem 1.5rem 2rem 4rem;
   @include flex-center;
   flex-direction: column;
   align-items: flex-end;
 
-  // transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+
+  margin-top: 6rem;
+  padding: 0.5rem 1.5rem 2rem 4rem;
+
   transition: all 2s ease-in;
 
   @include respond(phone) {
@@ -333,9 +268,11 @@
 
   &__list {
     list-style: none;
+
     opacity: 0;
+
     transform: translateX(200%);
-    // transition: transform 0.5s;
+
     overflow: hidden;
 
     & a.menu-interesting::before {
@@ -381,11 +318,16 @@
 
   &__link {
     position: relative;
+
+    padding: 0.7rem 0;
+
     font-size: 1.5rem;
     line-height: 4.2rem;
-    padding: 0.7rem 0;
+
     text-decoration: none;
+
     color: $color-black;
+
     transition: color 0.4s ease-in, opacity 0.4s ease-in-out 1s,
       transform 0.7s 1s;
 
@@ -406,7 +348,6 @@
       top: 90%;
       left: 0;
       width: 0;
-
       height: 0.2rem;
 
       background-color: $color-primary;
@@ -415,7 +356,6 @@
     }
 
     &:hover .link-graphic {
-      // transform: translate3d(-66.6%, 0, 0);
       transform: translate3d(66.6%, 0, 0);
       transition: all 0.7s;
       opacity: 1;
@@ -425,13 +365,14 @@
 
 .link-graphic {
   position: absolute;
+
+  top: 0.3rem;
+  left: -200%;
+
   stroke: #000;
   fill: none;
   stroke-width: 2px;
   pointer-events: none;
-  top: 0.3rem;
-  // left: 0;
-  left: -200%;
   opacity: 0;
 
   transition: all 0.7s;
@@ -441,34 +382,6 @@
     stroke: $color-dark-5;
   }
 }
-
-// .active {
-//   display: none;
-//   border-top: none;
-//   transition: all 0.3s;
-
-//   @include respond(tab-land) {
-//     display: block;
-//   }
-
-//   span {
-//     transform: rotate(135deg);
-
-//     transition: all 1s;
-//   }
-
-//   span:nth-child(1) {
-//     background-color: $color-secondary;
-//   }
-
-//   span:nth-child(2) {
-//     background-color: $color-blue;
-//   }
-
-//   span:nth-child(3) {
-//     background-color: $color-primary;
-//   }
-// }
 
 .dark .active span:nth-child(1) {
   background-color: $color-dark-3;
@@ -484,20 +397,22 @@
 
 .fixed {
   position: fixed;
+
   display: flex;
   align-items: center;
+
   right: 2rem;
   top: 1.9rem;
+
   width: 4.5rem;
   height: 3rem;
 }
 
 .hidden {
   display: none;
+
   transform: translateY(-40rem);
   transition: all 1.5s;
-
-  //   animation: fadeOutMenu 0.9s ease-in-out cubic-bezier(0, 0.98, 0.99, 0);
 }
 
 .transforming {
@@ -521,11 +436,8 @@
   &.active-scroll {
     visibility: visible;
     opacity: 1;
-
-    // background: red;
     z-index: 1;
     animation: scrollBtn 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
-    // scrollInfinity 2s infinite;
   }
 
   &.hidden-scroll {
@@ -539,28 +451,12 @@
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
     gap: 0.4rem;
+
     transform: rotate(45deg);
-    // border-width: 2px;
-    // border-style: solid;
+
     border-right: none;
     border-bottom: none;
-    // border-image: linear-gradient(
-    //     to bottom,
-    //     $color-blue,
-    //     $color-secondary,
-    //     transparent
-    //   )
-    //   1 100%;
-    // border-image-slice: 1;
-    // border-image-source: linear-gradient(
-    //   494deg,
-    //   $color-blue,
-    //   $color-secondary,
-    //   transparent
-    // );
 
-    // border-image-source: linear-gradient(494deg, $color-black, transparent);
-    // border-image-slice: 1;
     &:hover .toggle-scroll__item {
       animation: moveBackground 12s ease-out infinite;
     }
@@ -569,26 +465,8 @@
   &__item {
     width: 1rem;
     height: 1rem;
-    // border: 2px solid;
-    // border-top: 2px solid;
-    // border-left: 2px solid;
-    // background: linear-gradient(
-    //   310deg,
-    //   transparent 30%,
-    //   rgb(49, 102, 172 / 0.3) 100%
-    // );
 
-    // border: 2px solid;
     background: $color-black;
-    // border-image-source: linear-gradient(
-    //   494deg,
-    //   $color-blue,
-    //   $color-secondary,
-    //   transparent
-    // );
-    // border-image-slice: 1;
-
-    // filter: blur(0.6px);
 
     &:nth-child(3),
     &:nth-child(5),

@@ -6,27 +6,26 @@ body {
       rgba(#fbfaf7, 0.4)
     ),
     url('../images/bg/bg.jpg');
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   line-height: 1.6;
 }
 
 body.dark {
-  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%),
-    url('../images/bg/bg.jpg');
+  background-image: url('../images/bg/bg-dark.jpg');
 }
 
 .heading {
   position: relative;
+
   grid-row: 5 / 7;
   grid-column: 2 / span 7;
 
   display: flex;
   flex-direction: column;
-  // align-items: flex-start;
   justify-content: center;
+
   margin-left: 5.5rem;
   padding: 1rem 0;
 
@@ -53,13 +52,7 @@ body.dark {
     text-align: center;
   }
 
-  // @include respond(phone-bg) {
-  //   grid-row: 7 / 8;
-  //   grid-column: 2 / span 8;
-  // }
-
   @include respond(phone) {
-    // grid-row: 8 / 10;
     grid-row: 2 / 3;
     grid-column: 1 / -1;
 
@@ -68,21 +61,13 @@ body.dark {
 
   &-primary {
     display: inline-block;
-    font-size: 10.5rem;
-    // line-height: 1;
 
-    // color: rgba($color-black, 0.3);
+    font-size: 10.5rem;
+   
     color: transparent;
-    // background-color: hsl(0, 22%, 93%);
     background-image: url('../images/wave/wave3.png');
     background-size: 773.91px 100%;
-    // background-position: 0 0;
     background-repeat: repeat-x;
-
-    // -webkit-text-stroke: 1px hsl(0, 19%, 87%);
-
-    // background-size: cover;
-    // background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
 
@@ -115,10 +100,6 @@ body.dark {
       background-size: 773.91px 100px;
     }
 
-    // @include respond(tab-port) {
-    //   font-size: 8rem;
-    // }
-
     @include respond(phone) {
       font-size: 4rem;
       background-size: 513.91px 60px;
@@ -126,6 +107,7 @@ body.dark {
 
     @include respond(nokia3310) {
       font-size: 2.5rem;
+      background-size: 250px 40px;
     }
 
     span {
@@ -155,10 +137,6 @@ body.dark {
         background-size: 773.91px 100px;
       }
 
-      // @include respond(tab-port) {
-      //   font-size: 8rem;
-      // }
-
       @include respond(phone) {
         font-size: 4rem;
         background-size: 513.91px 60px;
@@ -182,7 +160,6 @@ body.dark {
 
     .dark & {
       color: $color-dark-4;
-      // text-shadow: 0 1rem 1rem rgba($color-dark-1, 0.6);
       transition: all 0.6s;
     }
 
@@ -210,19 +187,17 @@ body.dark {
   }
 }
 
-.logo {
+.logo,
+.logo-dark {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, 20%);
-  height: 10rem;
-  text-align: center;
-  filter: invert(1);
 
-  .dark & {
-    filter: invert(48%) sepia(128%) saturate(359%) hue-rotate(159deg)
-      brightness(110%) contrast(63%);
-  }
+  height: 10rem;
+
+  text-align: center;
+  z-index: 1;
 
   @include respond(phone-bg) {
     margin-left: 3rem;
@@ -233,9 +208,24 @@ body.dark {
   }
 }
 
+.logo {
+  .dark & {
+    display: none;
+  }
+}
+
+.logo-dark {
+  display: none;
+
+  .dark & {
+    display: block;
+  }
+}
+
 .heading-2 {
   display: grid;
   grid-template-columns: max-content 1fr;
+
   align-items: center;
 
   margin-bottom: 4rem;
@@ -243,6 +233,7 @@ body.dark {
   @include respond(tab-port) {
     grid-template-columns: max-content;
     justify-content: center;
+
     margin-bottom: 2rem;
   }
 
@@ -286,7 +277,9 @@ body.dark {
   &__line {
     max-width: 100%;
     height: 0.2rem;
+
     margin-top: 2.5rem;
+    
     background-color: $color-black;
 
     .dark & {
