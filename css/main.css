@@ -2311,7 +2311,7 @@ body.dark {
 .toggle-scroll {
   position: fixed;
   right: 2rem;
-  bottom: 5.5rem;
+  bottom: 5.2rem;
   visibility: hidden;
   opacity: 0;
 }
@@ -7653,13 +7653,6 @@ p {
           clip-path: circle(100% at center);
   visibility: visible;
   opacity: 1;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .story {
-    height: auto;
-    margin: 1rem auto;
-  }
 }
 
 .dark .story {

@@ -265,10 +265,10 @@ p {
     }
   }
 
-  @include respond(phone) {
-    height: auto;
-    margin: 1rem auto;
-  }
+  // @include respond(phone) {
+  //   // height: auto;
+  //   margin: 1rem auto;
+  // }
 
   .dark & {
     background: $color-dark-2;
