@@ -3389,5 +3389,17 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
       window.history.replaceState(null, null, window.location.href);
     }
     </script>
+    <script type="text/javascript">
+      function downloadJSAtOnload() {
+        var element = document.createElement('script');
+        element.src = 'script.js';
+        document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+        window.addEventListener('load', downloadJSAtOnload, false);
+      else if (window.attachEvent)
+        window.attachEvent('onload', downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
   </body>
 </html>
