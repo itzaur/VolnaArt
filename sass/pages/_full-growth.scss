@@ -269,19 +269,24 @@
     opacity: 0;
   }
 
-  @include respond(phone) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-
-    margin-top: 10rem;
-  }
-
   & > figure {
     @include respond(phone) {
       grid-column: span 2;
       grid-row: span 4;
-
-      padding: 0 0.5rem;
     }
+  }
+
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  @include respond(nokia3310) {
+    margin-top: 8rem;
   }
 }

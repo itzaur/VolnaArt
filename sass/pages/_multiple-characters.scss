@@ -201,8 +201,10 @@
   @include respond(phone) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    grid-auto-rows: auto;
 
     margin-top: 10rem;
+    margin-bottom: 1rem;
     padding: 0 0.5rem;
   }
 
@@ -211,5 +213,9 @@
       grid-column: span 2;
       grid-row: span 5;
     }
+  }
+
+  @include respond(nokia3310) {
+    margin-top: 8rem;
   }
 }

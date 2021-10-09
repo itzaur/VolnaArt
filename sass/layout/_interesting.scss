@@ -38,8 +38,10 @@
     }
 
     @include respond(nokia3310) {
+      min-height: 25rem;
+
       margin-bottom: 2rem;
-      padding: 1rem;
+      padding: 1rem 10vw;
     }
 
     &__date {

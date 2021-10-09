@@ -1,11 +1,7 @@
 'use strict';
 
-const toggle = document.querySelector('.toggle');
 const toggleMenu = document.querySelector('.toggle-menu');
 const allElements = document.querySelectorAll('.element');
-const element1 = document.querySelector('.el1');
-const element2 = document.querySelector('.el2');
-const element3 = document.querySelector('.el3');
 const toggleNav = document.querySelector('.toggle-nav');
 const toggleNavList = document.querySelectorAll('.toggle-nav li');
 const toggleSunMoon = document.querySelector('.toggle-menu-sunmoon');
@@ -30,7 +26,6 @@ if (darkMode === 'enable') {
 }
 
 toggleSunMoon.addEventListener('click', () => {
-  console.log('test');
   darkMode = localStorage.getItem('dark');
   if (darkMode !== 'enable') {
     enableDarkMode();
@@ -38,3 +33,31 @@ toggleSunMoon.addEventListener('click', () => {
     disableDarkMode();
   }
 });
+
+//toggle-scroll functionality
+window.addEventListener('scroll', toggleBtnScroll);
+
+function toggleBtnScroll() {
+  const toggleScrollBtn = document.querySelector('.toggle-scroll');
+
+  const itemHeight = document
+    .querySelector('.item1')
+    .getBoundingClientRect().height;
+  const scrollHeight = window.pageYOffset;
+
+  document.querySelectorAll('.toggle-scroll__item').forEach(item => {
+    document.querySelector('.dark')
+      ? (item.style.background = '#84c9fb')
+      : (item.style.background = '#fff');
+  });
+
+  toggleScrollBtn.style.bottom = '1.2rem';
+
+  if (scrollHeight > itemHeight) {
+    toggleScrollBtn.classList.add('active-scroll');
+    toggleScrollBtn.classList.remove('hidden-scroll');
+  } else {
+    toggleScrollBtn.classList.remove('active-scroll');
+    toggleScrollBtn.classList.add('hidden-scroll');
+  }
+}

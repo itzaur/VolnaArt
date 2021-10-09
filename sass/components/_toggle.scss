@@ -200,6 +200,11 @@
     position: absolute;
     top: 3rem;
     left: 13.5rem;
+
+    @include respond(nokia3310) {
+      top: 1.8rem;
+      left: 9rem;
+    }
   }
 
   &-sun,
@@ -430,6 +435,7 @@
   opacity: 0;
 
   @include respond(phone) {
+    bottom: 1.7rem;
     right: 1.5rem;
   }
 
@@ -477,6 +483,11 @@
 
     .dark & {
       background: $color-dark-4;
+    }
+
+    @include respond(nokia3310) {
+      width: 0.8rem;
+      height: 0.8rem;
     }
   }
 }

@@ -9,7 +9,7 @@
     <title>fullGrowth</title>
   </head>
   <body>
-    <section class="full-growth-gallery" id="full-growth-gallery">
+    <div class="full-growth-gallery" id="full-growth-gallery">
       <div class="full-content" id="popup-full-growth-1">
         <div class="full-content__wrapper">
           <a class="full-content__link" href="#!">&#9747;</a>
@@ -20,7 +20,9 @@
           />
         </div>
       </div>
-      <figure class="full-growth-gallery__item full-growth-gallery__item--1">
+      <figure
+        class="full-growth-gallery__item full-growth-gallery__item--1 item1"
+      >
         <img
           class="full-growth-gallery__img"
           src="images/gallery/fullGrowth/small/7.jpg"
@@ -518,9 +520,9 @@
       </figure>
 
       <div class="btn-toggle">
-        <button class="btn-back" type="submit">
+        <div class="btn-back">
           <a href="index.html#gallery">&larr;&nbsp;Back</a>
-        </button>
+        </div>
 
         <div class="toggle-menu-sunmoon toggle-menu-sunmoon--portrait">
           <svg class="toggle-menu-sun" viewBox="0 0 24 24">
@@ -535,7 +537,19 @@
           </svg>
         </div>
       </div>
-    </section>
+    </div>
+
+    <a href="#full-growth-gallery" class="toggle-scroll">
+      <div class="toggle-scroll__wrapper">
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+      </div>
+    </a>
     <script>
       'fixloadpage';
     </script>

@@ -2,22 +2,13 @@
 
 const toggleBtn = document.querySelector('.toggle-btn');
 const toggleIcon = document.querySelector('.toggle-icon');
-const sliderBtn = document.querySelectorAll('.slider__btn');
-const headerNav = document.querySelector('.header__nav');
-const toggle = document.querySelector('.toggle');
 const toggleMenu = document.querySelector('.toggle-menu');
 const allElements = document.querySelectorAll('.element');
-const element1 = document.querySelector('.el1');
-const element2 = document.querySelector('.el2');
-const element3 = document.querySelector('.el3');
 const toggleNav = document.querySelector('.toggle-nav');
-const toggleNavList = document.querySelectorAll('.toggle-nav li');
 const toggleSunMoon = document.querySelector('.toggle-menu-sunmoon');
 const toggleSun = document.querySelector('.toggle-menu-sun');
 const toggleMoon = document.querySelector('.toggle-menu-moon');
-const fullContent = document.querySelector('.top-gallery__img');
 const links = document.querySelectorAll('.toggle-nav__link');
-let lastScrollTop = 0;
 
 //////////////////////////HOME PAGE POPUP///////////////////////////////////
 document.getElementById('story-link').addEventListener('click', function (e) {
@@ -83,9 +74,9 @@ if (window.performance) {
 const htmlElement = document.querySelector('html');
 const languageLink = document.querySelector('.header__nav-link--6 span');
 const languageLinkMask = document.querySelector('.header__nav-link--span');
-const russianLang = document.querySelectorAll('[lang="russian"]');
-const englishLang = document.querySelectorAll('[lang="english"]');
-const formItem = document.querySelectorAll('.form__group');
+const russianLang = document.querySelectorAll('[data-lang="russian"]');
+const englishLang = document.querySelectorAll('[data-lang="english"]');
+const menuLanguage = document.querySelectorAll('.menu-language');
 const formInput = document.querySelectorAll('.form__input');
 
 const changeAttribute = function () {
@@ -99,6 +90,18 @@ const changeAttribute = function () {
 };
 
 changeAttribute();
+
+menuLanguage.forEach(menuLang => {
+  menuLang.addEventListener('click', function () {
+    formInput.forEach(input => {
+      if (input.closest('div[style="display: block;"]')) {
+        input.removeAttribute('required');
+      } else if (input.closest('div[style="display: none;"]')) {
+        input.setAttribute('required', 'required');
+      }
+    });
+  });
+});
 
 let changeLang = localStorage.getItem('[lang="ru"]');
 
@@ -187,7 +190,7 @@ const close = function (e) {
     e.target != toggleMoon // work + dont work
   ) {
     toggleBtn.checked = false;
-    document.removeEventListener('click', close);
+    // document.removeEventListener('click', close);
   }
 };
 
@@ -280,6 +283,7 @@ function toggleBtnScroll() {
   const headerHeight = document
     .querySelector('header')
     .getBoundingClientRect().height;
+
   const scrollHeight = window.pageYOffset;
 
   if (scrollHeight > headerHeight) {
@@ -300,35 +304,16 @@ window.addEventListener('load', () => {
 });
 
 ///////////////////////////////////////////////////////////Parallax////////////////////////////////////////////////////
+let positionX = 0,
+  positionY = 0,
+  coordXprocent = 0,
+  coordYprocent = 0;
+
 window.onload = function () {
-  const layers = document.querySelectorAll('.layer');
   const headerParallax = document.querySelector('.header');
   const contactsParallax = document.querySelector('.contacts');
 
   if (headerParallax && contactsParallax) {
-    const speed = 0.03;
-
-    let positionX = 0,
-      positionY = 0,
-      coordXprocent = 0,
-      coordYprocent = 0;
-
-    function setMouseParallaxStyle() {
-      const distX = coordXprocent - positionX;
-      const distY = coordYprocent - positionY;
-
-      positionX += distX * speed;
-      positionY += distY * speed;
-
-      layers.forEach(layer => {
-        const dataSpeed = layer.getAttribute('data-speed');
-        layer.style.transform = `translate(${positionX / dataSpeed}%, ${
-          positionY / dataSpeed / 9
-        }%)`;
-      });
-
-      requestAnimationFrame(setMouseParallaxStyle);
-    }
     setMouseParallaxStyle();
 
     const headerParallaxMove = function (e) {
@@ -357,6 +342,25 @@ window.onload = function () {
     contactsParallax.addEventListener('mousemove', contactsParallaxMove);
   }
 };
+
+function setMouseParallaxStyle() {
+  const layers = document.querySelectorAll('.layer');
+  const speed = 0.03;
+  const distX = coordXprocent - positionX;
+  const distY = coordYprocent - positionY;
+
+  positionX += distX * speed;
+  positionY += distY * speed;
+
+  layers.forEach(layer => {
+    const dataSpeed = layer.getAttribute('data-speed');
+    layer.style.transform = `translate(${positionX / dataSpeed}%, ${
+      positionY / dataSpeed / 9
+    }%)`;
+  });
+
+  requestAnimationFrame(setMouseParallaxStyle);
+}
 
 ///////////////////////////////////////////////////////////Dark mode////////////////////////////////////////////////////
 //Var 1
@@ -427,7 +431,7 @@ const slides = document.querySelectorAll('.slide');
 const sliderBtnLeft = document.querySelector('.slider__btn--left');
 const sliderBtnRight = document.querySelector('.slider__btn--right');
 const scrollbar = document.querySelector('.scrollbar__handle');
-const iframes = document.querySelectorAll('iframe');
+
 let curSlide = 0;
 
 const goToSlide = function (s) {
@@ -519,7 +523,7 @@ function setupVideo(video) {
     };
     onYouTubeIframeAPIReady();
 
-    function onPlayerStateChange(event) {
+    function onPlayerStateChange() {
       sliderBtnRight.addEventListener('click', function () {
         playerId[0].pauseVideo();
       });
@@ -573,7 +577,7 @@ const emailElRus = document.getElementById('mail-rus');
 const messageElEng = document.getElementById('message-eng');
 const messageElRus = document.getElementById('message-rus');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', () => {
   checkInputs();
   checkEmail();
 });

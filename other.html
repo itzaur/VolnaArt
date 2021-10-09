@@ -9,7 +9,7 @@
     <title>Other</title>
   </head>
   <body>
-    <section class="other-gallery" id="other-gallery">
+    <div class="other-gallery" id="other-gallery">
       <div class="full-content" id="popup-other-1">
         <div class="full-content__wrapper">
           <a class="full-content__link" href="#!">&#9747;</a>
@@ -20,7 +20,7 @@
           />
         </div>
       </div>
-      <figure class="other-gallery__item other-gallery__item--1">
+      <figure class="other-gallery__item other-gallery__item--1 item1">
         <img
           class="other-gallery__img"
           src="images/gallery/other/small/4.jpg"
@@ -413,10 +413,6 @@
         <span class="other-gallery__span"></span>
       </figure>
 
-      <figure class="other-gallery__item other-gallery__item--23">
-        <span class="other-gallery__span"></span>
-      </figure>
-
       <figure class="other-gallery__item other-gallery__item--24">
         <span class="other-gallery__span"></span>
       </figure>
@@ -441,9 +437,9 @@
       </figure>
 
       <div class="btn-toggle">
-        <button class="btn-back" type="submit">
+        <div class="btn-back">
           <a href="index.html#gallery">&larr;&nbsp;Back</a>
-        </button>
+        </div>
 
         <div class="toggle-menu-sunmoon toggle-menu-sunmoon--portrait">
           <svg class="toggle-menu-sun" viewBox="0 0 24 24">
@@ -458,7 +454,19 @@
           </svg>
         </div>
       </div>
-    </section>
+    </div>
+
+    <a href="#other-gallery" class="toggle-scroll">
+      <div class="toggle-scroll__wrapper">
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+      </div>
+    </a>
     <script>
       'fixloadpage';
     </script>

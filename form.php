@@ -31,7 +31,7 @@ if(isset($_POST['submit-en'])){
   
       $mail->isHTML(true);
       $mail->Subject = 'New Message from Volna|Art';
-      $mail->Body = "<h3>Name: <i style='font-weight:normal'>$name</i><br>Email: <i style='font-weight:normal'>$email</i><br>Message:<br><i style='font-weight:normal'></i>$message</i></h3>";
+      $mail->Body = "<h3>Name: <i style='font-weight:normal'>$name</i><br>Email: <i style='font-weight:normal'>$email</i><br>Message:<br><i style='font-weight:normal'>$message</i></h3>";
   
       $mail->send();
       $alert = '<div class="alert-success">

@@ -245,26 +245,30 @@
   &__icon {
     &-item {
       position: relative;
+
       display: grid;
       place-items: center;
 
-      overflow: hidden;
-
+      transform: scale(1) translate3d(0, 0, 0);
       transition: transform 0.35s ease;
 
       .social-icons {
-        height: 2.5rem;
         width: 2.5rem;
+        height: 2.5rem;
 
         .dark & {
           fill: $color-dark-4;
+        }
+
+        @include respond(nokia3310) {
+          width: 2rem;
+          height: 2rem;
         }
       }
 
       &:hover {
         transition: transform 0.35s ease;
-
-        transform: scale(1.2);
+        transform: scale(1.3) translate3d(0, 0, 0);
       }
 
       &:nth-child(3) img {
@@ -351,6 +355,7 @@
   width: 100%;
 
   z-index: 1000;
+
   animation: dontClick 2.95s ease;
 }
 

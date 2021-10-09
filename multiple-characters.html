@@ -9,10 +9,7 @@
     <title>Multiple Characters</title>
   </head>
   <body>
-    <section
-      class="multiple-characters-gallery"
-      id="multiple-characters-gallery"
-    >
+    <div class="multiple-characters-gallery" id="multiple-characters-gallery">
       <div class="full-content" id="popup-multiple-characters-1">
         <div class="full-content__wrapper">
           <a class="full-content__link" href="#!">&#9747;</a>
@@ -26,6 +23,7 @@
       <figure
         class="
           multiple-characters-gallery__item multiple-characters-gallery__item--1
+          item1
         "
       >
         <img
@@ -434,9 +432,9 @@
       </figure>
 
       <div class="btn-toggle">
-        <button class="btn-back" type="submit">
+        <div class="btn-back">
           <a href="index.html#gallery">&larr;&nbsp;Back</a>
-        </button>
+        </div>
 
         <div class="toggle-menu-sunmoon toggle-menu-sunmoon--portrait">
           <svg class="toggle-menu-sun" viewBox="0 0 24 24">
@@ -451,7 +449,19 @@
           </svg>
         </div>
       </div>
-    </section>
+    </div>
+
+    <a href="#multiple-characters-gallery" class="toggle-scroll">
+      <div class="toggle-scroll__wrapper">
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+        <div class="toggle-scroll__item"></div>
+      </div>
+    </a>
     <script>
       'fixloadpage';
     </script>

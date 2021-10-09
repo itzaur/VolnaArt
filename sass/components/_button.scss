@@ -38,7 +38,7 @@
 
     @include respond(nokia3310) {
       font-size: 1.4rem;
-      padding: 1rem 3rem 0.7rem 3rem;
+      padding: 1rem 2rem 0.7rem 2rem;
     }
 
     .dark & {
@@ -71,7 +71,7 @@
 
     position: absolute;
 
-    top: 90%;
+    top: 100%;
     left: 0;
     right: -1rem;
 
@@ -119,6 +119,10 @@
       .dark & {
         background-color: $color-btn-border;
       }
+    }
+
+    @include respond(nokia3310) {
+      height: 200%;
     }
   }
 
@@ -182,6 +186,11 @@
 
     border: none;
     cursor: pointer;
+
+    @include respond(nokia3310) {
+      width: 10rem;
+      height: 6rem;
+    }
 
     a {
       display: block;

@@ -1,7 +1,7 @@
 .portrait-gallery {
   display: grid;
   grid-template-columns: repeat(29, 1fr);
-  grid-auto-rows: 8rem 8rem;
+  grid-auto-rows: 12rem 8rem;
   grid-auto-flow: dense;
   gap: 1rem;
   justify-content: center;
@@ -295,8 +295,10 @@
   @include respond(phone) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    grid-auto-rows: auto;
 
     margin-top: 10rem;
+    margin-bottom: 1rem;
     padding: 0 0.5rem;
   }
 
@@ -305,5 +307,9 @@
       grid-column: span 2;
       grid-row: span 4;
     }
+  }
+
+  @include respond(nokia3310) {
+    margin-top: 8rem;
   }
 }

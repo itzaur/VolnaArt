@@ -8,21 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Volna art. Drawings to order. Drawings of game characters. Волна арт. Рисунки на заказ. Рисунки игровых персонажей"
+      content="Volna art. Drawings to order. Drawings of game characters | Волна арт. Рисунки на заказ. Рисунки игровых персонажей"
     />
     <link rel="stylesheet" href="css/main.css" />
     <link
       rel="icon"
-      type="image/png"
+      type="image/svg+xml"
       href="images/logo/logo-dark.svg"
       sizes="192x192"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
     <title>VOLNA | Art</title>
   </head>
   <body>
- <!--alert messages start-->
- <?php echo $alert; ?>
- <!--alert messages end-->
+    <!--alert messages start-->
+    <?php echo $alert; ?>
+    <!--alert messages end-->
 
     <header class="header" id="header">
       <span class="logo-box">
@@ -34,16 +37,16 @@
         />
       </span>
       <div class="heading">
-        <h1 class="heading-primary" lang="english">
+        <h1 class="heading-primary" data-lang="english">
           Volna&ensp;<span>|&ensp;Art</span>
         </h1>
-        <h1 class="heading-primary heading-primary--rus" lang="russian">
+        <h1 class="heading-primary heading-primary--rus" data-lang="russian">
           Волна&ensp;<span>|&ensp;Арт</span>
         </h1>
-        <h2 class="heading-secondary" lang="english">
+        <h2 class="heading-secondary" data-lang="english">
           Each gallery has its own works of art
         </h2>
-        <h2 class="heading-secondary" lang="russian">
+        <h2 class="heading-secondary" data-lang="russian">
           В каждой галерее свои художества
         </h2>
       </div>
@@ -52,23 +55,23 @@
         <nav class="header__nav-box">
           <ul class="header__nav-item">
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#gallery" lang="english">
+              <a class="header__nav-link" href="#gallery" data-lang="english">
                 <div class="header__nav-link--mask"><span>Gallery</span></div>
                 Gallery</a
               >
-              <a class="header__nav-link" href="#gallery" lang="russian">
+              <a class="header__nav-link" href="#gallery" data-lang="russian">
                 <div class="header__nav-link--mask"><span>Галерея</span></div>
                 Галерея</a
               >
             </li>
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#interesting" lang="english">
+              <a class="header__nav-link" href="#interesting" data-lang="english">
                 <div class="header__nav-link--mask">
                   <span>It is interesting...</span>
                 </div>
                 It is interesting...</a
               >
-              <a class="header__nav-link" href="#interesting" lang="russian">
+              <a class="header__nav-link" href="#interesting" data-lang="russian">
                 <div class="header__nav-link--mask">
                   <span>Это интересно...</span>
                 </div>
@@ -76,23 +79,23 @@
               >
             </li>
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#video-gallery" lang="english">
+              <a class="header__nav-link" href="#video-gallery" data-lang="english">
                 <div class="header__nav-link--mask"><span>Video</span></div>
                 Video</a
               >
-              <a class="header__nav-link" href="#video-gallery" lang="russian">
+              <a class="header__nav-link" href="#video-gallery" data-lang="russian">
                 <div class="header__nav-link--mask"><span>Видео</span></div>
                 Видео</a
               >
             </li>
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#contacts" lang="english">
+              <a class="header__nav-link" href="#contacts" data-lang="english">
                 <div class="header__nav-link--mask">
                   <span>Contact</span>
                 </div>
                 Contact</a
               >
-              <a class="header__nav-link" href="#contacts" lang="russian">
+              <a class="header__nav-link" href="#contacts" data-lang="russian">
                 <div class="header__nav-link--mask">
                   <span>Контакты</span>
                 </div>
@@ -122,7 +125,6 @@
                   class="social-icons"
                   enable-background="new 0 0 30 30"
                   height="30px"
-                  version="1.1"
                   viewBox="0 0 30 30"
                   width="30px"
                   xml:space="preserve"
@@ -170,7 +172,6 @@
                 <svg
                   class="social-icons"
                   style="enable-background: new 0 0 30 30"
-                  version="1.1"
                   viewBox="0 0 30 30"
                   xml:space="preserve"
                   xmlns="http://www.w3.org/2000/svg"
@@ -213,22 +214,31 @@
       <div class="top-gallery">
         <div class="full-content" id="popup-1">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/1.jpg       500w,
-                images/top-gallery-back/large/1.jpg 862w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/1.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/1.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/1.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/1.jpg       500w,
+                  images/top-gallery-back/large/1.jpg 862w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/1.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--1">
@@ -245,117 +255,168 @@
             alt=""
           />
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--1
               "
-              src="images/top-gallery/1.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/1.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/1.webp" type="image/webp" />
+              <source srcset="images/top-gallery/1.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/1.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/1.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/1.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/1.jpg" alt="" />
+            </picture>
             <a href="#popup-1">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-2">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/2.jpg       500w,
-                images/top-gallery-back/large/2.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/2.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/2.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/2.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/2.jpg       500w,
+                  images/top-gallery-back/large/2.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/2.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
 
         <figure class="top-gallery__item top-gallery__item--2">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--2
               "
-              src="images/top-gallery/2.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/2.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/2.webp" type="image/webp" />
+              <source srcset="images/top-gallery/2.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/2.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/2.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/2.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/2.jpg" alt="Alt Text!" />
+            </picture>
             <a href="#popup-2">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-3">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/3.jpg       500w,
-                images/top-gallery-back/large/3.jpg 862w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/3.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/3.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/3.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/3.jpg       500w,
+                  images/top-gallery-back/large/3.jpg 862w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/3.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--3">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--3
               "
-              src="images/top-gallery/3.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/3.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/3.webp" type="image/webp" />
+              <source srcset="images/top-gallery/3.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/3.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/3.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/3.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/3.jpg" alt="" />
+            </picture>
             <a href="#popup-3">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-4">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/4.jpg        500w,
-                images/top-gallery-back/large/4.jpg 1264w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 625px"
-              src="images/top-gallery-back/large/4.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/4.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/4.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/4.jpg        500w,
+                  images/top-gallery-back/large/4.jpg 1264w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 625px"
+                src="images/top-gallery-back/large/4.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
 
@@ -367,316 +428,439 @@
             alt=""
           />
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--4
               "
-              src="images/top-gallery/4.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img top-gallery__img--back top-gallery__img--back-4
-              "
-              src="images/top-gallery-back/small/4.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/4.webp" type="image/webp" />
+              <source srcset="images/top-gallery/4.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/4.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/4.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/4.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/4.jpg" alt="" />
+            </picture>
             <a href="#popup-4">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-5">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/5.jpg       500w,
-                images/top-gallery-back/large/5.jpg 862w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/5.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/5.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/5.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/5.jpg       500w,
+                  images/top-gallery-back/large/5.jpg 862w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/5.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--5">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--5
               "
-              src="images/top-gallery/5.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/5.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/5.webp" type="image/webp" />
+              <source srcset="images/top-gallery/5.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/5.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/5.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/5.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/5.jpg" alt="Alt Text!" />
+            </picture>
             <a href="#popup-5">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-6">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/6.jpg       500w,
-                images/top-gallery-back/large/6.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/6.jpg"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="images/top-gallery-back/large/6.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/6.jpg"
+                type="image/jpeg"
+              />
+              <img
+                class="full-content__img"
+                srcset="
+                  images/top-gallery-back/6.jpg       500w,
+                  images/top-gallery-back/large/6.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/6.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--6">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--6
               "
-              src="images/top-gallery/6.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/6.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/6.webp" type="image/webp" />
+              <source srcset="images/top-gallery/6.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/6.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/6.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/6.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/6.jpg" alt="" />
+            </picture>
             <a href="#popup-6">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-7">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/7.jpg       500w,
-                images/top-gallery-back/large/7.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/7.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/7.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/7.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/7.jpg       500w,
+                  images/top-gallery-back/large/7.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/7.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--7">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--7
               "
-              src="images/top-gallery/7.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img top-gallery__img--back top-gallery__img--back-7
-              "
-              src="images/top-gallery-back/small/7.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/7.webp" type="image/webp" />
+              <source srcset="images/top-gallery/7.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/7.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/7.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/7.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/7.jpg" alt="" />
+            </picture>
             <a href="#popup-7">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-8">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/8.jpg       500w,
-                images/top-gallery-back/large/8.jpg 849w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/8.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/8.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/8.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/8.jpg       500w,
+                  images/top-gallery-back/large/8.jpg 849w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/8.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--8">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--8
               "
-              src="images/top-gallery/8.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img top-gallery__img--back top-gallery__img--back-8
-              "
-              src="images/top-gallery-back/small/8.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/8.webp" type="image/webp" />
+              <source srcset="images/top-gallery/8.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/8.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/8.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/8.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/8.jpg" alt="" />
+            </picture>
             <a href="#popup-8">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-9">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/9.jpg       500w,
-                images/top-gallery-back/large/9.jpg 846w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/9.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/9.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/9.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/9.jpg       500w,
+                  images/top-gallery-back/large/9.jpg 846w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/9.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--9">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--9
               "
-              src="images/top-gallery/9.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/9.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/9.webp" type="image/webp" />
+              <source srcset="images/top-gallery/9.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/9.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/9.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/9.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/9.jpg" alt="" />
+            </picture>
             <a href="#popup-9">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-10">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/10.jpg       500w,
-                images/top-gallery-back/large/10.jpg 862w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/10.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/10.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/10.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/10.jpg       500w,
+                  images/top-gallery-back/large/10.jpg 862w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/10.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--10">
           <div class="top-gallery-card">
-            <img
+            <picture
               class="
                 top-gallery__img top-gallery__img--front top-gallery__img--10
               "
-              src="images/top-gallery/10.jpg"
-              alt=""
-            />
-            <img
-              class="top-gallery__img top-gallery__img--back"
-              src="images/top-gallery-back/small/10.jpg"
-              alt=""
-            />
+            >
+              <source srcset="images/top-gallery/10.webp" type="image/webp" />
+              <source srcset="images/top-gallery/10.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/10.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/10.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/10.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/10.jpg" alt="" />
+            </picture>
             <a href="#popup-10">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-11">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/11.jpg       500w,
-                images/top-gallery-back/large/11.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/11.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/11.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/11.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/11.jpg       500w,
+                  images/top-gallery-back/large/11.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/11.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--11">
           <div class="top-gallery-card">
-            <img
-              class="
-                top-gallery__img top-gallery__img--front top-gallery__img--11
-              "
-              src="images/top-gallery/11.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img
-                top-gallery__img--back
-                top-gallery__img--back-11
-              "
-              src="images/top-gallery-back/small/11.jpg"
-              alt=""
-            />
+            <picture class="top-gallery__img top-gallery__img--front">
+              <source srcset="images/top-gallery/11.webp" type="image/webp" />
+              <source srcset="images/top-gallery/11.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/11.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/11.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/11.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/11.jpg" alt="" />
+            </picture>
             <a href="#popup-11">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-12">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/12.jpg       500w,
-                images/top-gallery-back/large/12.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/12.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/12.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/12.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/12.jpg       500w,
+                  images/top-gallery-back/large/12.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/12.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--12">
@@ -687,86 +871,104 @@
             alt=""
           />
           <div class="top-gallery-card">
-            <img
-              class="
-                top-gallery__img top-gallery__img--front top-gallery__img--12
-              "
-              src="images/top-gallery/12.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img
-                top-gallery__img--back
-                top-gallery__img--back-12
-              "
-              src="images/top-gallery-back/small/12.jpg"
-              alt=""
-            />
+            <picture class="top-gallery__img top-gallery__img--front">
+              <source srcset="images/top-gallery/12.webp" type="image/webp" />
+              <source srcset="images/top-gallery/12.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/12.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/12.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/12.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/12.jpg" alt="" />
+            </picture>
             <a href="#popup-12">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-13">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/13.jpg       500w,
-                images/top-gallery-back/large/13.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/13.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/13.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/13.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/13.jpg       500w,
+                  images/top-gallery-back/large/13.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/13.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--13">
           <div class="top-gallery-card">
-            <img
-              class="
-                top-gallery__img top-gallery__img--front top-gallery__img--13
-              "
-              src="images/top-gallery/13.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img
-                top-gallery__img--back
-                top-gallery__img--back-13
-              "
-              src="images/top-gallery-back/small/13.jpg"
-              alt=""
-            />
+            <picture class="top-gallery__img top-gallery__img--front">
+              <source srcset="images/top-gallery/13.webp" type="image/webp" />
+              <source srcset="images/top-gallery/13.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/13.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/13.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/13.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/13.jpg" alt="" />
+            </picture>
             <a href="#popup-13">Text</a>
           </div>
         </figure>
 
         <div class="full-content" id="popup-14">
           <div class="full-content__wrapper">
-            <a class="full-content__link" href="#!" lang="english"
+            <a class="full-content__link" href="#!" data-lang="english"
               >&#9747; Close</a
             >
-            <a class="full-content__link" href="#!" lang="russian"
+            <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <img
-              class="full-content__img"
-              srcset="
-                images/top-gallery-back/14.jpg       500w,
-                images/top-gallery-back/large/14.jpg 863w
-              "
-              sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-              src="images/top-gallery-back/large/14.jpg"
-              alt=""
-            />
+            <picture class="full-content__img">
+              <source
+                srcset="images/top-gallery-back/large/14.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/large/14.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/top-gallery-back/14.jpg       500w,
+                  images/top-gallery-back/large/14.jpg 863w
+                "
+                sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
+                src="images/top-gallery-back/large/14.jpg"
+                alt=""
+              />
+            </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--14">
@@ -783,34 +985,33 @@
             alt=""
           />
           <div class="top-gallery-card">
-            <img
-              class="
-                top-gallery__img top-gallery__img--front top-gallery__img--14
-              "
-              src="images/top-gallery/14.jpg"
-              alt=""
-            />
-            <img
-              class="
-                top-gallery__img
-                top-gallery__img--back
-                top-gallery__img--back-14
-              "
-              src="images/top-gallery-back/small/14.jpg"
-              alt=""
-            />
+            <picture class="top-gallery__img top-gallery__img--front">
+              <source srcset="images/top-gallery/14.webp" type="image/webp" />
+              <source srcset="images/top-gallery/14.jpg" type="image/jpeg" />
+              <img src="images/top-gallery/14.jpg" alt="" />
+            </picture>
+            <picture class="top-gallery__img top-gallery__img--back">
+              <source
+                srcset="images/top-gallery-back/small/14.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/top-gallery-back/small/14.jpg"
+                type="image/jpeg"
+              />
+              <img src="images/top-gallery-back/small/14.jpg" alt="" />
+            </picture>
             <a href="#popup-14">Text</a>
           </div>
         </figure>
       </div>
-    </header>
 
-    <input class="toggle-btn" type="checkbox" id="toggle-btn" />
-    <label class="toggle-icon" for="toggle-btn" id="toggle-icon">
-      <span class="el1 element"></span>
-      <span class="el2 element"></span>
-      <span class="el3 element"></span>
-    </label>
+      <input class="toggle-btn" type="checkbox" id="toggle-btn" />
+      <label class="toggle-icon" for="toggle-btn" id="toggle-icon">
+        <span class="el1 element"></span>
+        <span class="el2 element"></span>
+        <span class="el3 element"></span>
+      </label>
 
     <div class="toggle-menu" id="toggle-menu">
       <div class="toggle-menu-sunmoon">
@@ -920,53 +1121,87 @@
         <div class="toggle-scroll__item"></div>
       </div>
     </a>
+    </header>
 
     <!--GALLERY-->
     <section class="gallery" id="gallery">
       <div class="heading-2">
-        <h2 class="heading-2__title" lang="english">Gallery</h2>
-        <h2 class="heading-2__title" lang="russian">Галерея</h2>
+        <h2 class="heading-2__title" data-lang="english">Gallery</h2>
+        <h2 class="heading-2__title" data-lang="russian">Галерея</h2>
         <span class="heading-2__line"></span>
       </div>
       <div class="gallery-box">
         <div class="gallery-box__item">
           <div class="gallery-box__imgs">
-            <img
-              class="gallery-box__img"
-              srcset="
-                images/gallery/portrait/preview/71.jpg 355w,
-                images/gallery/portrait/small/71.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/portrait/small/71.jpg"
-              alt=""
-            />
-            <img
-              class="gallery-box__img"
-              srcset="
-                images/gallery/portrait/preview/46.jpg 355w,
-                images/gallery/portrait/small/46.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/portrait/small/46.jpg"
-              alt=""
-            />
-            <img
-              class="gallery-box__img"
-              srcset="
-                images/gallery/portrait/preview/88.jpg 355w,
-                images/gallery/portrait/small/88.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/portrait/small/88.jpg"
-              alt=""
-            />
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/portrait/preview/71.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/portrait/preview/71.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/portrait/preview/71.jpg 355w,
+                  images/gallery/portrait/small/71.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/portrait/small/71.jpg"
+                alt=""
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/portrait/preview/46.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/portrait/preview/46.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/portrait/preview/46.jpg 355w,
+                  images/gallery/portrait/small/46.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/portrait/small/46.jpg"
+                alt=""
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/portrait/preview/88.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/portrait/preview/88.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/portrait/preview/88.jpg 355w,
+                  images/gallery/portrait/small/88.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/portrait/small/88.jpg"
+                alt=""
+              />
+            </picture>
           </div>
           <div class="gallery-box__link">
-            <a class="gallery-box__subtitle" href="portrait.html" lang="english"
+            <a
+              class="gallery-box__subtitle"
+              href="portrait.html"
+              data-lang="english"
               >Portrait</a
             >
-            <a class="gallery-box__subtitle" href="portrait.html" lang="russian"
+            <a
+              class="gallery-box__subtitle"
+              href="portrait.html"
+              data-lang="russian"
               >Портрет</a
             >
             <svg
@@ -988,47 +1223,74 @@
           </div>
         </div>
         <div class="gallery-box__item">
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/fullGrowth/preview/47.jpg 355w,
-              images/gallery/fullGrowth/small/47.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/fullGrowth/small/47.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/fullGrowth/preview/54.jpg 355w,
-              images/gallery/fullGrowth/small/54.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/fullGrowth/small/54.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/fullGrowth/preview/31.jpg  355w,
-              images/gallery/fullGrowth/31.jpg         1000w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/fullGrowth/small/31.jpg"
-            alt=""
-          />
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/fullGrowth/preview/47.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/fullGrowth/preview/47.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/fullGrowth/preview/47.jpg 355w,
+                images/gallery/fullGrowth/small/47.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/fullGrowth/small/47.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/fullGrowth/preview/54.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/fullGrowth/preview/54.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/fullGrowth/preview/54.jpg 355w,
+                images/gallery/fullGrowth/small/54.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/fullGrowth/small/54.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/fullGrowth/preview/31.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/fullGrowth/preview/31.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/fullGrowth/preview/31.jpg  355w,
+                images/gallery/fullGrowth/31.jpg         1000w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/fullGrowth/small/31.jpg"
+              alt=""
+            />
+          </picture>
           <div class="gallery-box__link">
             <a
               class="gallery-box__subtitle"
               href="full-growth.html"
-              lang="english"
+              data-lang="english"
               >Full growth</a
             >
             <a
               class="gallery-box__subtitle"
               href="full-growth.html"
-              lang="russian"
+              data-lang="russian"
               >В полный рост</a
             >
             <svg
@@ -1050,47 +1312,74 @@
           </div>
         </div>
         <div class="gallery-box__item">
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/multipleCharacters/preview/53.jpg 355w,
-              images/gallery/multipleCharacters/small/53.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/multipleCharacters/small/53.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/multipleCharacters/preview/76.jpg 355w,
-              images/gallery/multipleCharacters/small/76.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/multipleCharacters/small/76.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/multipleCharacters/preview/57.jpg 355w,
-              images/gallery/multipleCharacters/small/57.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/multipleCharacters/small/57.jpg"
-            alt=""
-          />
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/multipleCharacters/preview/53.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/multipleCharacters/preview/53.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/multipleCharacters/preview/53.jpg 355w,
+                images/gallery/multipleCharacters/small/53.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/multipleCharacters/small/53.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/multipleCharacters/preview/76.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/multipleCharacters/preview/76.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/multipleCharacters/preview/76.jpg 355w,
+                images/gallery/multipleCharacters/small/76.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/multipleCharacters/small/76.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/multipleCharacters/preview/57.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/multipleCharacters/preview/57.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/multipleCharacters/preview/57.jpg 355w,
+                images/gallery/multipleCharacters/small/57.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/multipleCharacters/small/57.jpg"
+              alt=""
+            />
+          </picture>
           <div class="gallery-box__link">
             <a
               class="gallery-box__subtitle"
               href="multiple-characters.html"
-              lang="english"
+              data-lang="english"
               >Multiple characters</a
             >
             <a
               class="gallery-box__subtitle"
               href="multiple-characters.html"
-              lang="russian"
+              data-lang="russian"
               >Несколько персонажей</a
             >
             <svg
@@ -1112,41 +1401,74 @@
           </div>
         </div>
         <div class="gallery-box__item">
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/other/preview/30.jpg 355w,
-              images/gallery/other/small/30.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/other/small/30.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/other/preview/19.jpg 355w,
-              images/gallery/other/small/19.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/other/small/19.jpg"
-            alt=""
-          />
-          <img
-            class="gallery-box__img"
-            srcset="
-              images/gallery/other/preview/82.jpg 355w,
-              images/gallery/other/small/82.jpg   500w
-            "
-            sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-            src="images/gallery/other/small/82.jpg"
-            alt=""
-          />
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/other/preview/30.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/other/preview/30.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/other/preview/30.jpg 355w,
+                images/gallery/other/small/30.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/other/small/30.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/other/preview/19.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/other/preview/19.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/other/preview/19.jpg 355w,
+                images/gallery/other/small/19.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/other/small/19.jpg"
+              alt=""
+            />
+          </picture>
+          <picture class="gallery-box__img">
+            <source
+              srcset="images/gallery/other/preview/82.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="images/gallery/other/preview/82.jpg"
+              type="image/jpeg"
+            />
+            <img
+              srcset="
+                images/gallery/other/preview/82.jpg 355w,
+                images/gallery/other/small/82.jpg   500w
+              "
+              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+              src="images/gallery/other/small/82.jpg"
+              alt=""
+            />
+          </picture>
           <div class="gallery-box__link">
-            <a class="gallery-box__subtitle" href="other.html" lang="english"
+            <a
+              class="gallery-box__subtitle"
+              href="other.html"
+              data-lang="english"
               >Other</a
             >
-            <a class="gallery-box__subtitle" href="other.html" lang="russian"
+            <a
+              class="gallery-box__subtitle"
+              href="other.html"
+              data-lang="russian"
               >Другое</a
             >
             <svg
@@ -1174,10 +1496,10 @@
     <!--IT IS INTERESTING-->
     <section class="interesting section" id="interesting">
       <div class="heading-2">
-        <h2 class="heading-2__title" lang="english">
+        <h2 class="heading-2__title" data-lang="english">
           It&nbsp;is&nbsp;interesting
         </h2>
-        <h2 class="heading-2__title" lang="russian">Это интересно</h2>
+        <h2 class="heading-2__title" data-lang="russian">Это интересно</h2>
         <span class="heading-2__line"></span>
       </div>
 
@@ -1185,16 +1507,16 @@
         <div class="interesting-item">
           <div class="interesting-item__content interesting-item__content--1">
             <div class="interesting-item__content-text">
-              <h3 class="interesting-item__content-title" lang="english">
+              <h3 class="interesting-item__content-title" data-lang="english">
                 Sorry
               </h3>
-              <h3 class="interesting-item__content-title" lang="russian">
+              <h3 class="interesting-item__content-title" data-lang="russian">
                 30 полезных советов и лайфхаков в Photoshop
               </h3>
-              <p class="interesting-item__content-paragraphe" lang="english">
+              <p class="interesting-item__content-paragraphe" data-lang="english">
                 These stories are still only in russian
               </p>
-              <p class="interesting-item__content-paragraphe" lang="russian">
+              <p class="interesting-item__content-paragraphe" data-lang="russian">
                 Полезный материал по программе Photoshop: хоткеи и сочетания
                 клавиш, полезные фишки, а также различные техники.
               </p>
@@ -1204,18 +1526,17 @@
                 href="https://infogra.ru/design/30-poleznyh-sovetov-i-lajfhakov-v-photoshop"
                 target="_blank"
                 rel="noopener"
-                lang="english"
+                data-lang="english"
                 >Read more</a
               >
               <a
                 href="https://infogra.ru/design/30-poleznyh-sovetov-i-lajfhakov-v-photoshop"
                 target="_blank"
                 rel="noopener"
-                lang="russian"
+                data-lang="russian"
                 >Подробнее</a
               >
               <svg
-                viewBox="0 0 32 32"
                 class="gallery-box__icon"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -1232,17 +1553,17 @@
         <div class="interesting-item">
           <div class="interesting-item__content interesting-item__content--2">
             <div class="interesting-item__content-text">
-              <h3 class="interesting-item__content-title" lang="english">
+              <h3 class="interesting-item__content-title" data-lang="english">
                 Sorry
               </h3>
-              <h3 class="interesting-item__content-title" lang="russian">
+              <h3 class="interesting-item__content-title" data-lang="russian">
                 Соня
               </h3>
-              <p class="interesting-item__content-paragraphe" lang="english">
+              <p class="interesting-item__content-paragraphe" data-lang="english">
                 These stories are still only in russian <br />
                 Please change language and click read more
               </p>
-              <p class="interesting-item__content-paragraphe" lang="russian">
+              <p class="interesting-item__content-paragraphe" data-lang="russian">
                 Солнце уже давно встало, и его лучики вовсю игрались со стаканом
                 воды, а забавы их игр отражались яркими бликами по всей комнате.
                 Сегодня Соня проснулась необычно рано. "Наконец-то!" - первая
@@ -1251,10 +1572,9 @@
               </p>
             </div>
             <div class="interesting-item__content-link">
-              <a href="#!" lang="english">Read more</a>
-              <a id="story-link" href="" lang="russian">Подробнее</a>
+              <a href="#!" data-lang="english">Read more</a>
+              <a id="story-link" href="" data-lang="russian">Подробнее</a>
               <svg
-                viewBox="0 0 32 32"
                 class="gallery-box__icon"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -1406,7 +1726,6 @@
                 </p>
 
                 <svg
-                  version="1.0"
                   xmlns="http://www.w3.org/2000/svg"
                   width="1280.000000pt"
                   height="776.000000pt"
@@ -1661,24 +1980,23 @@ l-67 90 10 73 c5 40 14 102 19 138 5 36 14 111 19 168 14 158 26 226 55 319 3
         <div class="interesting-item">
           <div class="interesting-item__content interesting-item__content--3">
             <div class="interesting-item__content-text">
-              <h3 class="interesting-item__content-title" lang="english">
+              <h3 class="interesting-item__content-title" data-lang="english">
                 Sorry
               </h3>
-              <h3 class="interesting-item__content-title" lang="russian">
+              <h3 class="interesting-item__content-title" data-lang="russian">
                 Здесь могла быть и ваша история
               </h3>
-              <p class="interesting-item__content-paragraphe" lang="english">
+              <p class="interesting-item__content-paragraphe" data-lang="english">
                 These stories are still only in russian
               </p>
-              <p class="interesting-item__content-paragraphe" lang="russian">
+              <p class="interesting-item__content-paragraphe" data-lang="russian">
                 Если готовы рассказать свою, милости прошу ко мне в гости (;
               </p>
             </div>
             <div class="interesting-item__content-link">
-              <a href="#!" lang="english">Read more</a>
-              <a id="story-link--2" href="#" lang="russian">Подробнее</a>
+              <a href="#!" data-lang="english">Read more</a>
+              <a id="story-link--2" href="#" data-lang="russian">Подробнее</a>
               <svg
-                viewBox="0 0 32 32"
                 class="gallery-box__icon"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -1695,7 +2013,6 @@ l-67 90 10 73 c5 40 14 102 19 138 5 36 14 111 19 168 14 158 26 226 55 319 3
             <div class="story__inner story__inner--home-page--2">
               <svg
                 class="full-content__img full-content__img--null"
-                version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
                 width="1271.000000pt"
                 height="1280.000000pt"
@@ -1857,14 +2174,13 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         <!--./interesting-item-->
       </div>
       <div class="interesting-item__view">
-        <a class="interesting-item__link" href="interesting.html" lang="english"
+        <a class="interesting-item__link" href="interesting.html" data-lang="english"
           >View all</a
         >
-        <a class="interesting-item__link" href="interesting.html" lang="russian"
+        <a class="interesting-item__link" href="interesting.html" data-lang="russian"
           >Посмотреть все</a
         >
         <svg
-          viewBox="0 0 32 32"
           class="gallery-box__icon gallery-box__icon--up"
           viewBox="0 0 32 32"
           aria-hidden="true"
@@ -1877,11 +2193,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     </section>
     <!--./IT IS INTERESTING-->
 
-    <!--VIDEO-->
-    <section class="video-gallery section" id="video-gallery">
+   <!--VIDEO-->
+   <section class="video-gallery section" id="video-gallery">
       <div class="heading-2">
-        <h2 class="heading-2__title" lang="english">Video</h2>
-        <h2 class="heading-2__title" lang="russian">Видео</h2>
+        <h2 class="heading-2__title" data-lang="english">Video</h2>
+        <h2 class="heading-2__title" data-lang="russian">Видео</h2>
         <span class="heading-2__line"></span>
       </div>
       <div class="slider-container">
@@ -1895,7 +2211,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/j6k508xEUnc/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/hieh6bgrgphttryzwpbl.webp
                     "
                     type="image/webp"
                   />
@@ -1907,12 +2223,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -1931,7 +2242,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/qWmEVKSBNSw/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/trtumeweoiq1r3nkzat3.webp
                     "
                     type="image/webp"
                   />
@@ -1943,12 +2254,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -1967,7 +2273,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/21qvf96Zz5k/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/lujowkzrwqk5ynoris08.webp
                     "
                     type="image/webp"
                   />
@@ -1979,12 +2285,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2003,7 +2304,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/-Ok4PFdMDtc/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/tpyt3rld7m2txq3szx7j.webp
                     "
                     type="image/webp"
                   />
@@ -2015,12 +2316,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2039,7 +2335,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/sG6hVAa8Njs/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/txxdom59jecv0etun9vk.webp
                     "
                     type="image/webp"
                   />
@@ -2051,12 +2347,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2075,7 +2366,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/L1thRuygeeA/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/ujnbz0azn8r4n7cds9rq.webp
                     "
                     type="image/webp"
                   />
@@ -2087,12 +2378,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2111,7 +2397,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/GIPeNL2HNZ0/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/xaa52lqlox2tbl3vioi0.webp
                     "
                     type="image/webp"
                   />
@@ -2123,12 +2409,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2147,7 +2428,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/IWeFSNYp3mU/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/elgkfhk0ryyfr1mmubvg.webp
                     "
                     type="image/webp"
                   />
@@ -2159,12 +2440,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2183,7 +2459,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/rfO8R6QfYA0/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/rbesz4ehuinfhmsgvnci.webp
                     "
                     type="image/webp"
                   />
@@ -2195,12 +2471,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2219,7 +2490,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/sTrOKFW17fc/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/q8tpnxbjmt31dw9fkezw.webp
                     "
                     type="image/webp"
                   />
@@ -2231,12 +2502,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2255,7 +2521,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/jN8-VKjZz2c/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/dkdcvn1xj0yfwpdlpbis.webp
                     "
                     type="image/webp"
                   />
@@ -2267,12 +2533,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2291,7 +2552,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/2muWUQsZEh8/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/ld1zfgkcgbfqhhnmonkv.webp
                     "
                     type="image/webp"
                   />
@@ -2303,12 +2564,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2327,7 +2583,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/yHzyggJYNRY/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/vrih7nfu4chuyyl8mdhx.webp
                     "
                     type="image/webp"
                   />
@@ -2339,12 +2595,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2363,7 +2614,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/RqarlcsJfYY/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/gdjm9hdl8s13snzo8vgh.webp
                     "
                     type="image/webp"
                   />
@@ -2375,12 +2626,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2399,7 +2645,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/fboH4llPuoQ/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/chi0hfrwng2xehey7x7u.webp
                     "
                     type="image/webp"
                   />
@@ -2411,12 +2657,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2435,7 +2676,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/SJSx1gv9uAQ/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/aqotjzndh91gtrc2ruu8.webp
                     "
                     type="image/webp"
                   />
@@ -2447,12 +2688,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2471,7 +2707,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/-_H1PMDr08s/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/xn5qmkgvkul4upie40zo.webp
                     "
                     type="image/webp"
                   />
@@ -2483,12 +2719,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2507,7 +2738,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/dNbd7kXLEdQ/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/dxgheoti4dxep8l61jbh.webp
                     "
                     type="image/webp"
                   />
@@ -2519,12 +2750,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2543,7 +2769,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/l1GeumVWqm4/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/oknnxe12zsmin1jf49so.webp
                     "
                     type="image/webp"
                   />
@@ -2555,12 +2781,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2579,7 +2800,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/f5mJAzCEESQ/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/a1ulqc33dcw2tb4fjgm8.webp
                     "
                     type="image/webp"
                   />
@@ -2591,12 +2812,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2615,7 +2831,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 <picture>
                   <source
                     srcset="
-                      https://i.ytimg.com/vi_webp/LLWVZWvxziY/maxresdefault.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/imanuog79afbso0eehrm.webp
                     "
                     type="image/webp"
                   />
@@ -2627,12 +2843,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </picture>
               </a>
               <button class="video__btn" aria-label="Смотреть">
-                <svg
-                  height="100%"
-                  version="1.1"
-                  viewBox="0 0 68 48"
-                  width="100%"
-                >
+                <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
                     class="video__btn-shape"
                     d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
@@ -2657,7 +2868,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="64.8546mm"
                 height="58.5111mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2680,7 +2890,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="63.7684mm"
                 height="63.3685mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2703,7 +2912,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="38.0481mm"
                 height="11.9155mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2733,7 +2941,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="64.8546mm"
                 height="58.5111mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2756,7 +2963,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="63.7684mm"
                 height="63.3685mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2779,7 +2985,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="33.3829mm"
                 height="10.7969mm"
-                version="1.1"
                 style="
                   shape-rendering: geometricPrecision;
                   text-rendering: geometricPrecision;
@@ -2811,13 +3016,13 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     <!--CONTACTS-->
     <section class="contacts section" id="contacts">
       <div class="heading-2">
-        <h2 class="heading-2__title" lang="english">Contact</h2>
-        <h2 class="heading-2__title" lang="russian">Контакты</h2>
+        <h2 class="heading-2__title" data-lang="english">Contact</h2>
+        <h2 class="heading-2__title" data-lang="russian">Контакты</h2>
         <span class="heading-2__line"></span>
       </div>
       <div class="contacts-box">
         <div class="contacts-box__item">
-          <p lang="russian">
+          <p data-lang="russian">
             Спасибо, что долистали до конца (: <br />
             Если вам понравились мои работы, то по вопросам сотрудничества
             обращайтесь незамедлительно, отправив мне сообщение, нажав на эту
@@ -2827,19 +3032,19 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           <a
             class="contacts-item"
             href="mailto:volnaart@gmail.com"
-            lang="english"
+            data-lang="english"
             >E-mail: <span>volnaart1@gmail.com</span></a
           >
           <a
             class="contacts-item"
             href="mailto:volnaart@gmail.com"
-            lang="russian"
+            data-lang="russian"
             >Электронная почта: <span>volnaart1@gmail.com</span></a
           >
         </div>
         <div class="contacts-box__item">
           <form class="form" action="" method="POST" name="form">
-            <div class="form__group" lang="english">
+            <div class="form__group" data-lang="english">
               <input
                 class="form__input"
                 type="text"
@@ -2849,7 +3054,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               />
               <label class="form__label" for="name-eng">Your name</label>
             </div>
-            <div class="form__group" lang="russian">
+            <div class="form__group" data-lang="russian">
               <input
                 class="form__input"
                 type="text"
@@ -2860,7 +3065,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               <label class="form__label" for="name-rus">Ваше имя</label>
             </div>
 
-            <div class="form__group" lang="english">
+            <div class="form__group" data-lang="english">
               <input
                 class="form__input"
                 type="email"
@@ -2872,7 +3077,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 >Your e-mail
               </label>
             </div>
-            <div class="form__group" lang="russian">
+            <div class="form__group" data-lang="russian">
               <input
                 class="form__input"
                 type="email"
@@ -2885,7 +3090,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               >
             </div>
 
-            <div class="form__group" lang="english">
+            <div class="form__group" data-lang="english">
               <textarea
                 class="form__input"
                 id="message-eng"
@@ -2894,7 +3099,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               ></textarea>
               <label class="form__label" for="message-eng">Message</label>
             </div>
-            <div class="form__group" lang="russian">
+            <div class="form__group" data-lang="russian">
               <textarea
                 class="form__input"
                 id="message-rus"
@@ -2904,19 +3109,18 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               <label class="form__label" for="message-rus">Сообщение</label>
             </div>
 
-            <div class="form__group" lang="english">
+            <div class="form__group" data-lang="english">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-en">
                   <span class="btn">
                     Send
-                    <div class="btn__blobs btn__blobs--en">
+                    <span class="btn__blobs btn__blobs--en">
                       <span></span>
                       <span></span>
                       <span></span>
-                    </div>
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      version="1.1"
                       style="display: block; height: 0; width: 0"
                     >
                       <defs>
@@ -2928,7 +3132,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                           ></feGaussianBlur>
                           <feColorMatrix
                             in="blur"
-                            mode="matrix"
                             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                             result="goo-eng"
                           ></feColorMatrix>
@@ -2940,19 +3143,18 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </button>
               </div>
             </div>
-            <div class="form__group" lang="russian">
+            <div class="form__group" data-lang="russian">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-rus">
                   <span class="btn">
                     Отправить
-                    <div class="btn__blobs btn__blobs--rus">
+                    <span class="btn__blobs btn__blobs--rus">
                       <span></span>
                       <span></span>
                       <span></span>
-                    </div>
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      version="1.1"
                       style="display: block; height: 0; width: 0"
                     >
                       <defs>
@@ -2964,7 +3166,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                           ></feGaussianBlur>
                           <feColorMatrix
                             in="blur"
-                            mode="matrix"
                             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                             result="goo-rus"
                           ></feColorMatrix>
@@ -3049,26 +3250,26 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         <nav class="footer__nav">
           <ul class="footer__nav-item">
             <li class="footer__nav-list">
-              <a class="footer__nav-link" href="#gallery" lang="english">
+              <a class="footer__nav-link" href="#gallery" data-lang="english">
                 Gallery
               </a>
-              <a class="footer__nav-link" href="#header" lang="russian"
+              <a class="footer__nav-link" href="#header" data-lang="russian"
                 >Галерея
               </a>
             </li>
             <li class="footer__nav-list">
-              <a class="footer__nav-link" href="#interesting" lang="english"
+              <a class="footer__nav-link" href="#interesting" data-lang="english"
                 >It is interesting...
               </a>
-              <a class="footer__nav-link" href="#interesting" lang="russian"
+              <a class="footer__nav-link" href="#interesting" data-lang="russian"
                 >Это интересно...
               </a>
             </li>
             <li class="footer__nav-list">
-              <a class="footer__nav-link" href="#video-gallery" lang="english"
+              <a class="footer__nav-link" href="#video-gallery" data-lang="english"
                 >Video
               </a>
-              <a class="footer__nav-link" href="#video-gallery" lang="russian"
+              <a class="footer__nav-link" href="#video-gallery" data-lang="russian"
                 >Видео
               </a>
             </li>
@@ -3076,13 +3277,13 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               <a
                 class="footer__nav-link dontClickEn"
                 href="#contacts"
-                lang="english"
+                data-lang="english"
                 >Don't click here
               </a>
               <a
                 class="footer__nav-link dontClickRus"
                 href="#contacts"
-                lang="russian"
+                data-lang="russian"
                 >Не нажимай сюда
               </a>
             </li>
@@ -3100,7 +3301,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               class="social-icons"
               enable-background="new 0 0 30 30"
               height="30px"
-              version="1.1"
               viewBox="0 0 30 30"
               width="30px"
               xml:space="preserve"
@@ -3144,7 +3344,6 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             <svg
               class="social-icons"
               style="enable-background: new 0 0 30 30"
-              version="1.1"
               viewBox="0 0 30 30"
               xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
@@ -3161,10 +3360,10 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         </div>
       </div>
 
-      <div class="footer__copyright" lang="english">
+      <div class="footer__copyright" data-lang="english">
         &copy; 2021. All rights reserved
       </div>
-      <div class="footer__copyright" lang="russian">
+      <div class="footer__copyright" data-lang="russian">
         &copy; 2021. Все права защищены
       </div>
     </footer>

@@ -80,6 +80,8 @@
         background-size: contain;
         background-position: right bottom;
 
+        z-index: -1;
+
         .dark & {
           background-image: url('../images/girl.png'),
             url('../images/bg/bg-dark2.jpg');
@@ -87,8 +89,6 @@
           background-size: contain, 3.55rem;
           background-position: right bottom, left top;
           background-blend-mode: color-burn;
-
-          z-index: -1;
 
           @include respond(tab-land3) {
             background-position: center center;

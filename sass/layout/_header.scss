@@ -26,7 +26,7 @@
   }
 
   @include respond(phone) {
-    grid-template-columns: 6rem repeat(12, 1fr) [last-col] 1fr;
+    grid-template-columns: 6rem 1fr;
     height: auto;
   }
 
@@ -106,6 +106,10 @@
       color: rgba($color-black, 0.8);
 
       overflow: hidden;
+
+      @include respond(big-fucking-desktop) {
+        font-size: 2rem;
+      }
 
       &--mask {
         position: absolute;
@@ -205,6 +209,11 @@
         .dark & {
           fill: $color-dark-4;
         }
+
+        @include respond(big-fucking-desktop) {
+          height: 2.1rem;
+          width: 2.1rem;
+        }
       }
     }
 
@@ -240,17 +249,12 @@
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
   }
+
+  @include respond(phone) {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
 }
-
-// .transform {
-//   transform: translate(-20%, 20%);
-//   transition: all 0.4s;
-// }
-
-// .transform2 {
-//   transform: translate(0%, 0%);
-//   transition: all 0.4s;
-// }
 
 .fa-sort-down {
   transform: translateY(-0.3rem);
