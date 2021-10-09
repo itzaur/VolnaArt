@@ -303,7 +303,7 @@ window.addEventListener('load', () => {
   changeAttribute();
 });
 
-///////////////////////////////////////////////////////////Parallax////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////Parallax//////////////////////////////////////////////
 let positionX = 0,
   positionY = 0,
   coordXprocent = 0,
@@ -431,7 +431,7 @@ const slides = document.querySelectorAll('.slide');
 const sliderBtnLeft = document.querySelector('.slider__btn--left');
 const sliderBtnRight = document.querySelector('.slider__btn--right');
 const scrollbar = document.querySelector('.scrollbar__handle');
-
+// const iframes = document.querySelectorAll('iframe');
 let curSlide = 0;
 
 const goToSlide = function (s) {

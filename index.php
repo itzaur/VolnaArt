@@ -3372,7 +3372,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     <script>
       'fixloadpage';
     </script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script
       src="https://kit.fontawesome.com/91e713af7e.js"
       crossorigin="anonymous"
