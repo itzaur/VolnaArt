@@ -5,10 +5,18 @@
   grid-auto-flow: dense;
   grid-gap: 1rem;
   justify-content: center;
+  place-content: center;
 
   width: 100%;
 
   padding: 2rem 6rem;
+
+  @include respond(tab-port) {
+    grid-auto-rows: auto;
+    grid-gap: 0.5rem;
+
+    padding: 8rem 2rem;
+  }
 
   &__img {
     display: block;
@@ -19,7 +27,7 @@
     border-radius: 0.5rem;
 
     object-fit: cover;
-    object-position: 10% 5%;
+    object-position: 50% 5%;
 
     backface-visibility: hidden;
 
@@ -252,10 +260,7 @@
   }
 
   &__link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include abs-center;
 
     display: flex;
     justify-content: center;

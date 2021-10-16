@@ -53,7 +53,7 @@
   @include respond(phone-bg) {
     grid-column: 3 / span 6;
 
-    margin-left: 0;
+    margin-left: 3rem;
   }
 
   @include respond(phone) {
@@ -497,7 +497,7 @@
   &__link:visited {
     padding: 0.2rem 3rem;
 
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
     font-weight: 400;
     text-decoration: none;
 
@@ -509,13 +509,8 @@
       background-color: $color-btn-close;
     }
 
-    @include respond(phone) {
-      position: relative;
-      top: 1rem;
-      left: 0;
-      transform: translate(0, 0);
-
-      margin-bottom: 1.5rem;
+    @include respond(nokia3310) {
+      padding: 0.2rem 2rem;
     }
   }
 
@@ -531,7 +526,7 @@
   &__img {
     display: block;
 
-    max-width: 100%;
+    max-width: 95%;
     max-height: 80vh;
 
     margin: 0 auto;
@@ -544,7 +539,6 @@
     }
 
     @include respond(phone-bg) {
-      width: 95%;
       height: auto;
     }
   }

@@ -11,44 +11,43 @@ const toggleMoon = document.querySelector('.toggle-menu-moon');
 const links = document.querySelectorAll('.toggle-nav__link');
 
 //////////////////////////HOME PAGE POPUP///////////////////////////////////
-document.getElementById('story-link').addEventListener('click', function (e) {
+const storyLink1 = document.getElementById('story-link');
+const storyLink2 = document.getElementById('story-link--2');
+const storyHomePage1 = document.querySelector('.story--home-page');
+const btnStory1 = document.querySelector('.btn-story');
+const storyHomePage2 = document.querySelector('.story--home-page--2');
+const btnStory2 = document.querySelector('.btn-story--2');
+
+storyLink1.addEventListener('click', function (e) {
   e.preventDefault();
 
-  document.querySelector('.story--home-page').classList.add('active');
-  document.querySelector('.story--home-page').style.clipPath =
-    'circle(100% at center)';
+  storyHomePage1.classList.add('active');
+  storyHomePage1.style.clipPath = 'circle(100% at center)';
 });
 
-document.querySelector('.btn-story').addEventListener('click', function () {
-  document.querySelector('.story--home-page').style.clipPath =
-    'circle(0rem at center)';
+btnStory1.addEventListener('click', function () {
+  storyHomePage1.style.clipPath = 'circle(0rem at center)';
 });
 
 window.onclick = function (e) {
-  if (e.target == document.querySelector('.story--home-page')) {
-    document.querySelector('.story--home-page').style.clipPath =
-      'circle(0rem at center)';
+  if (e.target == storyHomePage1) {
+    storyHomePage1.style.clipPath = 'circle(0rem at center)';
   }
 
-  if (e.target == document.querySelector('.story--home-page--2')) {
-    document.querySelector('.story--home-page--2').style.clipPath =
-      'circle(0rem at center)';
+  if (e.target == storyHomePage2) {
+    storyHomePage2.style.clipPath = 'circle(0rem at center)';
   }
 };
 
-document
-  .getElementById('story-link--2')
-  .addEventListener('click', function (e) {
-    e.preventDefault();
+storyLink2.addEventListener('click', function (e) {
+  e.preventDefault();
 
-    document.querySelector('.story--home-page--2').classList.add('active');
-    document.querySelector('.story--home-page--2').style.clipPath =
-      'circle(100% at center)';
-  });
+  storyHomePage2.classList.add('active');
+  storyHomePage2.style.clipPath = 'circle(100% at center)';
+});
 
-document.querySelector('.btn-story--2').addEventListener('click', function () {
-  document.querySelector('.story--home-page--2').style.clipPath =
-    'circle(0rem at center)';
+btnStory2.addEventListener('click', function () {
+  storyHomePage2.style.clipPath = 'circle(0rem at center)';
 });
 
 ///////////////////////////////////////////////TOGGLE MENU WITH TOP-GALLERY//////////////////////////////////
@@ -57,11 +56,11 @@ const topGalleryLinks = document.querySelectorAll('.full-content__link');
 
 topGalleryCards.forEach(card => {
   card.addEventListener('click', function () {
-    document.querySelector('.toggle-icon').style.opacity = 0;
+    toggleIcon.style.opacity = 0;
   });
   topGalleryLinks.forEach(link => {
     link.addEventListener('click', function () {
-      document.querySelector('.toggle-icon').style.opacity = 1;
+      toggleIcon.style.opacity = 1;
     });
   });
 });
@@ -70,7 +69,7 @@ if (window.performance) {
   toggleBtn.checked = false;
 }
 
-///////////////////////////////////////////////Change language and show/hide required attribute in form//////////////////
+/////////////////////////////////////////////Change language and show/hide required attribute in form//////////////////
 const htmlElement = document.querySelector('html');
 const languageLink = document.querySelector('.header__nav-link--6 span');
 const languageLinkMask = document.querySelector('.header__nav-link--span');
@@ -128,18 +127,16 @@ const changeLanguage = function () {
   if (languageLink.textContent != 'En') {
     languageLink.textContent = 'En';
     languageLinkMask.textContent = 'En';
-    document
-      .querySelector('.fa-sort-up')
-      .classList.replace('fa-sort-up', 'fa-sort-down');
+    document.querySelector('.fa-sort-down').classList.add('active-icon');
+    document.querySelector('.fa-sort-up').classList.remove('active-icon');
 
     localStorage.setItem('[lang="ru"]', null);
     russianDisable();
   } else {
     languageLink.textContent = 'Ru';
     languageLinkMask.textContent = 'Ru';
-    document
-      .querySelector('.fa-sort-down')
-      .classList.replace('fa-sort-down', 'fa-sort-up');
+    document.querySelector('.fa-sort-down').classList.remove('active-icon');
+    document.querySelector('.fa-sort-up').classList.add('active-icon');
 
     localStorage.setItem('[lang="ru"]', 'enabled');
     russianEnable();
@@ -179,7 +176,7 @@ document
   .querySelector('.menu-language')
   .addEventListener('click', changeHTMLLang);
 
-///////////////////////////////////////////////Toggle-btn functionality//////////////////////////////////////////
+///////////////////////////////////////////////Toggle-btn functionality/////////////////////////
 const close = function (e) {
   if (
     e.target != toggleBtn && //work
@@ -362,7 +359,7 @@ function setMouseParallaxStyle() {
   requestAnimationFrame(setMouseParallaxStyle);
 }
 
-///////////////////////////////////////////////////////////Dark mode////////////////////////////////////////////////////
+/////////////////////////////////////////Dark mode////////////////////////////////////////////////////
 //Var 1
 // toggleSunMoon.addEventListener('click', () => {
 //   document.body.classList.toggle('dark');
@@ -405,7 +402,7 @@ document
     }
   });
 
-//////////////////////////////////////////////////Scroll sections///////////////////////////////////////
+//////////////////////////////////////////////////Scroll sections////////////////////////////////////
 const sections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
@@ -431,7 +428,6 @@ const slides = document.querySelectorAll('.slide');
 const sliderBtnLeft = document.querySelector('.slider__btn--left');
 const sliderBtnRight = document.querySelector('.slider__btn--right');
 const scrollbar = document.querySelector('.scrollbar__handle');
-// const iframes = document.querySelectorAll('iframe');
 let curSlide = 0;
 
 const goToSlide = function (s) {
@@ -577,28 +573,7 @@ const emailElRus = document.getElementById('mail-rus');
 const messageElEng = document.getElementById('message-eng');
 const messageElRus = document.getElementById('message-rus');
 
-form.addEventListener('submit', () => {
-  checkInputs();
-  checkEmail();
-});
-
-if (document.querySelector('.alert-success')) {
-  document
-    .querySelector('.alert-success__close')
-    .addEventListener('click', function () {
-      document.querySelector('.alert-success').style.display = 'none';
-    });
-}
-
-if (document.querySelector('.alert-error')) {
-  document
-    .querySelector('.alert-error__close')
-    .addEventListener('click', function () {
-      document.querySelector('.alert-error').style.display = 'none';
-    });
-}
-
-function checkInputs() {
+form.addEventListener('submit', e => {
   const usernameValueEng = nameElEng.value.trim();
   const emailValueEng = emailElEng.value.trim();
   const messageValueEng = messageElEng.value.trim();
@@ -650,7 +625,26 @@ function checkInputs() {
   } else {
     setSuccessFor(messageElRus);
   }
-}
+
+  checkEmail();
+
+  if (
+    nameElEng.parentElement.classList.contains('success') &&
+    emailElEng.parentElement.classList.contains('success') &&
+    messageElEng.parentElement.classList.contains('success')
+  ) {
+    return true;
+  } else if (
+    nameElRus.parentElement.classList.contains('success') &&
+    emailElRus.parentElement.classList.contains('success') &&
+    messageElRus.parentElement.classList.contains('success')
+  ) {
+    return true;
+  } else {
+    e.preventDefault();
+    return false;
+  }
+});
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
@@ -672,7 +666,25 @@ function checkEmail(email) {
   );
 }
 
-////////////////////////////////////////////////////DON'T CLICK BUTTON/////////////////////////////////////////////////////
+if (document.querySelector('.alert-success')) {
+  removePreloader();
+  document
+    .querySelector('.alert-success__close')
+    .addEventListener('click', function () {
+      document.querySelector('.alert-success').style.display = 'none';
+    });
+}
+
+if (document.querySelector('.alert-error')) {
+  removePreloader();
+  document
+    .querySelector('.alert-error__close')
+    .addEventListener('click', function () {
+      document.querySelector('.alert-error').style.display = 'none';
+    });
+}
+
+////////////////////////////////////////////////////DON'T CLICK BUTTON///////////////////////////////
 const dontClickBtnEn = document.querySelector('.dontClickEn');
 const dontClickBtnRus = document.querySelector('.dontClickRus');
 
@@ -700,11 +712,42 @@ dontClickBtnEn.addEventListener('click', function (e) {
   document.querySelector('.contacts-square2').classList.toggle('falling2');
   document.querySelector('.contacts-square3').classList.toggle('falling3');
 
-  document.querySelector('.toggle-icon').classList.toggle('falling4');
+  toggleIcon.classList.toggle('falling4');
   document.querySelector('.el1').classList.toggle('falling5');
   document.querySelector('.el2').classList.toggle('falling6');
   document.querySelector('.el3').classList.toggle('falling7');
 });
+
+////////////////////////////////////////////////////PRELOADER///////////////////////////////
+// window.onload = function () {
+//   document.body.classList.add('loaded__hiding');
+//   window.setTimeout(function () {
+//     document.body.classList.add('loaded');
+//     document.body.classList.remove('loaded__hiding');
+//   }, 4500);
+// };
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!sessionStorage.isVisited) {
+    sessionStorage.isVisited = 'true';
+    preloader();
+  } else {
+    removePreloader();
+  }
+});
+
+function preloader() {
+  document.body.classList.add('loaded__hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded__hiding');
+  }, 4500);
+}
+
+function removePreloader() {
+  document.querySelector('.preloader').style.display = 'none';
+  document.body.classList.remove('loaded');
+}
 
 ///////Fix Error (The service worker navigation preload request was cancelled before 'preloadResponse' settled)///////
 addEventListener(

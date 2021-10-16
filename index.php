@@ -3,13 +3,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Content-Security-Policy" content="default-src 'self'" />
+    <meta
+      content="funart, graphics, drawings, фанарт, графика, рисунки на заказ, игровые персонажи"
+      name="keywords"
+    />
     <meta
       name="description"
-      content="Volna art. Drawings to order. Drawings of game characters | Волна арт. Рисунки на заказ. Рисунки игровых персонажей"
+      content="Volna art. Drawings to order. Drawings of game characters | Волна арт. Рисунки на заказ. Фанарт, рисунки игровых персонажей"
     />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta content="VOLNA | Art" property="og:title" />
+    <meta content="https://i.postimg.cc/rsKBBj5C/09.jpg" property="og:image" />
     <link rel="stylesheet" href="css/main.css" />
     <link
       rel="icon"
@@ -17,15 +26,42 @@
       href="images/logo/logo-dark.svg"
       sizes="192x192"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="author" href="preneur85@gmail.com" />
     <title>VOLNA | Art</title>
   </head>
   <body>
     <!--alert messages start-->
     <?php echo $alert; ?>
     <!--alert messages end-->
+
+    <div class="preloader">
+      <div class="preloader__box">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo-load">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
 
     <header class="header" id="header">
       <span class="logo-box">
@@ -65,13 +101,21 @@
               >
             </li>
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#interesting" data-lang="english">
+              <a
+                class="header__nav-link"
+                href="#interesting"
+                data-lang="english"
+              >
                 <div class="header__nav-link--mask">
                   <span>It is interesting...</span>
                 </div>
                 It is interesting...</a
               >
-              <a class="header__nav-link" href="#interesting" data-lang="russian">
+              <a
+                class="header__nav-link"
+                href="#interesting"
+                data-lang="russian"
+              >
                 <div class="header__nav-link--mask">
                   <span>Это интересно...</span>
                 </div>
@@ -79,11 +123,19 @@
               >
             </li>
             <li class="header__nav-list">
-              <a class="header__nav-link" href="#video-gallery" data-lang="english">
+              <a
+                class="header__nav-link"
+                href="#video-gallery"
+                data-lang="english"
+              >
                 <div class="header__nav-link--mask"><span>Video</span></div>
                 Video</a
               >
-              <a class="header__nav-link" href="#video-gallery" data-lang="russian">
+              <a
+                class="header__nav-link"
+                href="#video-gallery"
+                data-lang="russian"
+              >
                 <div class="header__nav-link--mask"><span>Видео</span></div>
                 Видео</a
               >
@@ -106,8 +158,27 @@
               <a class="header__nav-link header__nav-link--6" href="#">
                 <div class="header__nav-link--mask"><span>En</span></div>
                 <span class="header__nav-link--span">En</span>
-                <i class="fas fa-sort-down"></i
-              ></a>
+                <svg
+                  class="fa-sort-down active-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"
+                  ></path>
+                </svg>
+                <svg
+                  class="fa-sort-up"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
+                  ></path>
+                </svg>
+              </a>
             </li>
           </ul>
         </nav>
@@ -119,6 +190,7 @@
                 class="header__nav-icon"
                 href="https://www.vk.com/club_volna_a"
                 target="_blank"
+                aria-label="vk.com"
                 rel="noopener"
               >
                 <svg
@@ -144,6 +216,7 @@
                 class="header__nav-icon"
                 href="https://www.youtube.com/channel/UCQBC6BuesprYAv94pVlRfvQ"
                 target="_blank"
+                aria-label="Youtube"
                 rel="noopener"
               >
                 <svg
@@ -167,11 +240,11 @@
                 class="header__nav-icon"
                 href="https://www.instagram.com"
                 target="_blank"
+                aria-label="Instagram"
                 rel="noopener"
               >
                 <svg
                   class="social-icons"
-                  style="enable-background: new 0 0 30 30"
                   viewBox="0 0 30 30"
                   xml:space="preserve"
                   xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +260,12 @@
               </a>
             </li>
             <li class="header__nav-list-icon">
-              <a class="header__nav-icon" href="#">
+              <a
+                class="header__nav-icon"
+                href="#"
+                rel="nofollow"
+                aria-label="toggle icon"
+              >
                 <div class="toggle-menu-sunmoon--header">
                   <svg class="toggle-menu-sun" viewBox="0 0 24 24">
                     <path
@@ -515,7 +593,7 @@
             <a class="full-content__link" href="#!" data-lang="russian"
               >&#9747; Закрыть</a
             >
-            <picture>
+            <picture class="full-content__img">
               <source
                 srcset="images/top-gallery-back/large/6.webp"
                 type="image/webp"
@@ -525,7 +603,6 @@
                 type="image/jpeg"
               />
               <img
-                class="full-content__img"
                 srcset="
                   images/top-gallery-back/6.jpg       500w,
                   images/top-gallery-back/large/6.jpg 863w
@@ -1013,114 +1090,144 @@
         <span class="el3 element"></span>
       </label>
 
-    <div class="toggle-menu" id="toggle-menu">
-      <div class="toggle-menu-sunmoon">
-        <svg class="toggle-menu-sun" viewBox="0 0 24 24">
-          <path
-            d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z"
-          />
-        </svg>
-        <svg class="toggle-menu-moon" viewBox="0 0 24 24">
-          <path
-            d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z"
-          />
-        </svg>
+      <div class="toggle-menu" id="toggle-menu">
+        <div class="toggle-menu-sunmoon">
+          <svg class="toggle-menu-sun" viewBox="0 0 24 24">
+            <path
+              d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z"
+            />
+          </svg>
+          <svg class="toggle-menu-moon" viewBox="0 0 24 24">
+            <path
+              d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z"
+            />
+          </svg>
+        </div>
+
+        <ul class="toggle-nav" id="toggle-nav">
+          <li class="toggle-nav__list">
+            <a
+              class="toggle-nav__link menu-gallery"
+              href="#gallery"
+              aria-label="menu gallery"
+              rel="noopener"
+            >
+              <svg
+                class="link-graphic"
+                width="300%"
+                height="100%"
+                viewBox="0 0 1200 60"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </a>
+          </li>
+
+          <li class="toggle-nav__list">
+            <a
+              class="toggle-nav__link menu-interesting"
+              href="#interesting"
+              aria-label="menu interesting"
+              rel="noopener"
+            >
+              <svg
+                class="link-graphic"
+                width="300%"
+                height="100%"
+                viewBox="0 0 1200 60"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </a>
+          </li>
+
+          <li class="toggle-nav__list">
+            <a
+              class="toggle-nav__link menu-video"
+              href="#video-gallery"
+              aria-label="menu video"
+              rel="noopener"
+            >
+              <svg
+                class="link-graphic"
+                width="300%"
+                height="100%"
+                viewBox="0 0 1200 60"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </a>
+          </li>
+
+          <li class="toggle-nav__list">
+            <a
+              class="toggle-nav__link menu-contacts"
+              href="#contacts"
+              aria-label="menu contacts"
+              rel="noopener"
+            >
+              <svg
+                class="link-graphic"
+                width="300%"
+                height="100%"
+                viewBox="0 0 1200 60"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </a>
+          </li>
+
+          <li class="toggle-nav__list">
+            <a
+              class="toggle-nav__link menu-language"
+              href="#language"
+              aria-label="menu language"
+              rel="noopener"
+            >
+              <svg
+                class="link-graphic"
+                width="300%"
+                height="100%"
+                viewBox="0 0 1200 60"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <ul class="toggle-nav" id="toggle-nav">
-        <li class="toggle-nav__list">
-          <a class="toggle-nav__link menu-gallery" href="#gallery">
-            <svg
-              class="link-graphic"
-              width="300%"
-              height="100%"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg>
-          </a>
-        </li>
-
-        <li class="toggle-nav__list">
-          <a class="toggle-nav__link menu-interesting" href="#interesting">
-            <svg
-              class="link-graphic"
-              width="300%"
-              height="100%"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg>
-          </a>
-        </li>
-
-        <li class="toggle-nav__list">
-          <a class="toggle-nav__link menu-video" href="#video-gallery">
-            <svg
-              class="link-graphic"
-              width="300%"
-              height="100%"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg>
-          </a>
-        </li>
-
-        <li class="toggle-nav__list">
-          <a class="toggle-nav__link menu-contacts" href="#contacts">
-            <svg
-              class="link-graphic"
-              width="300%"
-              height="100%"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg>
-          </a>
-        </li>
-
-        <li class="toggle-nav__list">
-          <a class="toggle-nav__link menu-language" href="#language">
-            <svg
-              class="link-graphic"
-              width="300%"
-              height="100%"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <a href="#header" class="toggle-scroll">
-      <div class="toggle-scroll__wrapper">
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-        <div class="toggle-scroll__item"></div>
-      </div>
-    </a>
+      <a
+        class="toggle-scroll"
+        href="#header"
+        rel="nofollow"
+        aria-label="Back to header"
+      >
+        <div class="toggle-scroll__wrapper">
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+          <div class="toggle-scroll__item"></div>
+        </div>
+      </a>
     </header>
 
     <!--GALLERY-->
@@ -1150,6 +1257,7 @@
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
                 src="images/gallery/portrait/small/71.jpg"
                 alt=""
+                loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
@@ -1169,6 +1277,7 @@
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
                 src="images/gallery/portrait/small/46.jpg"
                 alt=""
+                loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
@@ -1188,6 +1297,7 @@
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
                 src="images/gallery/portrait/small/88.jpg"
                 alt=""
+                loading="lazy"
               />
             </picture>
           </div>
@@ -1222,64 +1332,70 @@
             </svg>
           </div>
         </div>
+
         <div class="gallery-box__item">
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/fullGrowth/preview/47.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/fullGrowth/preview/47.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/fullGrowth/preview/47.jpg 355w,
-                images/gallery/fullGrowth/small/47.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/fullGrowth/small/47.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/fullGrowth/preview/54.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/fullGrowth/preview/54.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/fullGrowth/preview/54.jpg 355w,
-                images/gallery/fullGrowth/small/54.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/fullGrowth/small/54.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/fullGrowth/preview/31.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/fullGrowth/preview/31.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/fullGrowth/preview/31.jpg  355w,
-                images/gallery/fullGrowth/31.jpg         1000w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/fullGrowth/small/31.jpg"
-              alt=""
-            />
-          </picture>
+          <div class="gallery-box__imgs">
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/fullGrowth/preview/47.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/fullGrowth/preview/47.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/fullGrowth/preview/47.jpg 355w,
+                  images/gallery/fullGrowth/small/47.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/fullGrowth/small/47.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/fullGrowth/preview/54.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/fullGrowth/preview/54.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/fullGrowth/preview/54.jpg 355w,
+                  images/gallery/fullGrowth/small/54.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/fullGrowth/small/54.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/fullGrowth/preview/31.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/fullGrowth/preview/31.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/fullGrowth/preview/31.jpg  355w,
+                  images/gallery/fullGrowth/31.jpg         1000w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/fullGrowth/small/31.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+          </div>
           <div class="gallery-box__link">
             <a
               class="gallery-box__subtitle"
@@ -1311,64 +1427,70 @@
             </svg>
           </div>
         </div>
+
         <div class="gallery-box__item">
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/multipleCharacters/preview/53.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/multipleCharacters/preview/53.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/multipleCharacters/preview/53.jpg 355w,
-                images/gallery/multipleCharacters/small/53.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/multipleCharacters/small/53.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/multipleCharacters/preview/76.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/multipleCharacters/preview/76.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/multipleCharacters/preview/76.jpg 355w,
-                images/gallery/multipleCharacters/small/76.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/multipleCharacters/small/76.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/multipleCharacters/preview/57.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/multipleCharacters/preview/57.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/multipleCharacters/preview/57.jpg 355w,
-                images/gallery/multipleCharacters/small/57.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/multipleCharacters/small/57.jpg"
-              alt=""
-            />
-          </picture>
+          <div class="gallery-box__imgs">
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/multipleCharacters/preview/53.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/multipleCharacters/preview/53.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/multipleCharacters/preview/53.jpg 355w,
+                  images/gallery/multipleCharacters/small/53.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/multipleCharacters/small/53.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/multipleCharacters/preview/76.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/multipleCharacters/preview/76.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/multipleCharacters/preview/76.jpg 355w,
+                  images/gallery/multipleCharacters/small/76.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/multipleCharacters/small/76.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/multipleCharacters/preview/57.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/multipleCharacters/preview/57.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/multipleCharacters/preview/57.jpg 355w,
+                  images/gallery/multipleCharacters/small/57.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/multipleCharacters/small/57.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+          </div>
           <div class="gallery-box__link">
             <a
               class="gallery-box__subtitle"
@@ -1400,64 +1522,70 @@
             </svg>
           </div>
         </div>
+
         <div class="gallery-box__item">
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/other/preview/30.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/other/preview/30.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/other/preview/30.jpg 355w,
-                images/gallery/other/small/30.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/other/small/30.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/other/preview/19.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/other/preview/19.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/other/preview/19.jpg 355w,
-                images/gallery/other/small/19.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/other/small/19.jpg"
-              alt=""
-            />
-          </picture>
-          <picture class="gallery-box__img">
-            <source
-              srcset="images/gallery/other/preview/82.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/gallery/other/preview/82.jpg"
-              type="image/jpeg"
-            />
-            <img
-              srcset="
-                images/gallery/other/preview/82.jpg 355w,
-                images/gallery/other/small/82.jpg   500w
-              "
-              sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-              src="images/gallery/other/small/82.jpg"
-              alt=""
-            />
-          </picture>
+          <div class="gallery-box__imgs">
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/other/preview/30.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/other/preview/30.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/other/preview/30.jpg 355w,
+                  images/gallery/other/small/30.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/other/small/30.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/other/preview/19.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/other/preview/19.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/other/preview/19.jpg 355w,
+                  images/gallery/other/small/19.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/other/small/19.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+            <picture class="gallery-box__img">
+              <source
+                srcset="images/gallery/other/preview/82.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="images/gallery/other/preview/82.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="
+                  images/gallery/other/preview/82.jpg 355w,
+                  images/gallery/other/small/82.jpg   500w
+                "
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
+                src="images/gallery/other/small/82.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+          </div>
           <div class="gallery-box__link">
             <a
               class="gallery-box__subtitle"
@@ -1513,10 +1641,16 @@
               <h3 class="interesting-item__content-title" data-lang="russian">
                 30 полезных советов и лайфхаков в Photoshop
               </h3>
-              <p class="interesting-item__content-paragraphe" data-lang="english">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="english"
+              >
                 These stories are still only in russian
               </p>
-              <p class="interesting-item__content-paragraphe" data-lang="russian">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="russian"
+              >
                 Полезный материал по программе Photoshop: хоткеи и сочетания
                 клавиш, полезные фишки, а также различные техники.
               </p>
@@ -1527,14 +1661,16 @@
                 target="_blank"
                 rel="noopener"
                 data-lang="english"
-                >Read more</a
+                aria-label="30 helpful tips and life hacks in Photoshop"
+                >Learn more at Infogra.ru</a
               >
               <a
                 href="https://infogra.ru/design/30-poleznyh-sovetov-i-lajfhakov-v-photoshop"
                 target="_blank"
                 rel="noopener"
                 data-lang="russian"
-                >Подробнее</a
+                aria-label="30 полезных советов и лайфхаков в Photoshop"
+                >Подробнее на Infogra.ru</a
               >
               <svg
                 class="gallery-box__icon"
@@ -1559,11 +1695,17 @@
               <h3 class="interesting-item__content-title" data-lang="russian">
                 Соня
               </h3>
-              <p class="interesting-item__content-paragraphe" data-lang="english">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="english"
+              >
                 These stories are still only in russian <br />
                 Please change language and click read more
               </p>
-              <p class="interesting-item__content-paragraphe" data-lang="russian">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="russian"
+              >
                 Солнце уже давно встало, и его лучики вовсю игрались со стаканом
                 воды, а забавы их игр отражались яркими бликами по всей комнате.
                 Сегодня Соня проснулась необычно рано. "Наконец-то!" - первая
@@ -1589,11 +1731,21 @@
           <div class="story story--home-page">
             <button class="btn-story" type="button">&#9747;</button>
             <div class="story__inner story__inner--home-page">
-              <img
-                class="full-content__img"
-                src="images/gallery/other/small/11.jpg"
-                alt=""
-              />
+              <picture class="full-content__img">
+                <source
+                  srcset="images/gallery/other/small/11.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="images/gallery/other/small/11.jpg"
+                  type="image/jpeg"
+                />
+                <img
+                  src="images/gallery/other/small/11.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
               <div class="story__text">
                 <p>
                   Солнце уже давно встало, и его лучики вовсю игрались со
@@ -1986,10 +2138,16 @@ l-67 90 10 73 c5 40 14 102 19 138 5 36 14 111 19 168 14 158 26 226 55 319 3
               <h3 class="interesting-item__content-title" data-lang="russian">
                 Здесь могла быть и ваша история
               </h3>
-              <p class="interesting-item__content-paragraphe" data-lang="english">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="english"
+              >
                 These stories are still only in russian
               </p>
-              <p class="interesting-item__content-paragraphe" data-lang="russian">
+              <p
+                class="interesting-item__content-paragraphe"
+                data-lang="russian"
+              >
                 Если готовы рассказать свою, милости прошу ко мне в гости (;
               </p>
             </div>
@@ -2174,10 +2332,16 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         <!--./interesting-item-->
       </div>
       <div class="interesting-item__view">
-        <a class="interesting-item__link" href="interesting.html" data-lang="english"
+        <a
+          class="interesting-item__link"
+          href="interesting.html"
+          data-lang="english"
           >View all</a
         >
-        <a class="interesting-item__link" href="interesting.html" data-lang="russian"
+        <a
+          class="interesting-item__link"
+          href="interesting.html"
+          data-lang="russian"
           >Посмотреть все</a
         >
         <svg
@@ -2193,8 +2357,8 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     </section>
     <!--./IT IS INTERESTING-->
 
-   <!--VIDEO-->
-   <section class="video-gallery section" id="video-gallery">
+    <!--VIDEO-->
+    <section class="video-gallery section" id="video-gallery">
       <div class="heading-2">
         <h2 class="heading-2__title" data-lang="english">Video</h2>
         <h2 class="heading-2__title" data-lang="russian">Видео</h2>
@@ -2204,7 +2368,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         <div class="slider">
           <div class="slide">
             <div class="video" id="video0">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/j6k508xEUnc?enablejsapi=1"
               >
@@ -2221,7 +2385,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2235,14 +2399,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video1">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/qWmEVKSBNSw?enablejsapi=1"
               >
                 <picture>
                   <source
                     srcset="
-                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/trtumeweoiq1r3nkzat3.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_711/v1633986325/drjspqgqvmiw0kdk1lqo.webp
                     "
                     type="image/webp"
                   />
@@ -2252,7 +2416,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2266,7 +2430,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video2">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/21qvf96Zz5k?enablejsapi=1"
               >
@@ -2283,7 +2447,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2297,7 +2461,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video3">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/-Ok4PFdMDtc?enablejsapi=1"
               >
@@ -2314,7 +2478,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2328,7 +2492,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video4">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/sG6hVAa8Njs?enablejsapi=1"
               >
@@ -2345,7 +2509,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2359,7 +2523,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video5">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/L1thRuygeeA?enablejsapi=1"
               >
@@ -2376,7 +2540,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2390,7 +2554,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video6">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/GIPeNL2HNZ0?enablejsapi=1"
               >
@@ -2407,7 +2571,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2421,7 +2585,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video7">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/IWeFSNYp3mU?enablejsapi=1"
               >
@@ -2438,7 +2602,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2452,7 +2616,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video8">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/rfO8R6QfYA0?enablejsapi=1"
               >
@@ -2469,7 +2633,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2483,7 +2647,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video9">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/sTrOKFW17fc?enablejsapi=1"
               >
@@ -2500,7 +2664,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2514,7 +2678,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video10">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/jN8-VKjZz2c?enablejsapi=1"
               >
@@ -2531,7 +2695,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2545,7 +2709,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video11">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/2muWUQsZEh8?enablejsapi=1"
               >
@@ -2562,7 +2726,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2576,7 +2740,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video12">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/yHzyggJYNRY?enablejsapi=1"
               >
@@ -2593,7 +2757,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2607,7 +2771,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video13">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/RqarlcsJfYY?enablejsapi=1"
               >
@@ -2624,7 +2788,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2638,7 +2802,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video14">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/fboH4llPuoQ?enablejsapi=1"
               >
@@ -2655,7 +2819,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2669,14 +2833,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video15">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/SJSx1gv9uAQ?enablejsapi=1"
               >
                 <picture>
                   <source
                     srcset="
-                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/aqotjzndh91gtrc2ruu8.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_711/v1633986325/ul8dy0qv6eounsycu3bd.webp
                     "
                     type="image/webp"
                   />
@@ -2686,7 +2850,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2700,7 +2864,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video16">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/-_H1PMDr08s?enablejsapi=1"
               >
@@ -2717,7 +2881,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2731,7 +2895,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video17">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/dNbd7kXLEdQ?enablejsapi=1"
               >
@@ -2748,7 +2912,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2762,7 +2926,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video18">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/l1GeumVWqm4?enablejsapi=1"
               >
@@ -2779,7 +2943,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2793,7 +2957,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video19">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/f5mJAzCEESQ?enablejsapi=1"
               >
@@ -2810,7 +2974,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2824,14 +2988,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </div>
           <div class="slide">
             <div class="video" id="video20">
-              <a
+              <span
                 class="video__link"
                 href="https://www.youtube.com/embed/LLWVZWvxziY?enablejsapi=1"
               >
                 <picture>
                   <source
                     srcset="
-                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/imanuog79afbso0eehrm.webp
+                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_711/v1633986325/rtnxgc2depxz6jbws0i5.webp
                     "
                     type="image/webp"
                   />
@@ -2841,7 +3005,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     alt=""
                   />
                 </picture>
-              </a>
+              </span>
               <button class="video__btn" aria-label="Смотреть">
                 <svg height="100%" viewBox="0 0 68 48" width="100%">
                   <path
@@ -2868,19 +3032,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="64.8546mm"
                 height="58.5111mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 4186.2 3776.74"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g>
                   <path
-                    class="fil0"
                     d="M947.86 590.99c334.21,-193.89 468.75,-558.43 726.55,-588.85 257.8,-30.42 638.85,273.28 1048.55,356.81 409.7,83.54 848.03,-53.08 1097.29,200.54 249.26,253.63 309.43,897.51 346.43,1472.47 37,574.97 50.84,1081.03 -238.43,1341.41 -289.26,260.39 -881.62,275.11 -1527.32,333.5 -645.69,58.38 -1344.72,160.43 -1633.71,-97.45 -288.99,-257.87 -167.94,-875.68 -303.15,-1398.68 -135.22,-522.99 -526.7,-951.18 -455.5,-1176.89 71.2,-225.71 605.07,-248.95 939.28,-442.85z"
                   />
                 </g>
@@ -2890,19 +3046,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="63.7684mm"
                 height="63.3685mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 5756.25 5720.15"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g>
                   <path
-                    class="fil0"
                     d="M1371.45 634.51c489.8,-266.52 853.04,-636.14 1290.9,-634.5 437.85,1.63 950.32,374.53 1555.53,661.01 605.21,286.48 1303.15,486.55 1484.94,843.63 181.78,357.08 -152.58,871.16 -228.22,1454.61 -75.64,583.46 107.47,1236.27 -158.05,1613.1 -265.51,376.84 -979.65,477.72 -1526.69,685.52 -547.04,207.81 -926.97,522.55 -1278.44,452.22 -351.48,-70.34 -674.48,-525.76 -1106.67,-831.89 -432.19,-306.13 -973.55,-462.97 -1167.33,-741.19 -193.79,-278.22 -40,-677.85 -80.16,-1182.94 -40.16,-505.09 -274.29,-1115.67 -83.15,-1502.66 191.12,-386.98 807.5,-550.38 1297.31,-816.9z"
                   />
                 </g>
@@ -2912,19 +3060,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="38.0481mm"
                 height="11.9155mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 19432.17 6085.56"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g>
                   <path
-                    class="fil0"
                     d="M17118.94 2669.62c-1610.32,304.04 -4628.2,686.88 -7454.72,540.5 -2826.46,-146.37 -5461.45,-822.07 -5675.45,-1261.24 -213.94,-439.17 1993.21,-641.83 3062.98,-1013.43 1069.77,-371.6 1002.2,-912.16 -416.7,-934.68 -1418.85,-22.52 -4188.98,472.98 -5551.55,844.59 -1362.57,371.6 -1317.52,619.31 -540.5,1767.93 776.97,1148.62 2285.96,3198.07 2894.03,3445.82 608.07,247.75 315.32,-1306.29 123.85,-2184.63 -191.42,-878.35 -281.51,-1081 754.45,-810.73 1036.01,270.23 3198.12,1013.43 6024.58,1283.71 2826.46,270.23 6317.33,67.57 7893.84,-416.65 1576.51,-484.22 1238.72,-1249.95 968.44,-1520.18 -270.28,-270.28 -472.93,-45.1 -2083.25,258.99z"
                   />
                 </g>
@@ -2941,19 +3081,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="64.8546mm"
                 height="58.5111mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 4186.2 3776.74"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g>
                   <path
-                    class="fil0"
                     d="M947.86 590.99c334.21,-193.89 468.75,-558.43 726.55,-588.85 257.8,-30.42 638.85,273.28 1048.55,356.81 409.7,83.54 848.03,-53.08 1097.29,200.54 249.26,253.63 309.43,897.51 346.43,1472.47 37,574.97 50.84,1081.03 -238.43,1341.41 -289.26,260.39 -881.62,275.11 -1527.32,333.5 -645.69,58.38 -1344.72,160.43 -1633.71,-97.45 -288.99,-257.87 -167.94,-875.68 -303.15,-1398.68 -135.22,-522.99 -526.7,-951.18 -455.5,-1176.89 71.2,-225.71 605.07,-248.95 939.28,-442.85z"
                   />
                 </g>
@@ -2963,19 +3095,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="63.7684mm"
                 height="63.3685mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 5756.25 5720.15"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g>
                   <path
-                    class="fil0"
                     d="M1371.45 634.51c489.8,-266.52 853.04,-636.14 1290.9,-634.5 437.85,1.63 950.32,374.53 1555.53,661.01 605.21,286.48 1303.15,486.55 1484.94,843.63 181.78,357.08 -152.58,871.16 -228.22,1454.61 -75.64,583.46 107.47,1236.27 -158.05,1613.1 -265.51,376.84 -979.65,477.72 -1526.69,685.52 -547.04,207.81 -926.97,522.55 -1278.44,452.22 -351.48,-70.34 -674.48,-525.76 -1106.67,-831.89 -432.19,-306.13 -973.55,-462.97 -1167.33,-741.19 -193.79,-278.22 -40,-677.85 -80.16,-1182.94 -40.16,-505.09 -274.29,-1115.67 -83.15,-1502.66 191.12,-386.98 807.5,-550.38 1297.31,-816.9z"
                   />
                 </g>
@@ -2985,23 +3109,12 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 xml:space="preserve"
                 width="33.3829mm"
                 height="10.7969mm"
-                style="
-                  shape-rendering: geometricPrecision;
-                  text-rendering: geometricPrecision;
-                  image-rendering: optimizeQuality;
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                "
                 viewBox="0 0 1140.84 368.98"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <defs>
-                  <style type="text/css"></style>
-                </defs>
                 <g>
                   <metadata />
                   <path
-                    class="fil0"
                     d="M820.2 83.92c14.6,34.06 -81.09,58.39 -197.87,64.88 -116.78,6.49 -254.64,-4.87 -362.5,-27.58 -107.86,-22.71 -185.71,-56.76 -227.88,-47.84 -42.17,8.92 -48.66,60.82 17.84,107.04 66.5,46.22 205.99,86.77 342.23,94.07 136.24,7.3 269.24,-18.65 354.59,-44.6 85.35,-25.95 123.07,-51.9 146.79,-55.95 23.72,-4.06 33.45,13.79 32.24,38.52 -1.22,24.74 -13.38,56.36 -33.86,93.67 -20.48,37.3 -49.27,80.28 -8.52,55.55 40.75,-24.74 151.04,-117.18 211.5,-178.6 60.45,-61.42 71.07,-91.81 -27.06,-123.44 -98.13,-31.63 -304.99,-64.49 -345.98,-59.03 -40.99,5.46 83.9,49.26 98.49,83.32z"
                   />
                 </g>
@@ -3031,13 +3144,13 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
           </p>
           <a
             class="contacts-item"
-            href="mailto:volnaart@gmail.com"
+            href="mailto:volnaart1@gmail.com"
             data-lang="english"
             >E-mail: <span>volnaart1@gmail.com</span></a
           >
           <a
             class="contacts-item"
-            href="mailto:volnaart@gmail.com"
+            href="mailto:volnaart1@gmail.com"
             data-lang="russian"
             >Электронная почта: <span>volnaart1@gmail.com</span></a
           >
@@ -3112,17 +3225,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             <div class="form__group" data-lang="english">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-en">
-                  <span class="btn">
+                  <span class="btn btn--en">
                     Send
                     <span class="btn__blobs btn__blobs--en">
                       <span></span>
                       <span></span>
                       <span></span>
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      style="display: block; height: 0; width: 0"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <filter id="goo-eng">
                           <feGaussianBlur
@@ -3146,17 +3256,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             <div class="form__group" data-lang="russian">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-rus">
-                  <span class="btn">
+                  <span class="btn btn--rus">
                     Отправить
                     <span class="btn__blobs btn__blobs--rus">
                       <span></span>
                       <span></span>
                       <span></span>
                     </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      style="display: block; height: 0; width: 0"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <filter id="goo-rus">
                           <feGaussianBlur
@@ -3258,18 +3365,30 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               </a>
             </li>
             <li class="footer__nav-list">
-              <a class="footer__nav-link" href="#interesting" data-lang="english"
+              <a
+                class="footer__nav-link"
+                href="#interesting"
+                data-lang="english"
                 >It is interesting...
               </a>
-              <a class="footer__nav-link" href="#interesting" data-lang="russian"
+              <a
+                class="footer__nav-link"
+                href="#interesting"
+                data-lang="russian"
                 >Это интересно...
               </a>
             </li>
             <li class="footer__nav-list">
-              <a class="footer__nav-link" href="#video-gallery" data-lang="english"
+              <a
+                class="footer__nav-link"
+                href="#video-gallery"
+                data-lang="english"
                 >Video
               </a>
-              <a class="footer__nav-link" href="#video-gallery" data-lang="russian"
+              <a
+                class="footer__nav-link"
+                href="#video-gallery"
+                data-lang="russian"
                 >Видео
               </a>
             </li>
@@ -3295,14 +3414,12 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             class="footer__icon-item"
             href="https://www.vk.com/club_volna_a"
             target="_blank"
+            aria-label="vk.com"
             rel="noopener"
           >
             <svg
               class="social-icons"
-              enable-background="new 0 0 30 30"
-              height="30px"
               viewBox="0 0 30 30"
-              width="30px"
               xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -3318,6 +3435,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             class="footer__icon-item"
             href="https://www.youtube.com/channel/UCQBC6BuesprYAv94pVlRfvQ"
             target="_blank"
+            aria-label="Youtube"
             rel="noopener"
           >
             <svg
@@ -3339,11 +3457,11 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
             class="footer__icon-item"
             href="https://www.instagram.com"
             target="_blank"
+            aria-label="Instagram"
             rel="noopener"
           >
             <svg
               class="social-icons"
-              style="enable-background: new 0 0 30 30"
               viewBox="0 0 30 30"
               xml:space="preserve"
               xmlns="http://www.w3.org/2000/svg"
@@ -3372,34 +3490,13 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     <script>
       'fixloadpage';
     </script>
-    <!-- <script src="script.js"></script> -->
-    <script
-      src="https://kit.fontawesome.com/91e713af7e.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      id="www-widgetapi-script"
-      src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js"
-      async=""
-    ></script>
+    <script src="script.js"></script>
     <script src="https://www.youtube.com/player_api"></script>
     <script type="text/javascript">
     if(window.history.replaceState){
       window.history.replaceState(null, null, window.location.href);
     }
     </script>
-    <script type="text/javascript">
-      function downloadJSAtOnload() {
-        var element = document.createElement('script');
-        element.src = 'script.js';
-        document.body.appendChild(element);
-      }
-      if (window.addEventListener)
-        window.addEventListener('load', downloadJSAtOnload, false);
-      else if (window.attachEvent)
-        window.attachEvent('onload', downloadJSAtOnload);
-      else window.onload = downloadJSAtOnload;
-    </script>
+    <noscript>Your browser does not support JavaScript!</noscript>
   </body>
 </html>

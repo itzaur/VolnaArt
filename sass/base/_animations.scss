@@ -1,3 +1,4 @@
+//top-gallery
 @keyframes moveUp {
   0% {
     transform: scale(10, 10);
@@ -10,48 +11,13 @@
   }
 }
 
+//wave
 @keyframes wave {
   from {
     background-position: -773.91px -1px; // wave size
   }
   to {
     background-position: 0 -1px;
-  }
-}
-
-@keyframes footerWave {
-  0% {
-    background-position-x: 0; // wave size
-  }
-  100% {
-    background-position-x: 2480px;
-  }
-}
-
-@keyframes footerWave2 {
-  0% {
-    background-position-x: 1600px; // wave size
-  }
-  100% {
-    background-position-x: 0;
-  }
-}
-
-@keyframes moveInfinite {
-  0% {
-    transform: translate3d(-9rem, 0, 0);
-  }
-  100% {
-    transform: translate3d(8.5rem, 0, 0);
-  }
-}
-
-@keyframes waves {
-  0% {
-    transform: translate3d(-50%, -96%, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate3d(-50%, -96%, 0) rotate(360deg);
   }
 }
 
@@ -84,72 +50,17 @@
   }
 }
 
-@keyframes fadeInMenu {
+//footer
+@keyframes moveInfinite {
   0% {
-    transform: translateY(-30rem);
-    opacity: 0;
+    transform: translate3d(-9rem, 0, 0);
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translate3d(8.5rem, 0, 0);
   }
 }
 
-@keyframes fadeMenuNav {
-  from {
-    transform: translateX(5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeMenuNav0 {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 0;
-  }
-}
-
-@keyframes back1 {
-  from {
-    background-color: $color-secondary;
-    transform: rotate(135deg);
-  }
-  to {
-    background-color: $color-black;
-    transform: rotate(0);
-  }
-}
-
-@keyframes back2 {
-  from {
-    background-color: $color-blue;
-    transform: rotate(135deg);
-  }
-  to {
-    background-color: $color-black;
-    transform: rotate(0);
-  }
-}
-
-@keyframes back3 {
-  from {
-    background-color: $color-primary;
-    transform: rotate(135deg);
-  }
-  to {
-    background-color: $color-black;
-    transform: rotate(0);
-  }
-}
-
+//toggle
 @keyframes toggleBtnMove {
   from {
     top: 0;
@@ -159,6 +70,21 @@
   }
 }
 
+@keyframes moveBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+//buttons
 @keyframes btnRightRotate {
   from {
     transform: translate(-50%, -50%) rotate(0);
@@ -174,21 +100,6 @@
   }
   to {
     transform: translate(-50%, -50%) rotate(-360deg);
-  }
-}
-
-@keyframes slide-out-blurred-left {
-  0% {
-    transform: translateX(0) scaleY(1) scaleX(1);
-    transform-origin: 50% 50%;
-    filter: blur(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(30rem) scaleX(1) scaleY(0.2);
-    transform-origin: 100% 50%;
-    filter: blur(40px);
-    opacity: 0;
   }
 }
 
@@ -222,20 +133,7 @@
   }
 }
 
-@keyframes moveBackground {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(360deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
+//Form crashing
 @keyframes dontClick {
   0% {
     opacity: 0;
@@ -264,16 +162,16 @@
 
 @keyframes feather1 {
   0% {
-    transform: rotate(28deg) translate(5px, 0px);
+    transform: rotate(28deg) translate(0px, 0px);
   }
   25% {
-    transform: rotate(33deg) translate(5px, 0px);
+    transform: rotate(33deg) translate(0px, 0px);
   }
 
-  50%,
+  60%,
   70%,
   100% {
-    transform: rotate(33deg) translate(5px, 400px);
+    transform: rotate(33deg) translate(200px, 400px);
   }
 }
 
@@ -296,7 +194,6 @@
   0% {
     transform: rotate(10deg) translate(0px, 0px);
   }
-
   100% {
     transform: rotate(10deg) translate(50px, 880px);
   }
@@ -362,5 +259,50 @@
 
   100% {
     transform: rotate(0deg) translate(-350px, 920px);
+  }
+}
+
+//Preloader
+@keyframes preloaderScale {
+  20% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes moveBallOne {
+  0% {
+    left: 10%;
+  }
+
+  100% {
+    left: 90%;
+  }
+}
+
+@keyframes moveBallTwo {
+  0% {
+    left: 27%;
+  }
+
+  100% {
+    left: 73%;
+  }
+}
+
+@keyframes headingMove {
+  0% {
+    transform: translateY(20rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

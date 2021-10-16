@@ -1,5 +1,6 @@
 .gallery {
-  padding: 5rem 8rem 5rem 8rem;
+  padding: $section-title-padding-top $section-title-padding-left 5rem
+    $section-title-padding-left;
 
   background: linear-gradient(
     to bottom,
@@ -17,6 +18,10 @@
     );
   }
 
+  @include respond(tab-land) {
+    padding: $section-title-padding-top 8rem 5rem 8rem;
+  }
+
   @include respond(phone) {
     padding: 2rem 0;
   }
@@ -26,18 +31,21 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-    grid-template-rows: 40rem auto;
-    column-gap: 10rem;
-    row-gap: 8rem;
+    column-gap: 8rem;
+    row-gap: 4rem;
     justify-items: center;
 
     margin: 0 auto;
-    padding: 5rem 10rem 5rem 10rem;
+    padding: 5rem 10rem 0 10rem;
 
     z-index: 0;
 
+    @include respond(tab-land) {
+      padding: 2rem 0;
+    }
+
     @include respond(tab-port) {
-      padding: 2rem 6rem;
+      padding: 2rem;
     }
 
     @include respond(phone) {
@@ -50,15 +58,15 @@
     }
 
     @include respond(nokia3310) {
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-      row-gap: 6rem;
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
 
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     &__subtitle {
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       text-align: center;
 
@@ -70,20 +78,27 @@
         color: $color-dark-4;
       }
 
-      @include respond(nokia3310) {
-        font-size: 1.5rem;
+      @include respond(phone) {
+        font-size: clamp(1.3rem, 9vw, 2rem);
       }
     }
 
     &__item {
       position: relative;
-      display: flex;
+      @include flex-center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 2rem;
 
       width: 100%;
-      min-height: 40rem;
+      aspect-ratio: 1 / 1.4;
+
+      @include respond(tab-port) {
+        aspect-ratio: 1;
+      }
 
       @include respond(nokia3310) {
-        min-height: 12rem;
+        gap: 1.2rem;
       }
 
       &:hover .gallery-box__img:nth-child(1) {
@@ -171,11 +186,6 @@
     }
 
     &__link {
-      position: absolute;
-      bottom: -5rem;
-      left: 50%;
-      transform: translateX(-50%);
-
       width: 100%;
 
       @include flex-center;
@@ -216,6 +226,9 @@
     }
 
     &__imgs {
+      position: relative;
+
+      width: 100%;
       height: 100%;
     }
 

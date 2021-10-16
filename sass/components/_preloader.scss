@@ -1,0 +1,119 @@
+$item-size-big: 5rem;
+$item-size-small: 3rem;
+$box-width: 20%;
+$box-height: $item-size-big * 2;
+$animation-time: 2.5s;
+$animation-offset: 15rem;
+
+.preloader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background: url('../images/bg/bg.jpg');
+
+  z-index: 100;
+  transition: opacity 2s ease;
+
+  &__box {
+    position: relative;
+
+    width: $box-width;
+    height: $box-height;
+
+    filter: url('#goo-load');
+
+    @include respond(tab-land2) {
+      width: 30%;
+    }
+
+    @include respond(tab-port) {
+      width: 40%;
+    }
+
+    @include respond(phone-bg) {
+      width: 50%;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
+
+    @include respond(nokia3310) {
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      @include abs-center;
+
+      width: $item-size-big;
+      height: $item-size-big;
+
+      border-radius: 50%;
+
+      background: $color-dark-3;
+
+      animation: preloaderScale $animation-time ease-in-out infinite;
+
+      @include respond(nokia3310) {
+        width: $item-size-big / 2 + 0.7rem;
+        height: $item-size-big / 2 + 0.7rem;
+      }
+    }
+  }
+
+  &__item {
+    @include abs-center;
+    width: $item-size-small;
+    height: $item-size-small;
+
+    border-radius: 50%;
+    background: $color-dark-3;
+    animation: moveBallTwo $animation-time infinite ease-in-out alternate;
+
+    @include respond(nokia3310) {
+      width: $item-size-small / 2 + 0.7rem;
+      height: $item-size-small / 2 + 0.7rem;
+    }
+
+    &:last-child {
+      width: $item-size-small - 0.7rem;
+      height: $item-size-small - 0.7rem;
+
+      background: $color-dark-3;
+
+      animation: moveBallOne $animation-time infinite ease-in-out alternate;
+
+      @include respond(nokia3310) {
+        width: $item-size-small - 1rem;
+        height: $item-size-small - 1rem;
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.loaded .preloader {
+  display: none;
+  z-index: -100;
+  opacity: 0;
+}
+
+.loaded__hiding .preloader {
+  opacity: 1;
+}
+
+.loaded header,
+.loaded .gallery {
+  animation: headingMove 2s ease;
+}

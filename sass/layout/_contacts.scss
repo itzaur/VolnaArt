@@ -1,15 +1,19 @@
 .contacts {
   position: relative;
 
-  padding: 5rem 8rem 2rem 8rem;
+  padding: $section-title-padding-top $section-title-padding-left 2rem
+    $section-title-padding-left;
   z-index: 0;
+
+  @include respond(tab-land) {
+    padding: $section-title-padding-top 8rem 2em 8rem;
+  }
 
   @include respond(tab-port) {
     @include flex-center;
     flex-direction: column;
     justify-content: center;
 
-    padding-bottom: 0;
     padding: 5rem 2rem 0 2rem;
   }
 
@@ -22,19 +26,27 @@
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
 
-    padding: 3rem 5rem;
+    width: 100%;
+
+    padding: 5rem;
 
     @include respond(tab-port) {
       flex-direction: column;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 2rem 2rem;
     }
 
     @include respond(phone) {
       width: 100%;
-      padding: 0 1rem;
+      padding: 3rem 1rem;
+    }
+
+    @include respond(nokia3310) {
+      width: 100%;
+      gap: 1rem;
+      padding: 2rem 1rem;
     }
 
     &__item {
@@ -66,8 +78,6 @@
       display: flex;
       justify-content: flex-start;
       align-self: stretch;
-
-      margin-top: 3rem;
 
       &::before {
         content: '';
@@ -115,10 +125,6 @@
       @include respond(tab-port) {
         background: none;
       }
-
-      @include respond(nokia3310) {
-        margin-top: 1rem;
-      }
     }
 
     &__item:nth-child(2) {
@@ -138,20 +144,6 @@
 
     color: $color-black;
 
-    @include respond(tab-port) {
-      width: 100%;
-
-      text-align: center;
-    }
-
-    @include respond(phone) {
-      font-size: 1.8rem;
-    }
-
-    @include respond(nokia3310) {
-      font-size: 1.2rem;
-    }
-
     span {
       color: $color-secondary;
       transition: all 0.3s;
@@ -166,9 +158,20 @@
       transition: all 0.4s ease-in-out;
     }
 
+    @include respond(tab-port) {
+      width: 100%;
+
+      text-align: center;
+    }
+
     @include respond(phone) {
       @include flex-center;
       flex-direction: column;
+      font-size: 1.8rem;
+    }
+
+    @include respond(nokia3310) {
+      font-size: 1.2rem;
     }
   }
 

@@ -118,38 +118,6 @@
   }
 }
 
-.toggle-icon:checked ~ .toggle-menu,
-.toggle-btn:checked ~ .toggle-menu {
-  transform: translateY(0) !important;
-  opacity: 1;
-
-  .toggle-nav__list {
-    transform: translateX(0);
-    transition: opacity 0.4s ease-in-out 1s, transform 0.8s 1s;
-    opacity: 1;
-
-    &:nth-of-type(1) {
-      transition-delay: 0.2s !important;
-    }
-
-    &:nth-of-type(2) {
-      transition-delay: 0.55s !important;
-    }
-
-    &:nth-of-type(3) {
-      transition-delay: 0.9s !important;
-    }
-
-    &:nth-of-type(4) {
-      transition-delay: 1.2s !important;
-    }
-
-    &:nth-of-type(5) {
-      transition-delay: 1.4s !important;
-    }
-  }
-}
-
 .dark .toggle-icon {
   border-bottom: 0.2rem solid $color-dark-4;
 
@@ -266,6 +234,10 @@
     margin-top: 5rem;
   }
 
+  @include respond(nokia3310) {
+    padding: 0.5rem 1rem 2rem 2rem;
+  }
+
   &-active {
     opacity: 1;
     transform: translateX(0%);
@@ -301,23 +273,23 @@
     }
 
     &:nth-of-type(1) {
-      transition: all 0.5s !important;
+      transition: all 0.5s;
     }
 
     &:nth-of-type(2) {
-      transition: all 0.6s !important;
+      transition: all 0.6s;
     }
 
     &:nth-of-type(3) {
-      transition: all 0.7s !important;
+      transition: all 0.7s;
     }
 
     &:nth-of-type(4) {
-      transition: all 0.8s !important;
+      transition: all 0.8s;
     }
 
     &:nth-of-type(5) {
-      transition: all 0.9s !important;
+      transition: all 0.9s;
     }
   }
 
@@ -368,6 +340,38 @@
   }
 }
 
+.toggle-icon:checked ~ .toggle-menu,
+.toggle-btn:checked ~ .toggle-menu {
+  transform: translateY(0);
+  opacity: 1;
+
+  #toggle-nav .toggle-nav__list {
+    transform: translateX(0);
+    transition: opacity 0.4s ease-in-out 1s, transform 0.8s 1s;
+    opacity: 1;
+
+    &:nth-of-type(1) {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-of-type(2) {
+      transition-delay: 0.55s;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 0.9s;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 1.2s;
+    }
+
+    &:nth-of-type(5) {
+      transition-delay: 1.4s;
+    }
+  }
+}
+
 .link-graphic {
   position: absolute;
 
@@ -400,19 +404,6 @@
   background-color: $color-dark-4;
 }
 
-.fixed {
-  position: fixed;
-
-  display: flex;
-  align-items: center;
-
-  right: 2rem;
-  top: 1.9rem;
-
-  width: 4.5rem;
-  height: 3rem;
-}
-
 .hidden {
   display: none;
 
@@ -435,7 +426,7 @@
   opacity: 0;
 
   @include respond(phone) {
-    bottom: 1.7rem;
+    bottom: 2rem;
     right: 1.5rem;
   }
 

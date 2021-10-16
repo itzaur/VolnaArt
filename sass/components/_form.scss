@@ -11,13 +11,13 @@
   background-position: top right;
 
   width: 100%;
-  min-width: 15rem;
 
   padding: 3rem;
   border-radius: 3rem;
 
   @include respond(tab-port) {
-    min-width: 45rem;
+    width: 70%;
+    margin: 0 auto;
   }
 
   @include respond(phone) {
@@ -25,9 +25,13 @@
     flex-direction: column;
     justify-content: center;
 
-    min-width: 10rem;
+    width: 85%;
 
-    padding: 0 0.5rem;
+    padding: 2rem 0.5rem 0 0.5rem;
+  }
+
+  @include respond(nokia3310) {
+    width: 100%;
   }
 
   &__group {
@@ -39,7 +43,12 @@
       margin-bottom: 1rem;
       padding-top: 2rem;
 
+      @include respond(phone) {
+        width: 80%;
+      }
+
       @include respond(nokia3310) {
+        width: 100%;
         margin-bottom: 0;
       }
     }
@@ -63,7 +72,7 @@
     display: flex;
     flex-direction: column;
 
-    width: clamp(20rem, 65%, 40rem);
+    width: clamp(20rem, 80%, 45rem);
 
     padding: 1rem;
 
@@ -107,7 +116,7 @@
     }
 
     @include respond(nokia3310) {
-      min-width: 10rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -119,11 +128,11 @@
   &__group.error label {
     color: $color-primary;
 
-    transform: translateY(0) !important;
+    transform: translateY(0);
 
-    visibility: visible !important;
+    visibility: visible;
 
-    opacity: 1 !important;
+    opacity: 1;
 
     .dark & {
       color: $color-dark-5;
@@ -131,11 +140,11 @@
   }
 
   &__group.success label {
-    transform: translateY(-4.8rem) !important;
+    transform: translateY(-4.8rem);
 
-    visibility: hidden !important;
+    visibility: hidden;
 
-    opacity: 0 !important;
+    opacity: 0;
   }
 
   &__group.success input,
@@ -169,6 +178,10 @@
 
     .dark & {
       color: $color-dark-5;
+    }
+
+    @include respond(nokia3310) {
+      font-size: 1.2rem;
     }
   }
 
@@ -230,12 +243,12 @@
   transform-origin: 0% 50%;
 }
 
-.falling4 {
-  animation: feather4 1s ease-in-out !important;
-  animation-delay: 1.8s !important;
-  animation-direction: alternate !important;
-  animation-fill-mode: forwards !important;
-  transform-origin: 0% 50% !important;
+#header .falling4 {
+  animation: feather4 1s ease-in-out;
+  animation-delay: 1.8s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  transform-origin: 0% 50%;
 }
 
 .falling5 {
@@ -311,7 +324,7 @@
     margin: 0 1rem;
     padding: 2rem 4rem;
 
-    font-size: 18px;
+    font-size: 1.8rem;
 
     border-radius: 1.4rem;
 

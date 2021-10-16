@@ -10,6 +10,13 @@
 
   padding: 2rem 6rem;
 
+  @include respond(tab-port) {
+    grid-auto-rows: auto;
+    grid-gap: 0.5rem;
+
+    padding: 8rem 2rem;
+  }
+
   &__img {
     display: block;
 
@@ -19,7 +26,7 @@
     border-radius: 0.5rem;
 
     object-fit: cover;
-    object-position: 10% 5%;
+    object-position: 50% 5%;
 
     backface-visibility: hidden;
 

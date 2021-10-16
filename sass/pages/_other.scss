@@ -21,7 +21,7 @@
     border-radius: 0.5rem;
 
     object-fit: cover;
-    object-position: 30% 5%;
+    object-position: 50% 5%;
 
     backface-visibility: hidden;
 
@@ -209,8 +209,14 @@
   }
 
   @include respond(tab-port) {
-    padding: 2rem 0;
+    
+    grid-template-columns: auto;
+    grid-gap: 0.5rem;
+
+    padding: 9rem 2rem;
   }
+
+  
 
   @include respond(phone) {
     grid-template-columns: repeat(2, 1fr);

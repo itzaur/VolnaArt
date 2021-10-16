@@ -2,8 +2,8 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 8rem repeat(12, 1fr) [last-col] 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: 7rem repeat(12, 1fr) [last-col] 1fr;
+  grid-template-rows: repeat(7, 7rem);
   gap: 1rem;
 
   box-shadow: inset 0 -1rem 0 hsl(0, 19%, 87%);
@@ -27,7 +27,7 @@
 
   @include respond(phone) {
     grid-template-columns: 6rem 1fr;
-    height: auto;
+    grid-template-rows: 8rem;
   }
 
   &__nav {
@@ -243,25 +243,100 @@
   @include flex-center;
   justify-content: center;
 
-  margin-right: 8rem;
+  margin-left: $logo-margin-left;
+
+  @include respond(tab-land) {
+    margin-left: 0;
+  }
+
+  @include respond(tab-port) {
+    grid-column: 1 / 1;
+    margin-left: 2rem;
+  }
 
   @include respond(phone-bg) {
     grid-column: 1 / span 2;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
   }
 
   @include respond(phone) {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
   }
+
+  @include respond(nokia3310) {
+    margin-left: 1rem;
+  }
+}
+
+.logo,
+.logo-dark {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+
+  height: 10rem;
+
+  text-align: center;
+  z-index: 1;
+
+  @include respond(tab-port) {
+    height: 8rem;
+  }
+
+  @include respond(phone) {
+    height: 6rem;
+  }
+
+  @include respond(nokia3310) {
+    top: 1rem;
+  }
+}
+
+.logo {
+  .dark & {
+    display: none;
+  }
+}
+
+.logo-dark {
+  display: none;
+
+  .dark & {
+    display: block;
+  }
 }
 
 .fa-sort-down {
-  transform: translateY(-0.3rem);
-  transition: transform 0.4s, color 0.5s;
+  width: 1.8rem;
+  height: 1.8rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-0.4rem, 0.6rem);
+
+  &.active-icon {
+    transform: translate(-0.4rem, -0.1rem);
+    transition: transform 0.4s, color 0.5s;
+  }
 }
 
 .fa-sort-up {
-  transform: translateY(0.5rem);
-  transition: transform 0.4s, color 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  transform: translate(-0.4rem, 0.4rem);
+
+  &.active-icon {
+    transform: translate(-0.4rem, 1rem);
+    transition: transform 0.4s, color 0.5s;
+  }
+}
+
+.active-icon {
+  visibility: visible;
+  opacity: 1;
 }

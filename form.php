@@ -38,7 +38,6 @@ if(isset($_POST['submit-en'])){
                    <div>Message Sent! <br>Thank you for contacting me (:
                       <span class="alert-success__close">&#10005;</span>
                    </div>
-                   
                 </div>';
     } catch (Exception $e){
       $alert = '<div class="alert-error">
@@ -75,7 +74,6 @@ if(isset($_POST['submit-rus'])){
                    <div>Сообщение отправлено! <br>Спасибо, что связались со мной (:
                       <span class="alert-success__close">&#10005;</span>
                    </div>
-                   
                 </div>';
     } catch (Exception $e){
       $alert = '<div class="alert-error">
