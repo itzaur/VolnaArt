@@ -892,13 +892,13 @@ body.dark {
 @media only screen and (max-width: 37.5em) {
   .heading-primary {
     font-size: clamp(2rem, 8vw, 6rem);
-    background-size: 773.91px 60px;
+    background-size: 386.96px clamp(4rem, 10vw, 6rem);
   }
 }
 
 @media only screen and (max-width: 20em) {
   .heading-primary {
-    background-size: 250px 40px;
+    background-size: 386.96px clamp(3.2rem, 8vw, 4rem);
   }
 }
 
@@ -932,13 +932,13 @@ body.dark {
 @media only screen and (max-width: 37.5em) {
   .heading-primary--rus {
     font-size: clamp(2rem, 8vw, 6rem);
-    background-size: 513.91px 71px;
+    background-size: 386.96px clamp(4rem, 12vw, 7rem);
   }
 }
 
 @media only screen and (max-width: 20em) {
   .heading-primary--rus {
-    background-size: 215px 40px;
+    background-size: 386.96px 40px;
   }
 }
 
@@ -1048,7 +1048,7 @@ body.dark {
 
 @media only screen and (max-width: 37.5em) {
   .heading-2__title {
-    font-size: clamp(1.7rem, 9vw, 6rem);
+    font-size: clamp(1.7rem, 6.5vw, 6rem);
     margin-bottom: 0.5rem;
   }
 }
@@ -1108,7 +1108,6 @@ body.dark {
 @media only screen and (max-width: 37.5em) {
   .btn--en, .btn--en:link, .btn--en:visited {
     padding: 1.2rem 4rem 0.9rem 4rem;
-    margin-bottom: 2rem;
   }
 }
 
@@ -1125,27 +1124,20 @@ body.dark {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
-  .btn--rus, .btn--rus:link, .btn--rus:visited {
-    margin-bottom: 2rem;
-  }
-}
-
 @media only screen and (max-width: 20em) {
   .btn--rus, .btn--rus:link, .btn--rus:visited {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
   }
 }
 
-.btn-send {
+.btn-send, .btn-send:link, .btn-send:visited {
   border: none;
-  outline: none;
   background: none;
 }
 
 .btn-send:focus {
-  outline-style: revert;
+  outline: none;
 }
 
 .btn-box {
@@ -1156,6 +1148,7 @@ body.dark {
 @media only screen and (max-width: 37.5em) {
   .btn-box {
     text-align: center;
+    margin-bottom: 2rem;
   }
 }
 
@@ -2181,6 +2174,10 @@ body.dark {
   border-radius: 3rem;
 }
 
+.form > * + * {
+  padding-top: 1rem;
+}
+
 @media only screen and (max-width: 56.25em) {
   .form {
     width: 70%;
@@ -2221,30 +2218,11 @@ body.dark {
 
 .form__group {
   position: relative;
-  padding: 1rem;
-}
-
-.form__group:not(:last-child) {
-  margin-bottom: 1rem;
-  padding-top: 2rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .form__group:not(:last-child) {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 20em) {
-  .form__group:not(:last-child) {
-    width: 100%;
-    margin-bottom: 0;
-  }
 }
 
 @media only screen and (max-width: 37.5em) {
   .form__group {
-    width: 100%;
+    width: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2263,12 +2241,13 @@ body.dark {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 0 0.5rem;
+    padding: 1rem 0.5rem;
   }
 }
 
 @media only screen and (max-width: 20em) {
   .form__group {
+    width: 90%;
     padding: 0.5rem 0;
   }
 }
@@ -2873,8 +2852,6 @@ body.dark {
 
 .slider-container {
   position: relative;
-  width: 100%;
-  height: 100%;
   padding: 5rem 0 3rem 0;
 }
 
@@ -4255,6 +4232,12 @@ body.dark {
   }
 }
 
+@media only screen and (max-width: 20em) {
+  .gallery {
+    padding: 0.5rem 0 2rem 0;
+  }
+}
+
 .gallery-box {
   position: relative;
   display: -ms-grid;
@@ -4286,8 +4269,9 @@ body.dark {
   .gallery-box {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    -ms-grid-rows: minmax(min-content, 1fr);
+        grid-template-rows: minmax(-webkit-min-content, 1fr);
+        grid-template-rows: minmax(min-content, 1fr);
     -webkit-column-gap: 5rem;
             column-gap: 5rem;
     padding: 3rem 5rem;
@@ -4299,7 +4283,7 @@ body.dark {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     row-gap: 3rem;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -4319,7 +4303,7 @@ body.dark {
 
 @media only screen and (max-width: 37.5em) {
   .gallery-box__subtitle {
-    font-size: clamp(1.3rem, 9vw, 2rem);
+    font-size: clamp(1.3rem, 5.5vw, 2rem);
   }
 }
 
@@ -4355,7 +4339,7 @@ body.dark {
 
 @media only screen and (max-width: 20em) {
   .gallery-box__item {
-    gap: 1.2rem;
+    gap: 1.6rem;
   }
 }
 

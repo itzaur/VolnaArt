@@ -26,6 +26,10 @@
     padding: 2rem 0;
   }
 
+  @include respond(nokia3310) {
+    padding: 0.5rem 0 2rem 0;
+  }
+
   &-box {
     position: relative;
 
@@ -50,7 +54,8 @@
 
     @include respond(phone) {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
+      // grid-template-rows: 1fr;
+      grid-template-rows: minmax(min-content, 1fr);
 
       column-gap: 5rem;
 
@@ -61,7 +66,7 @@
       grid-template-columns: 1fr;
       row-gap: 3rem;
 
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
     }
 
     &__subtitle {
@@ -79,7 +84,7 @@
       }
 
       @include respond(phone) {
-        font-size: clamp(1.3rem, 9vw, 2rem);
+        font-size: clamp(1.3rem, 5.5vw, 2rem);
       }
     }
 
@@ -98,7 +103,7 @@
       }
 
       @include respond(nokia3310) {
-        gap: 1.2rem;
+        gap: 1.6rem;
       }
 
       &:hover .gallery-box__img:nth-child(1) {

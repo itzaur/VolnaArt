@@ -91,11 +91,11 @@ body.dark {
     @include respond(phone) {
       font-size: clamp(2rem, 8vw, 6rem);
 
-      background-size: 773.91px 60px;
+      background-size: 386.96px clamp(4rem, 10vw, 6rem);
     }
 
     @include respond(nokia3310) {
-      background-size: 250px 40px;
+      background-size: 386.96px clamp(3.2rem, 8vw, 4rem);
     }
 
     span {
@@ -121,11 +121,11 @@ body.dark {
       @include respond(phone) {
         font-size: clamp(2rem, 8vw, 6rem);
 
-        background-size: 513.91px 71px;
+        background-size: 386.96px clamp(4rem, 12vw, 7rem);
       }
 
       @include respond(nokia3310) {
-        background-size: 215px 40px;
+        background-size: 386.96px 40px;
       }
     }
   }
@@ -213,7 +213,7 @@ body.dark {
     }
 
     @include respond(phone) {
-      font-size: clamp(1.7rem, 9vw, 6rem);
+      font-size: clamp(1.7rem, 6.5vw, 6rem);
       margin-bottom: 0.5rem;
     }
   }
