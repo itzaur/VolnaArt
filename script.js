@@ -292,13 +292,11 @@ function toggleBtnScroll() {
   }
 }
 
-window.addEventListener('load', () => {
+function toggleMenuTransform() {
   if (scrollPos === 0) {
     toggleMenu.classList.remove('transforming');
   }
-
-  changeAttribute();
-});
+}
 
 ///////////////////////////////////////////////////////////Parallax//////////////////////////////////////////////
 let positionX = 0,
@@ -306,7 +304,7 @@ let positionX = 0,
   coordXprocent = 0,
   coordYprocent = 0;
 
-window.onload = function () {
+function parallaxRun() {
   const headerParallax = document.querySelector('.header');
   const contactsParallax = document.querySelector('.contacts');
 
@@ -338,7 +336,7 @@ window.onload = function () {
     headerParallax.addEventListener('mousemove', headerParallaxMove);
     contactsParallax.addEventListener('mousemove', contactsParallaxMove);
   }
-};
+}
 
 function setMouseParallaxStyle() {
   const layers = document.querySelectorAll('.layer');
@@ -352,12 +350,14 @@ function setMouseParallaxStyle() {
   layers.forEach(layer => {
     const dataSpeed = layer.getAttribute('data-speed');
     layer.style.transform = `translate(${positionX / dataSpeed}%, ${
-      positionY / dataSpeed / 9
+      positionY / dataSpeed / 8
     }%)`;
   });
 
   requestAnimationFrame(setMouseParallaxStyle);
 }
+
+parallaxRun();
 
 /////////////////////////////////////////Dark mode////////////////////////////////////////////////////
 //Var 1
@@ -463,7 +463,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-window.addEventListener('load', function () {
+function slidesVisible() {
   const slides = document.querySelectorAll('.slide');
 
   slides.forEach(slide => {
@@ -471,6 +471,13 @@ window.addEventListener('load', function () {
   });
 
   document.querySelector('.scrollbar__handle').style.display = 'block';
+}
+
+window.addEventListener('load', function () {
+  slidesVisible();
+  toggleMenuTransform();
+  changeAttribute();
+  preloaderSessionStorage();
 });
 
 function findVideos() {
@@ -503,12 +510,6 @@ function setupVideo(video) {
 
     iframeIds.push(iframe.id);
     playerId.push(iframe.id.replace('video', 'player'));
-
-    //Inject YouTube API script
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/player_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     const onYouTubeIframeAPIReady = function () {
       playerId[0] = new YT.Player(iframeIds[0], {
@@ -719,22 +720,14 @@ dontClickBtnEn.addEventListener('click', function (e) {
 });
 
 ////////////////////////////////////////////////////PRELOADER///////////////////////////////
-// window.onload = function () {
-//   document.body.classList.add('loaded__hiding');
-//   window.setTimeout(function () {
-//     document.body.classList.add('loaded');
-//     document.body.classList.remove('loaded__hiding');
-//   }, 4500);
-// };
-
-document.addEventListener('DOMContentLoaded', function () {
+function preloaderSessionStorage() {
   if (!sessionStorage.isVisited) {
     sessionStorage.isVisited = 'true';
     preloader();
   } else {
     removePreloader();
   }
-});
+}
 
 function preloader() {
   document.body.classList.add('loaded__hiding');
@@ -758,5 +751,63 @@ addEventListener(
     event.respondWith(event.preloadResponse)
 );
 
-document.cookie = 'cookie1=value1; SameSite=Lax';
-document.cookie = 'cookie2=value2; SameSite=None; Secure';
+document.cookie = 'cookie1=value1; SameSite=None; Secure';
+
+////////////////////////////////////////
+const lazyImages = document.querySelectorAll('[loading="lazy"]');
+
+const optionsImages = {
+  rootMargin: '0px',
+  threshold: 0,
+};
+
+const callback = function (entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    observer.unobserve(entry.target);
+    const { srcset } = entry.target.dataset;
+    const { src } = entry.target.dataset;
+    if (!src || !srcset) return;
+    entry.target.src = src;
+    entry.target.srcset = srcset;
+  });
+};
+
+let observer = new IntersectionObserver(callback, optionsImages);
+
+lazyImages.forEach(img => {
+  observer.observe(img);
+});
+
+//show images when card hover
+const cards = document.querySelectorAll('.top-gallery-card');
+const imagesTopGalleryBack = document.querySelectorAll(
+  '.top-gallery__img--back img'
+);
+cards.forEach(card => {
+  card.addEventListener('mouseover', rotateImg);
+  card.addEventListener('click', showImg);
+});
+
+function rotateImg(e) {
+  const img = e.target.offsetParent.children[1].lastElementChild;
+
+  const newUrl = img.dataset.src;
+  img.src = newUrl;
+}
+
+function showImg(e) {
+  const fullContent = document.querySelectorAll('.full-content');
+  const id = e.target.getAttribute('href').slice(1);
+
+  fullContent.forEach(content => {
+    const contentImg = content.querySelector('.full-content__img img');
+    if (content.id === id) {
+      const newURLSrc = contentImg.dataset.src;
+      const newURLSrcset = contentImg.dataset.srcset;
+      contentImg.src = newURLSrc;
+      contentImg.srcset = newURLSrcset;
+    }
+  });
+}

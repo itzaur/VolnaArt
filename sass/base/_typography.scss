@@ -177,17 +177,17 @@ body.dark {
 
   align-items: center;
 
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 
   @include respond(tab-port) {
     grid-template-columns: max-content;
     justify-content: center;
 
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   @include respond(phone) {
-    margin: 1rem 0 0 0;
+    padding: 1rem 0 0 0;
   }
 
   &__title {

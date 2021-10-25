@@ -8,6 +8,8 @@
     transparent
   );
 
+  overflow: hidden;
+
   .dark & {
     box-shadow: 0 -1rem 1rem #256474;
 
@@ -54,7 +56,6 @@
 
     @include respond(phone) {
       grid-template-columns: 1fr;
-      // grid-template-rows: 1fr;
       grid-template-rows: minmax(min-content, 1fr);
 
       column-gap: 5rem;

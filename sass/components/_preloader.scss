@@ -19,6 +19,11 @@ $animation-offset: 15rem;
   z-index: 100;
   transition: opacity 2s ease;
 
+  &__img {
+    position: absolute;
+    inset: 0;
+  }
+
   &__box {
     position: relative;
 

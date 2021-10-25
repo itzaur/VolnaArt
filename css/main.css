@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*
-0 - 600px: phone
+0 - 320px: small-phone
+320px - 600px: phone
 600 - 900px: tablet-portrait
 900 - 1200px: tablet-landscape
 1200 - 1800px: our styles
@@ -998,7 +999,7 @@ body.dark {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -1009,13 +1010,13 @@ body.dark {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 }
 
 @media only screen and (max-width: 37.5em) {
   .heading-2 {
-    margin: 1rem 0 0 0;
+    padding: 1rem 0 0 0;
   }
 }
 
@@ -2629,6 +2630,11 @@ body.dark {
   transition: opacity 2s ease;
 }
 
+.preloader__img {
+  position: absolute;
+  inset: 0;
+}
+
 .preloader__box {
   position: relative;
   width: 20%;
@@ -3901,6 +3907,7 @@ body.dark {
   right: -12%;
   width: 4rem;
   height: 4rem;
+  background: #c34640;
   border-radius: 0.5rem;
   z-index: 3;
   -webkit-transition: left 1s linear;
@@ -3927,6 +3934,7 @@ body.dark {
   width: 12rem;
   height: 10rem;
   border-radius: 1.3rem;
+  background: #46a6c7;
   -webkit-filter: blur(0.6rem);
           filter: blur(0.6rem);
   z-index: -1;
@@ -3965,6 +3973,7 @@ body.dark {
   left: 30%;
   width: 4.5rem;
   height: 10rem;
+  background: #3166ac;
   border-radius: 0.6rem;
   z-index: 3;
   -webkit-transition: left 0.5s linear;
@@ -3991,7 +4000,8 @@ body.dark {
   left: -50%;
   width: 8rem;
   height: 7rem;
-  border-radius: 1.5rem;
+  background: #c34640;
+  border-radius: 1.2rem;
   z-index: 3;
 }
 
@@ -4016,6 +4026,7 @@ body.dark {
   right: -15%;
   width: 6rem;
   height: 6rem;
+  background: #c34640;
   border-radius: 1.2rem;
   z-index: 1;
 }
@@ -4041,6 +4052,7 @@ body.dark {
   right: -70%;
   width: 12rem;
   height: 10rem;
+  background: #46a6c7;
   border-radius: 0.5rem;
   -webkit-filter: blur(0.6rem);
           filter: blur(0.6rem);
@@ -4205,12 +4217,17 @@ body.dark {
 .layer {
   -webkit-box-shadow: 0.6rem 0.6rem 1rem rgba(17, 17, 17, 0.2);
           box-shadow: 0.6rem 0.6rem 1rem rgba(17, 17, 17, 0.2);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .gallery {
   padding: 5rem 13.5rem 5rem 13.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#e4d8d8), to(transparent));
   background: linear-gradient(to bottom, #e4d8d8, transparent);
+  overflow: hidden;
 }
 
 .dark .gallery {
@@ -4706,21 +4723,21 @@ body.dark {
 }
 
 .interesting-item__content--1::before {
-  background: url("../images/gallery/other/small/19.jpg");
+  background: url("../images/interesting-preview/19.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 10%;
 }
 
 .interesting-item__content--2::before {
-  background: url("../images/gallery/other/small/11.jpg");
+  background: url("../images/interesting-preview/11.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 10%;
 }
 
 .interesting-item__content--3::before {
-  background: url("../images/gallery/fullGrowth/small/28.jpg");
+  background: url("../images/interesting-preview/28.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 10%;
@@ -5143,7 +5160,7 @@ body.dark {
 .dark .contacts-box__item:nth-child(1)::before {
   background-image: url("../images/girl.png"), url("../images/bg/bg-dark2.jpg");
   background-repeat: no-repeat, repeat;
-  background-size: contain, 3.55rem;
+  background-size: contain, 3.8rem;
   background-position: right bottom, left top;
   background-blend-mode: color-burn;
 }
@@ -5332,7 +5349,6 @@ textarea {
 .footer {
   position: relative;
   min-height: 35vh;
-  margin-top: 1rem;
   padding: 0 5rem;
   overflow: hidden;
   display: -webkit-box;
@@ -7407,7 +7423,7 @@ main {
 }
 
 p {
-  font-size: clamp(1.8rem, 2vw, 1.6rem);
+  font-size: clamp(1.7rem, 2vw, 1.6rem);
   font-weight: 400;
 }
 
@@ -7474,7 +7490,7 @@ p {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: clamp(1rem, 1.5vw, 3rem);
+  padding: clamp(2rem, 1.5vw, 3rem);
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -7499,7 +7515,13 @@ p {
 }
 
 .int-link > * + * {
-  margin-top: 2vw;
+  padding-top: 2vw;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .int-link > * + * {
+    padding-top: 2rem;
+  }
 }
 
 .int-link :is(h2, p) {
@@ -7509,6 +7531,12 @@ p {
 
 .dark .int-link :is(h2, p) {
   color: #84c9fb;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .int-link :is(h2, p) {
+    line-height: 1.1;
+  }
 }
 
 .int-link h2 {

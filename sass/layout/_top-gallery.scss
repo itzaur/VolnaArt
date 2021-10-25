@@ -279,6 +279,8 @@
     width: 4rem;
     height: 4rem;
 
+    background: #c34640;
+
     border-radius: 0.5rem;
 
     z-index: 3;
@@ -304,6 +306,8 @@
     height: 10rem;
 
     border-radius: 1.3rem;
+
+    background: #46a6c7;
 
     filter: blur(0.6rem);
 
@@ -342,6 +346,8 @@
     width: 4.5rem;
     height: 10rem;
 
+    background: #3166ac;
+
     border-radius: 0.6rem;
 
     z-index: 3;
@@ -368,7 +374,9 @@
     width: 8rem;
     height: 7rem;
 
-    border-radius: 1.5rem;
+    background: #c34640;
+
+    border-radius: 1.2rem;
 
     z-index: 3;
 
@@ -392,6 +400,8 @@
 
     width: 6rem;
     height: 6rem;
+
+    background: #c34640;
 
     border-radius: 1.2rem;
 
@@ -417,6 +427,8 @@
 
     width: 12rem;
     height: 10rem;
+
+    background: #46a6c7;
 
     border-radius: 0.5rem;
 
@@ -550,4 +562,5 @@
 
 .layer {
   box-shadow: 0.6rem 0.6rem 1rem rgba($color-black, 0.2);
+  transition: transform 0.5s ease;
 }

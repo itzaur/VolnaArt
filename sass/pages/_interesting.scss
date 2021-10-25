@@ -10,12 +10,11 @@ main {
 }
 
 p {
-  font-size: clamp(1.8rem, 2vw, 1.6rem);
+  font-size: clamp(1.7rem, 2vw, 1.6rem);
   font-weight: 400;
 
   @include respond(phone) {
     font-size: clamp(2rem, 2vw, 4rem);
-    
   }
 }
 
@@ -70,7 +69,7 @@ p {
     width: 100%;
     height: 100%;
 
-    padding: clamp(1rem, 1.5vw, 3rem);
+    padding: clamp(2rem, 1.5vw, 3rem);
 
     border-radius: 1rem;
 
@@ -93,7 +92,11 @@ p {
   backface-visibility: hidden;
 
   & > * + * {
-    margin-top: 2vw;
+    padding-top: 2vw;
+
+    @include respond(phone) {
+      padding-top: 2rem;
+    }
   }
 
   :is(h2, p) {
@@ -102,6 +105,10 @@ p {
 
     .dark & {
       color: $color-dark-4;
+    }
+
+    @include respond(phone) {
+      line-height: 1.1;
     }
   }
 

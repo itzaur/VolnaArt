@@ -17,14 +17,35 @@
     />
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
-    <meta content="VOLNA | Art" property="og:title" />
-    <meta content="https://i.postimg.cc/rsKBBj5C/09.jpg" property="og:image" />
-    <link rel="stylesheet" href="css/main.css" />
+    <meta property="og:title" content="VOLNA | Art" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://i.postimg.cc/rsKBBj5C/09.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800px" />
+    <meta property="og:image:height" content="800px" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:description"
+      content="Volna art. Drawings to order. Drawings of game characters | Волна арт. Рисунки на заказ. Фанарт, рисунки игровых персонажей"
+    />
+    <link
+      rel="preload"
+      href="css/main.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
     <link
       rel="icon"
       type="image/svg+xml"
       href="images/logo/logo-dark.svg"
-      sizes="192x192"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="16x16"
+      href="images/logo/logo-dark.svg"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,6 +91,7 @@
           class="logo-dark"
           src="images/logo/logo-dark.svg"
           alt="logo-dark"
+          loading="lazy"
         />
       </span>
       <div class="heading">
@@ -300,38 +322,28 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/1.webp"
+                data-srcset="images/top-gallery-back/large/1.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/1.jpg"
+                data-srcset="images/top-gallery-back/1.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/1.jpg       500w,
                   images/top-gallery-back/large/1.jpg 862w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/1.jpg"
+                data-src="images/top-gallery-back/large/1.jpg"
                 alt=""
               />
             </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--1">
-          <img
-            class="top-gallery-square2 layer"
-            data-speed="-0.6"
-            src="images/header/square6-2.png"
-            alt=""
-          />
-          <img
-            class="top-gallery-square3 layer"
-            data-speed="-0.9"
-            src="images/header/square3-1.svg"
-            alt=""
-          />
+          <span class="top-gallery-square2 layer" data-speed="-0.6"></span>
+          <span class="top-gallery-square3 layer" data-speed="-0.9"></span>
           <div class="top-gallery-card">
             <picture
               class="
@@ -344,14 +356,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/1.webp"
+                data-srcset="images/top-gallery-back/small/1.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/1.jpg"
+                data-srcset="images/top-gallery-back/small/1.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/1.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/1.jpg" alt="" />
             </picture>
             <a href="#popup-1">Text</a>
           </div>
@@ -367,20 +379,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/2.webp"
+                data-srcset="images/top-gallery-back/large/2.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/2.jpg"
+                data-srcset="images/top-gallery-back/large/2.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/2.jpg       500w,
                   images/top-gallery-back/large/2.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/2.jpg"
+                data-src="images/top-gallery-back/large/2.jpg"
                 alt=""
               />
             </picture>
@@ -400,14 +412,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/2.webp"
+                data-srcset="images/top-gallery-back/small/2.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/2.jpg"
+                data-srcset="images/top-gallery-back/small/2.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/2.jpg" alt="Alt Text!" />
+              <img data-src="images/top-gallery-back/small/2.jpg" alt="" />
             </picture>
             <a href="#popup-2">Text</a>
           </div>
@@ -423,20 +435,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/3.webp"
+                data-srcset="images/top-gallery-back/large/3.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/3.jpg"
+                data-srcset="images/top-gallery-back/large/3.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/3.jpg       500w,
                   images/top-gallery-back/large/3.jpg 862w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/3.jpg"
+                data-src="images/top-gallery-back/large/3.jpg"
                 alt=""
               />
             </picture>
@@ -455,14 +467,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/3.webp"
+                data-srcset="images/top-gallery-back/small/3.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/3.jpg"
+                data-srcset="images/top-gallery-back/small/3.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/3.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/3.jpg" alt="" />
             </picture>
             <a href="#popup-3">Text</a>
           </div>
@@ -478,20 +490,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/4.webp"
+                data-srcset="images/top-gallery-back/large/4.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/4.jpg"
+                data-srcset="images/top-gallery-back/large/4.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/4.jpg        500w,
                   images/top-gallery-back/large/4.jpg 1264w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 625px"
-                src="images/top-gallery-back/large/4.jpg"
+                data-src="images/top-gallery-back/large/4.jpg"
                 alt=""
               />
             </picture>
@@ -499,12 +511,7 @@
         </div>
 
         <figure class="top-gallery__item top-gallery__item--4">
-          <img
-            class="top-gallery-square1 layer"
-            data-speed="-0.9"
-            src="images/header/square4-1s.svg"
-            alt=""
-          />
+          <span class="top-gallery-square1 layer" data-speed="-0.9"></span>
           <div class="top-gallery-card">
             <picture
               class="
@@ -517,14 +524,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/4.webp"
+                data-srcset="images/top-gallery-back/small/4.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/4.jpg"
+                data-srcset="images/top-gallery-back/small/4.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/4.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/4.jpg" alt="" />
             </picture>
             <a href="#popup-4">Text</a>
           </div>
@@ -540,20 +547,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/5.webp"
+                data-srcset="images/top-gallery-back/large/5.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/5.jpg"
+                data-srcset="images/top-gallery-back/large/5.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/5.jpg       500w,
                   images/top-gallery-back/large/5.jpg 862w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/5.jpg"
+                data-src="images/top-gallery-back/large/5.jpg"
                 alt=""
               />
             </picture>
@@ -572,14 +579,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/5.webp"
+                data-srcset="images/top-gallery-back/small/5.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/5.jpg"
+                data-srcset="images/top-gallery-back/small/5.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/5.jpg" alt="Alt Text!" />
+              <img data-src="images/top-gallery-back/small/5.jpg" alt="" />
             </picture>
             <a href="#popup-5">Text</a>
           </div>
@@ -595,20 +602,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/6.webp"
+                data-srcset="images/top-gallery-back/large/6.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/6.jpg"
+                data-srcset="images/top-gallery-back/large/6.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/6.jpg       500w,
                   images/top-gallery-back/large/6.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/6.jpg"
+                data-src="images/top-gallery-back/large/6.jpg"
                 alt=""
               />
             </picture>
@@ -627,14 +634,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/6.webp"
+                data-srcset="images/top-gallery-back/small/6.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/6.jpg"
+                data-srcset="images/top-gallery-back/small/6.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/6.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/6.jpg" alt="" />
             </picture>
             <a href="#popup-6">Text</a>
           </div>
@@ -650,20 +657,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/7.webp"
+                data-srcset="images/top-gallery-back/large/7.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/7.jpg"
+                data-srcset="images/top-gallery-back/large/7.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/7.jpg       500w,
                   images/top-gallery-back/large/7.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/7.jpg"
+                data-src="images/top-gallery-back/large/7.jpg"
                 alt=""
               />
             </picture>
@@ -682,14 +689,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/7.webp"
+                data-srcset="images/top-gallery-back/small/7.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/7.jpg"
+                data-srcset="images/top-gallery-back/small/7.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/7.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/7.jpg" alt="" />
             </picture>
             <a href="#popup-7">Text</a>
           </div>
@@ -705,20 +712,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/8.webp"
+                data-srcset="images/top-gallery-back/large/8.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/8.jpg"
+                data-srcset="images/top-gallery-back/large/8.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/8.jpg       500w,
                   images/top-gallery-back/large/8.jpg 849w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/8.jpg"
+                data-src="images/top-gallery-back/large/8.jpg"
                 alt=""
               />
             </picture>
@@ -737,14 +744,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/8.webp"
+                data-srcset="images/top-gallery-back/small/8.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/8.jpg"
+                data-srcset="images/top-gallery-back/small/8.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/8.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/8.jpg" alt="" />
             </picture>
             <a href="#popup-8">Text</a>
           </div>
@@ -760,20 +767,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/9.webp"
+                data-srcset="images/top-gallery-back/large/9.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/9.jpg"
+                data-srcset="images/top-gallery-back/large/9.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/9.jpg       500w,
                   images/top-gallery-back/large/9.jpg 846w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/9.jpg"
+                data-src="images/top-gallery-back/large/9.jpg"
                 alt=""
               />
             </picture>
@@ -792,14 +799,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/9.webp"
+                data-srcset="images/top-gallery-back/small/9.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/9.jpg"
+                data-srcset="images/top-gallery-back/small/9.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/9.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/9.jpg" alt="" />
             </picture>
             <a href="#popup-9">Text</a>
           </div>
@@ -815,20 +822,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/10.webp"
+                data-srcset="images/top-gallery-back/large/10.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/10.jpg"
+                data-srcset="images/top-gallery-back/large/10.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/10.jpg       500w,
                   images/top-gallery-back/large/10.jpg 862w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/10.jpg"
+                data-src="images/top-gallery-back/large/10.jpg"
                 alt=""
               />
             </picture>
@@ -847,14 +854,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/10.webp"
+                data-srcset="images/top-gallery-back/small/10.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/10.jpg"
+                data-srcset="images/top-gallery-back/small/10.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/10.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/10.jpg" alt="" />
             </picture>
             <a href="#popup-10">Text</a>
           </div>
@@ -870,20 +877,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/11.webp"
+                data-srcset="images/top-gallery-back/large/11.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/11.jpg"
+                data-srcset="images/top-gallery-back/large/11.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/11.jpg       500w,
                   images/top-gallery-back/large/11.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/11.jpg"
+                data-src="images/top-gallery-back/large/11.jpg"
                 alt=""
               />
             </picture>
@@ -898,14 +905,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/11.webp"
+                data-srcset="images/top-gallery-back/small/11.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/11.jpg"
+                data-srcset="images/top-gallery-back/small/11.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/11.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/11.jpg" alt="" />
             </picture>
             <a href="#popup-11">Text</a>
           </div>
@@ -921,32 +928,27 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/12.webp"
+                data-srcset="images/top-gallery-back/large/12.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/12.jpg"
+                data-srcset="images/top-gallery-back/large/12.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/12.jpg       500w,
                   images/top-gallery-back/large/12.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/12.jpg"
+                data-src="images/top-gallery-back/large/12.jpg"
                 alt=""
               />
             </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--12">
-          <img
-            class="top-gallery-square4 layer"
-            data-speed="1"
-            src="images/header/square4-1s.svg"
-            alt=""
-          />
+          <span class="top-gallery-square4 layer" data-speed="1"></span>
           <div class="top-gallery-card">
             <picture class="top-gallery__img top-gallery__img--front">
               <source srcset="images/top-gallery/12.webp" type="image/webp" />
@@ -955,14 +957,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/12.webp"
+                data-srcset="images/top-gallery-back/small/12.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/12.jpg"
+                data-srcset="images/top-gallery-back/small/12.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/12.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/12.jpg" alt="" />
             </picture>
             <a href="#popup-12">Text</a>
           </div>
@@ -978,20 +980,20 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/13.webp"
+                data-srcset="images/top-gallery-back/large/13.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/13.jpg"
+                data-srcset="images/top-gallery-back/large/13.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/13.jpg       500w,
                   images/top-gallery-back/large/13.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/13.jpg"
+                data-src="images/top-gallery-back/large/13.jpg"
                 alt=""
               />
             </picture>
@@ -1006,14 +1008,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/13.webp"
+                data-srcset="images/top-gallery-back/small/13.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/13.jpg"
+                data-srcset="images/top-gallery-back/small/13.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/13.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/13.jpg" alt="" />
             </picture>
             <a href="#popup-13">Text</a>
           </div>
@@ -1029,38 +1031,28 @@
             >
             <picture class="full-content__img">
               <source
-                srcset="images/top-gallery-back/large/14.webp"
+                data-srcset="images/top-gallery-back/large/14.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/large/14.jpg"
+                data-srcset="images/top-gallery-back/large/14.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/top-gallery-back/14.jpg       500w,
                   images/top-gallery-back/large/14.jpg 863w
                 "
                 sizes="(max-width: 900px) 43vw, (max-width: 720px) 55vw, 500px"
-                src="images/top-gallery-back/large/14.jpg"
+                data-src="images/top-gallery-back/large/14.jpg"
                 alt=""
               />
             </picture>
           </div>
         </div>
         <figure class="top-gallery__item top-gallery__item--14">
-          <img
-            class="top-gallery-square5 layer"
-            data-speed="-0.5"
-            src="images/header/square4-1s.svg"
-            alt=""
-          />
-          <img
-            class="top-gallery-square6 layer"
-            data-speed="0.95"
-            src="images/header/square6-2.png"
-            alt=""
-          />
+          <span class="top-gallery-square5 layer" data-speed="-0.5"></span>
+          <span class="top-gallery-square6 layer" data-speed="0.95"></span>
           <div class="top-gallery-card">
             <picture class="top-gallery__img top-gallery__img--front">
               <source srcset="images/top-gallery/14.webp" type="image/webp" />
@@ -1069,14 +1061,14 @@
             </picture>
             <picture class="top-gallery__img top-gallery__img--back">
               <source
-                srcset="images/top-gallery-back/small/14.webp"
+                data-srcset="images/top-gallery-back/small/14.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/top-gallery-back/small/14.jpg"
+                data-srcset="images/top-gallery-back/small/14.jpg"
                 type="image/jpeg"
               />
-              <img src="images/top-gallery-back/small/14.jpg" alt="" />
+              <img data-src="images/top-gallery-back/small/14.jpg" alt="" />
             </picture>
             <a href="#popup-14">Text</a>
           </div>
@@ -1242,60 +1234,60 @@
           <div class="gallery-box__imgs">
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/portrait/preview/71.webp"
+                data-srcset="images/gallery/portrait/preview/71.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/portrait/preview/71.jpg"
+                data-srcset="images/gallery/portrait/preview/71.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/portrait/preview/71.jpg 355w,
                   images/gallery/portrait/small/71.jpg   500w
                 "
-                sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/portrait/small/71.jpg"
+                sizes="(max-width: 720px) 58vw, (max-width: 600px) 80vw, (max-width: 320px) 90vw, 500px"
+                data-src="images/gallery/portrait/small/71.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/portrait/preview/46.webp"
+                data-srcset="images/gallery/portrait/preview/46.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/portrait/preview/46.jpg"
+                data-srcset="images/gallery/portrait/preview/46.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/portrait/preview/46.jpg 355w,
                   images/gallery/portrait/small/46.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/portrait/small/46.jpg"
+                data-src="images/gallery/portrait/small/46.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/portrait/preview/88.webp"
+                data-srcset="images/gallery/portrait/preview/88.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/portrait/preview/88.jpg"
+                data-srcset="images/gallery/portrait/preview/88.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/portrait/preview/88.jpg 355w,
                   images/gallery/portrait/small/88.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/portrait/small/88.jpg"
+                data-src="images/gallery/portrait/small/88.jpg"
                 alt=""
                 loading="lazy"
               />
@@ -1337,60 +1329,60 @@
           <div class="gallery-box__imgs">
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/fullGrowth/preview/47.webp"
+                data-srcset="images/gallery/fullGrowth/preview/47.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/fullGrowth/preview/47.jpg"
+                data-srcset="images/gallery/fullGrowth/preview/47.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/fullGrowth/preview/47.jpg 355w,
                   images/gallery/fullGrowth/small/47.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/fullGrowth/small/47.jpg"
+                data-src="images/gallery/fullGrowth/small/47.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/fullGrowth/preview/54.webp"
+                data-srcset="images/gallery/fullGrowth/preview/54.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/fullGrowth/preview/54.jpg"
+                data-srcset="images/gallery/fullGrowth/preview/54.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/fullGrowth/preview/54.jpg 355w,
                   images/gallery/fullGrowth/small/54.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/fullGrowth/small/54.jpg"
+                data-src="images/gallery/fullGrowth/small/54.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/fullGrowth/preview/31.webp"
+                data-srcset="images/gallery/fullGrowth/preview/31.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/fullGrowth/preview/31.jpg"
+                data-srcset="images/gallery/fullGrowth/preview/31.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/fullGrowth/preview/31.jpg  355w,
                   images/gallery/fullGrowth/31.jpg         1000w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/fullGrowth/small/31.jpg"
+                data-src="images/gallery/fullGrowth/small/31.jpg"
                 alt=""
                 loading="lazy"
               />
@@ -1432,60 +1424,60 @@
           <div class="gallery-box__imgs">
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/multipleCharacters/preview/53.webp"
+                data-srcset="images/gallery/multipleCharacters/preview/53.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/multipleCharacters/preview/53.jpg"
+                data-srcset="images/gallery/multipleCharacters/preview/53.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/multipleCharacters/preview/53.jpg 355w,
                   images/gallery/multipleCharacters/small/53.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/multipleCharacters/small/53.jpg"
+                data-src="images/gallery/multipleCharacters/small/53.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/multipleCharacters/preview/76.webp"
+                data-srcset="images/gallery/multipleCharacters/preview/76.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/multipleCharacters/preview/76.jpg"
+                data-srcset="images/gallery/multipleCharacters/preview/76.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/multipleCharacters/preview/76.jpg 355w,
                   images/gallery/multipleCharacters/small/76.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/multipleCharacters/small/76.jpg"
+                data-src="images/gallery/multipleCharacters/small/76.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/multipleCharacters/preview/57.webp"
+                data-srcset="images/gallery/multipleCharacters/preview/57.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/multipleCharacters/preview/57.jpg"
+                data-srcset="images/gallery/multipleCharacters/preview/57.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/multipleCharacters/preview/57.jpg 355w,
                   images/gallery/multipleCharacters/small/57.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/multipleCharacters/small/57.jpg"
+                data-src="images/gallery/multipleCharacters/small/57.jpg"
                 alt=""
                 loading="lazy"
               />
@@ -1527,60 +1519,60 @@
           <div class="gallery-box__imgs">
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/other/preview/30.webp"
+                data-srcset="images/gallery/other/preview/30.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/other/preview/30.jpg"
+                data-srcset="images/gallery/other/preview/30.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/other/preview/30.jpg 355w,
                   images/gallery/other/small/30.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/other/small/30.jpg"
+                data-src="images/gallery/other/small/30.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/other/preview/19.webp"
+                data-srcset="images/gallery/other/preview/19.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/other/preview/19.jpg"
+                data-srcset="images/gallery/other/preview/19.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/other/preview/19.jpg 355w,
                   images/gallery/other/small/19.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/other/small/19.jpg"
+                data-src="images/gallery/other/small/19.jpg"
                 alt=""
                 loading="lazy"
               />
             </picture>
             <picture class="gallery-box__img">
               <source
-                srcset="images/gallery/other/preview/82.webp"
+                data-srcset="images/gallery/other/preview/82.webp"
                 type="image/webp"
               />
               <source
-                srcset="images/gallery/other/preview/82.jpg"
+                data-srcset="images/gallery/other/preview/82.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="
+                data-srcset="
                   images/gallery/other/preview/82.jpg 355w,
                   images/gallery/other/small/82.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 67vw, 500px"
-                src="images/gallery/other/small/82.jpg"
+                data-src="images/gallery/other/small/82.jpg"
                 alt=""
                 loading="lazy"
               />
