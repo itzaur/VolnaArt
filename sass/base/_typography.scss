@@ -17,7 +17,7 @@ body.dark {
 .heading {
   position: relative;
 
-  grid-row: 7 / 7;
+  grid-row: 6 / 8;
   grid-column: 2 / span 7;
 
   display: flex;
@@ -26,35 +26,66 @@ body.dark {
 
   margin-top: 7.5rem;
   margin-left: $logo-margin-left;
-  padding: 1rem 0;
 
   z-index: 1;
 
+  &__box {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &--primary {
+      min-height: 15rem;
+    }
+
+    &--secondary {
+      min-height: 3rem;
+    }
+  }
+
   @include respond(tab-land2) {
-    margin-top: 5.5rem;
+    margin-top: 2.5rem;
   }
 
   @include respond(tab-land) {
     grid-column: 2 / span 7;
-    grid-row: 4 / span 5;
+    grid-row: 5 / span 3;
 
-    margin: 0;
+    margin: 2.5rem 0 0 0;
   }
 
   @include respond(tab-port) {
     grid-row: 8 / 10;
     grid-column: 1 / -1;
 
+    margin-top: -3rem;
+
     text-align: center;
   }
 
   @include respond(phone) {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
     grid-row: 2 / 3;
-    grid-column: 1 / -1;
+
+    margin-top: 0;
+    padding: 0;
   }
 
   &-primary {
     display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
 
     font-size: clamp(7rem, 7vw, 13rem);
 
@@ -78,14 +109,6 @@ body.dark {
 
     @include respond(big-desktop) {
       background-size: 773.91px 100%;
-    }
-
-    @include respond(tab-land2) {
-      background-size: 773.91px 130px;
-    }
-
-    @include respond(tab-land) {
-      background-size: 773.91px 100px;
     }
 
     @include respond(phone) {
@@ -131,6 +154,11 @@ body.dark {
   }
 
   &-secondary {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+
     font-size: 2.8rem;
     font-weight: 500;
 
@@ -159,9 +187,12 @@ body.dark {
     }
 
     @include respond(phone) {
+      width: 100%;
+
       padding: 1rem 0;
 
       font-size: 1.2rem;
+
       text-align: center;
     }
 
@@ -174,10 +205,9 @@ body.dark {
 .heading-2 {
   display: grid;
   grid-template-columns: max-content 1fr;
-
+  grid-template-rows: min-content;
   align-items: center;
-
-  padding-bottom: 4rem;
+  column-gap: 4rem;
 
   @include respond(tab-port) {
     grid-template-columns: max-content;
@@ -191,11 +221,10 @@ body.dark {
   }
 
   &__title {
-    font-size: 10.5rem;
-    font-weight: 600;
-    line-height: 1;
+    grid-column: 1;
+    grid-row: 1;
 
-    padding-right: 4rem;
+    font-size: 10.5rem;
 
     .dark & {
       color: $color-dark-4;
@@ -208,13 +237,14 @@ body.dark {
 
     @include respond(tab-port) {
       font-size: 6rem;
-      margin-bottom: 1.5rem;
+
       padding-right: 0;
     }
 
     @include respond(phone) {
+      height: 100%;
+
       font-size: clamp(1.7rem, 6.5vw, 6rem);
-      margin-bottom: 0.5rem;
     }
   }
 
@@ -231,7 +261,7 @@ body.dark {
       transition: all 0.4s ease-in-out;
     }
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       margin-top: 0;
     }
   }

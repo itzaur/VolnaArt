@@ -1,6 +1,11 @@
 .form {
   position: relative;
 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, max-content);
+  row-gap: 2rem;
+
   background-image: linear-gradient(
     to bottom right,
     rgba($color-blue, 0.2),
@@ -15,23 +20,18 @@
   padding: 3rem;
   border-radius: 3rem;
 
-  & > * + * {
-    padding-top: 1rem;
-  }
-
   @include respond(tab-port) {
     width: 70%;
     margin: 0 auto;
   }
 
   @include respond(phone) {
-    @include flex-center;
-    flex-direction: column;
-    justify-content: center;
-
     width: 85%;
 
-    padding: 2rem 0.5rem 0 0.5rem;
+    place-items: center;
+    row-gap: 3rem;
+
+    padding: 4rem 0.5rem 0 0.5rem;
   }
 
   @include respond(nokia3310) {
@@ -41,19 +41,32 @@
   &__group {
     position: relative;
 
+    &--1 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &--2 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &--3 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    &--4 {
+      grid-column: 1;
+      grid-row: 4;
+    }
+
     @include respond(phone) {
       width: 80%;
-
-      @include flex-center;
-      flex-direction: column;
-      justify-content: center;
-
-      padding: 1rem 0.5rem;
     }
 
     @include respond(nokia3310) {
       width: 90%;
-      padding: 0.5rem 0;
     }
   }
 

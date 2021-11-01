@@ -3,7 +3,7 @@
 
   display: grid;
   grid-template-columns: 7rem repeat(12, 1fr) [last-col] 1fr;
-  grid-template-rows: repeat(7, 7rem);
+  grid-template-rows: repeat(7, minmax(7rem, min-content)) 1fr;
   gap: 1rem;
 
   box-shadow: inset 0 -1rem 0 hsl(0, 19%, 87%);
@@ -16,7 +16,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    box-shadow: 0 -1rem 1rem #0f6d85 inset;
+    box-shadow: 7px -1rem 1rem #23697e;
   }
 
   @media (max-width: 37.5em) and (min-resolution: 192dpi) {
@@ -26,14 +26,22 @@
   }
 
   @include respond(phone) {
-    grid-template-columns: 6rem 1fr;
-    grid-template-rows: 8rem;
+    grid-template-columns: 10rem 1fr;
+
+    grid-template-rows: 8rem 1fr;
+
+    height: 20rem;
+  }
+
+  @include respond(nokia3310) {
+    height: 16rem;
   }
 
   &__nav {
     @include flex-center;
 
     height: 7rem;
+    min-height: 7rem;
 
     grid-column: 4 / -1;
     grid-row: 1 / 2;
@@ -63,7 +71,11 @@
     }
 
     &-item {
-      @include flex-center;
+      display: grid;
+      grid-template-columns: repeat(5, max-content);
+      justify-content: space-between;
+      align-items: center;
+
       width: 100%;
 
       list-style: none;
@@ -93,12 +105,19 @@
 
     &-list {
       position: relative;
+
+      display: grid;
+      grid-template-columns: max-content;
+      grid-template-rows: 1fr;
     }
 
     &-link {
       position: relative;
 
       display: block;
+
+      grid-column: 1;
+      grid-row: 1;
 
       font-size: 1.8rem;
       text-decoration: none;
@@ -196,6 +215,7 @@
 
     &-icon {
       @include flex-center;
+      align-items: baseline;
       padding: 1rem 0;
 
       .social-icons {
@@ -275,16 +295,19 @@
   top: 2rem;
   left: 0;
 
+  width: 10rem;
   height: 10rem;
 
   text-align: center;
   z-index: 1;
 
   @include respond(tab-port) {
+    width: 8rem;
     height: 8rem;
   }
 
   @include respond(phone) {
+    width: 6rem;
     height: 6rem;
   }
 

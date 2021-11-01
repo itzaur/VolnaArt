@@ -22,10 +22,9 @@
   }
 
   &-box {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
     gap: 3rem;
 
     width: 100%;
@@ -33,30 +32,36 @@
     padding: 5rem;
 
     @include respond(tab-port) {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       align-items: center;
+
       padding: 2rem 2rem;
     }
 
     @include respond(phone) {
       width: 100%;
+
       padding: 3rem 1rem;
     }
 
     @include respond(nokia3310) {
       width: 100%;
       gap: 1rem;
+
       padding: 2rem 1rem;
     }
 
     &__item {
       position: relative;
-      @include flex-center;
-      flex-direction: column;
-      align-items: flex-start;
-      flex: 1;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: max-content max-content;
 
       & p {
+        grid-column: 1;
+        grid-row: 2;
+
         font-size: clamp(1.2rem, 6vw, 2rem);
         font-weight: 400;
 
@@ -74,10 +79,6 @@
 
     &__item:nth-child(1) {
       position: relative;
-
-      display: flex;
-      justify-content: flex-start;
-      align-self: stretch;
 
       &::before {
         content: '';
@@ -128,8 +129,6 @@
     }
 
     &__item:nth-child(2) {
-      width: 50%;
-
       @include respond(tab-port) {
         width: 100%;
       }
@@ -137,6 +136,8 @@
   }
 
   &-item {
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 2rem;
 
     font-size: 2rem;

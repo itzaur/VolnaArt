@@ -1,4 +1,12 @@
 .gallery {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+
   padding: $section-title-padding-top $section-title-padding-left 5rem
     $section-title-padding-left;
 
@@ -11,8 +19,6 @@
   overflow: hidden;
 
   .dark & {
-    box-shadow: 0 -1rem 1rem #256474;
-
     background: linear-gradient(
       to bottom,
       rgba(hsl(192, 97%, 25%), 3rem),
@@ -26,6 +32,8 @@
 
   @include respond(phone) {
     padding: 2rem 0;
+
+    gap: 0;
   }
 
   @include respond(nokia3310) {
@@ -41,7 +49,6 @@
     row-gap: 4rem;
     justify-items: center;
 
-    margin: 0 auto;
     padding: 5rem 10rem 0 10rem;
 
     z-index: 0;
@@ -68,25 +75,6 @@
       row-gap: 3rem;
 
       padding: 1.5rem 1rem;
-    }
-
-    &__subtitle {
-      font-size: 2rem;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-
-      color: $color-black;
-
-      transition: all 0.3s;
-
-      .dark & {
-        color: $color-dark-4;
-      }
-
-      @include respond(phone) {
-        font-size: clamp(1.3rem, 5.5vw, 2rem);
-      }
     }
 
     &__item {
@@ -176,7 +164,6 @@
       width: 2rem;
       height: 2rem;
 
-      margin: 0 0 0 0.5rem;
       fill: $color-black;
 
       transition: all 0.4s;
@@ -186,24 +173,54 @@
       }
 
       @include respond(nokia3310) {
+        grid-column: 3;
+        grid-row: 1;
+
         width: 1.4rem;
         height: 1.4rem;
       }
     }
 
     &__link {
+      position: relative;
       width: 100%;
 
-      @include flex-center;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
       justify-content: center;
+      column-gap: 0.5rem;
 
       transition: all 0.4s;
 
       @include respond(nokia3310) {
-        flex-wrap: nowrap;
+        grid-template-columns: 1fr minmax(min-content, max-content) min-content 1fr;
+      }
+    }
 
-        bottom: -4rem;
-        line-height: 1;
+    &__subtitle {
+      grid-column: 1;
+      grid-row: 1;
+
+      font-size: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+
+      color: $color-black;
+
+      transition: all 0.3s;
+
+      .dark & {
+        color: $color-dark-4;
+      }
+
+      @include respond(phone) {
+        font-size: clamp(1.3rem, 5.5vw, 2rem);
+      }
+
+      @include respond(nokia3310) {
+        grid-column: 2;
       }
     }
 

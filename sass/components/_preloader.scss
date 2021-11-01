@@ -17,7 +17,9 @@ $animation-offset: 15rem;
   background: url('../images/bg/bg.jpg');
 
   z-index: 100;
+
   transition: opacity 2s ease;
+  overflow: hidden;
 
   &__img {
     position: absolute;
@@ -106,6 +108,11 @@ $animation-offset: 15rem;
     pointer-events: none;
     z-index: -1;
   }
+}
+
+.loaded {
+  width: 100%;
+  min-height: 100vh;
 }
 
 .loaded .preloader {

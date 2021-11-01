@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Content-Security-Policy" content="default-src 'self'" />
     <meta
@@ -20,6 +20,10 @@
     <meta property="og:title" content="VOLNA | Art" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://i.postimg.cc/rsKBBj5C/09.jpg" />
+    <meta
+      property="og:image:secure_url"
+      content="https://i.postimg.cc/rsKBBj5C/09.jpg"
+    />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="800px" />
     <meta property="og:image:height" content="800px" />
@@ -28,13 +32,7 @@
       property="og:description"
       content="Volna art. Drawings to order. Drawings of game characters | Волна арт. Рисунки на заказ. Фанарт, рисунки игровых персонажей"
     />
-    <link
-      rel="preload"
-      href="css/main.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+    <link rel="stylesheet" href="css/main.css" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -53,8 +51,44 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/playfairdisplay/v22/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/playfairdisplay/v22/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/gallery/portrait/preview/71.jpg"
+      imagesrcset="images/gallery/portrait/preview/71.webp 355w,
+  images/gallery/portrait/small/71.jpg   500w"
+      imagesizes="100vw"
+      loading="eager"
+    />
     <link rel="author" href="preneur85@gmail.com" />
     <title>VOLNA | Art</title>
+    <style>
+      .preloader {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100vh;
+
+        background: url('../images/bg/bg.jpg');
+      }
+    </style>
   </head>
   <body>
     <!--alert messages start-->
@@ -76,7 +110,6 @@
             />
             <feColorMatrix
               in="blur"
-              mode="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"
             />
           </filter>
@@ -86,7 +119,12 @@
 
     <header class="header" id="header">
       <span class="logo-box">
-        <img class="logo" src="images/logo/logo.svg" alt="logo" />
+        <img
+          class="logo"
+          src="images/logo/logo.svg"
+          alt="logo"
+          loading="lazy"
+        />
         <img
           class="logo-dark"
           src="images/logo/logo-dark.svg"
@@ -95,18 +133,25 @@
         />
       </span>
       <div class="heading">
-        <h1 class="heading-primary" data-lang="english">
-          Volna&ensp;<span>|&ensp;Art</span>
-        </h1>
-        <h1 class="heading-primary heading-primary--rus" data-lang="russian">
-          Волна&ensp;<span>|&ensp;Арт</span>
-        </h1>
-        <h2 class="heading-secondary" data-lang="english">
-          Each gallery has its own works of art
-        </h2>
-        <h2 class="heading-secondary" data-lang="russian">
-          В каждой галерее свои художества
-        </h2>
+        <div class="heading__box heading__box--primary">
+          <h1 class="heading-primary" data-lang="english">
+            Volna&ensp;<span>|&ensp;Art</span>
+          </h1>
+          <h2 class="heading-primary heading-primary--rus" data-lang="russian">
+            Волна&ensp;<span>|&ensp;Арт</span>
+          </h2>
+        </div>
+        <div class="heading__box heading__box--secondary">
+          <h2 class="heading-secondary" data-lang="english">
+            Each gallery has its own works of art
+          </h2>
+          <h2
+            class="heading-secondary heading-secondary--rus"
+            data-lang="russian"
+          >
+            В каждой галерее свои художества
+          </h2>
+        </div>
       </div>
 
       <div class="header__nav">
@@ -1234,22 +1279,22 @@
           <div class="gallery-box__imgs">
             <picture class="gallery-box__img">
               <source
-                data-srcset="images/gallery/portrait/preview/71.webp"
+                srcset="images/gallery/portrait/preview/71.webp"
                 type="image/webp"
               />
               <source
-                data-srcset="images/gallery/portrait/preview/71.jpg"
+                srcset="images/gallery/portrait/preview/71.jpg"
                 type="image/jpeg"
               />
               <img
-                data-srcset="
+                srcset="
                   images/gallery/portrait/preview/71.jpg 355w,
                   images/gallery/portrait/small/71.jpg   500w
                 "
                 sizes="(max-width: 720px) 58vw, (max-width: 600px) 80vw, (max-width: 320px) 90vw, 500px"
-                data-src="images/gallery/portrait/small/71.jpg"
+                src="images/gallery/portrait/small/71.jpg"
                 alt=""
-                loading="lazy"
+                loading="eager"
               />
             </picture>
             <picture class="gallery-box__img">
@@ -1310,6 +1355,8 @@
               xmlns="http://www.w3.org/2000/svg"
               class="gallery-box__icon"
               viewBox="0 0 20 20"
+              width="20"
+              height="20"
             >
               <path
                 fill-rule="evenodd"
@@ -1405,6 +1452,8 @@
               xmlns="http://www.w3.org/2000/svg"
               class="gallery-box__icon"
               viewBox="0 0 20 20"
+              width="20"
+              height="20"
             >
               <path
                 fill-rule="evenodd"
@@ -1500,6 +1549,8 @@
               xmlns="http://www.w3.org/2000/svg"
               class="gallery-box__icon"
               viewBox="0 0 20 20"
+              width="20"
+              height="20"
             >
               <path
                 fill-rule="evenodd"
@@ -1595,6 +1646,8 @@
               xmlns="http://www.w3.org/2000/svg"
               class="gallery-box__icon"
               viewBox="0 0 20 20"
+              width="20"
+              height="20"
             >
               <path
                 fill-rule="evenodd"
@@ -1732,11 +1785,7 @@
                   srcset="images/gallery/other/small/11.jpg"
                   type="image/jpeg"
                 />
-                <img
-                  src="images/gallery/other/small/11.jpg"
-                  alt=""
-                  loading="lazy"
-                />
+                <img src="images/gallery/other/small/11.jpg" alt="" />
               </picture>
               <div class="story__text">
                 <p>
@@ -2366,15 +2415,14 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               >
                 <picture>
                   <source
-                    srcset="
-                      https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_400,q_auto,w_714/v1633672898/hieh6bgrgphttryzwpbl.webp
-                    "
+                    srcset="./images/videoplayerpreview.webp"
                     type="image/webp"
                   />
                   <img
                     class="video__media"
                     src="https://i.ytimg.com/vi/j6k508xEUnc/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2406,6 +2454,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/qWmEVKSBNSw/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2437,6 +2486,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/21qvf96Zz5k/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2468,6 +2518,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/-Ok4PFdMDtc/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2499,6 +2550,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/sG6hVAa8Njs/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2530,6 +2582,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/L1thRuygeeA/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2561,6 +2614,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/GIPeNL2HNZ0/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2592,6 +2646,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/IWeFSNYp3mU/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2623,6 +2678,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/rfO8R6QfYA0/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2654,6 +2710,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/sTrOKFW17fc/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2685,6 +2742,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/jN8-VKjZz2c/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2716,6 +2774,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/2muWUQsZEh8/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2747,6 +2806,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/yHzyggJYNRY/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2778,6 +2838,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/RqarlcsJfYY/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2809,6 +2870,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/fboH4llPuoQ/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2840,6 +2902,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/SJSx1gv9uAQ/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2871,6 +2934,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/-_H1PMDr08s/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2902,6 +2966,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/dNbd7kXLEdQ/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2933,6 +2998,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/l1GeumVWqm4/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2964,6 +3030,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/f5mJAzCEESQ/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -2995,6 +3062,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                     class="video__media"
                     src="https://i.ytimg.com/vi/LLWVZWvxziY/maxresdefault.jpg"
                     alt=""
+                    loading="lazy"
                   />
                 </picture>
               </span>
@@ -3149,7 +3217,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         </div>
         <div class="contacts-box__item">
           <form class="form" action="" method="POST" name="form">
-            <div class="form__group" data-lang="english">
+            <div class="form__group form__group--1" data-lang="english">
               <input
                 class="form__input"
                 type="text"
@@ -3159,7 +3227,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               />
               <label class="form__label" for="name-eng">Your name</label>
             </div>
-            <div class="form__group" data-lang="russian">
+            <div class="form__group form__group--1" data-lang="russian">
               <input
                 class="form__input"
                 type="text"
@@ -3170,7 +3238,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               <label class="form__label" for="name-rus">Ваше имя</label>
             </div>
 
-            <div class="form__group" data-lang="english">
+            <div class="form__group form__group--2" data-lang="english">
               <input
                 class="form__input"
                 type="email"
@@ -3182,7 +3250,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 >Your e-mail
               </label>
             </div>
-            <div class="form__group" data-lang="russian">
+            <div class="form__group form__group--2" data-lang="russian">
               <input
                 class="form__input"
                 type="email"
@@ -3195,7 +3263,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               >
             </div>
 
-            <div class="form__group" data-lang="english">
+            <div class="form__group form__group--3" data-lang="english">
               <textarea
                 class="form__input"
                 id="message-eng"
@@ -3204,7 +3272,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               ></textarea>
               <label class="form__label" for="message-eng">Message</label>
             </div>
-            <div class="form__group" data-lang="russian">
+            <div class="form__group form__group--3" data-lang="russian">
               <textarea
                 class="form__input"
                 id="message-rus"
@@ -3214,7 +3282,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
               <label class="form__label" for="message-rus">Сообщение</label>
             </div>
 
-            <div class="form__group" data-lang="english">
+            <div class="form__group form__group--4" data-lang="english">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-en">
                   <span class="btn btn--en">
@@ -3245,7 +3313,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
                 </button>
               </div>
             </div>
-            <div class="form__group" data-lang="russian">
+            <div class="form__group form__group--4" data-lang="russian">
               <div class="btn-box">
                 <button class="btn-send" type="submit" name="submit-rus">
                   <span class="btn btn--rus">
@@ -3288,7 +3356,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
     <!--FOOTER-->
     <footer class="footer">
       <svg
-        class="waves"
+        class="waves waves--footer"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 14 150 28"
@@ -3470,11 +3538,9 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
         </div>
       </div>
 
-      <div class="footer__copyright" data-lang="english">
-        &copy; 2021. All rights reserved
-      </div>
-      <div class="footer__copyright" data-lang="russian">
-        &copy; 2021. Все права защищены
+      <div class="footer__copyright">
+        <div data-lang="english">&copy; 2021. All rights reserved</div>
+        <div data-lang="russian">&copy; 2021. Все права защищены</div>
       </div>
     </footer>
     <!--./FOOTER-->
@@ -3483,7 +3549,7 @@ l-6 -53 -57 30 c-113 61 -215 175 -257 287 -30 81 -63 103 -99 66z"
       'fixloadpage';
     </script>
     <script src="script.js"></script>
-    <script src="https://www.youtube.com/player_api"></script>
+    <script src="https://www.youtube.com/player_api" async></script>
     <script type="text/javascript">
     if(window.history.replaceState){
       window.history.replaceState(null, null, window.location.href);

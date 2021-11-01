@@ -171,6 +171,11 @@
       }
 
       &-text {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        row-gap: 1rem;
+
         transition: transform 0.2s linear, filter 0.3s, zoom 0.2s;
         will-change: transform;
       }
@@ -191,6 +196,9 @@
       }
 
       &-title {
+        grid-column: 1;
+        grid-row: 1;
+
         font-size: 3rem;
         line-height: 1.2;
 
@@ -200,7 +208,9 @@
       }
 
       &-paragraphe {
-        margin: 1.2rem 0 0 0;
+        grid-column: 1;
+        grid-row: 2;
+
         font-size: 1.6rem;
         font-weight: 400;
 
@@ -211,12 +221,20 @@
       }
 
       &-link {
-        @include flex-center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+
         transition: transform 0.2s linear;
 
+        @include respond(nokia3310) {
+          grid-template-columns: 1fr max-content;
+        }
+
         a {
+          grid-column: 1;
+          grid-row: 1;
+
           font-size: 1.6rem;
           text-decoration: none;
 
@@ -258,8 +276,9 @@
     }
 
     &__view {
-      @include flex-center;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
 
       font-size: 1.8rem;
 
@@ -286,6 +305,9 @@
     }
 
     &__link {
+      grid-column: 1;
+      grid-row: 1;
+
       text-decoration: none;
 
       color: $color-black;
