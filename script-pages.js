@@ -61,3 +61,12 @@ function toggleBtnScroll() {
     toggleScrollBtn.classList.add('hidden-scroll');
   }
 }
+
+window.addEventListener('click', function (e) {
+  const wrappers = document.querySelectorAll('.full-content__wrapper');
+  wrappers.forEach(wrapper => {
+    if (e.target == wrapper) {
+      wrapper.closest('.full-content').classList.add('hide');
+    }
+  });
+});

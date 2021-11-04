@@ -4288,6 +4288,11 @@ body.dark {
   background: rgba(23, 34, 59, 0.95);
 }
 
+.full-content.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .layer {
   -webkit-box-shadow: 0.6rem 0.6rem 1rem rgba(17, 17, 17, 0.2);
           box-shadow: 0.6rem 0.6rem 1rem rgba(17, 17, 17, 0.2);
@@ -4614,6 +4619,13 @@ body.dark {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.gallery-box__imgs a {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 3;
 }
 
 .gallery-box__img {

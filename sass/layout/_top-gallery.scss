@@ -560,6 +560,11 @@
   }
 }
 
+.full-content.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .layer {
   box-shadow: 0.6rem 0.6rem 1rem rgba($color-black, 0.2);
   transition: transform 0.5s ease;

@@ -65,6 +65,16 @@ topGalleryCards.forEach(card => {
   });
 });
 
+//close image when window click
+window.addEventListener('click', function (e) {
+  const wrappers = document.querySelectorAll('.full-content__wrapper');
+  wrappers.forEach(wrapper => {
+    if (e.target == wrapper) {
+      wrapper.closest('.full-content').classList.add('hide');
+    }
+  });
+});
+
 if (window.performance) {
   toggleBtn.checked = false;
 }
@@ -781,6 +791,8 @@ lazyImages.forEach(img => {
 });
 
 //show images when card hover
+let viewImg = localStorage.getItem('visibleImg');
+
 const cards = document.querySelectorAll('.top-gallery-card');
 const imagesTopGalleryBack = document.querySelectorAll(
   '.top-gallery__img--back img'
@@ -788,7 +800,22 @@ const imagesTopGalleryBack = document.querySelectorAll(
 cards.forEach(card => {
   card.addEventListener('mouseover', rotateImg);
   card.addEventListener('click', showImg);
+  card.addEventListener('click', function () {
+    viewImg = localStorage.getItem('visibleImg');
+    if (viewImg !== 'enable') {
+      showContent();
+    } else {
+      hideContent();
+    }
+  });
 });
+
+if (
+  performance.navigation.type == performance.navigation.TYPE_RELOAD &&
+  viewImg == 'enable'
+) {
+  showContent();
+}
 
 function rotateImg(e) {
   const img = e.target.offsetParent.children[1].lastElementChild;
@@ -811,3 +838,28 @@ function showImg(e) {
     }
   });
 }
+
+if (viewImg === 'enable') {
+  showContent();
+}
+
+document.querySelectorAll('.full-content__link').forEach(link => {
+  link.addEventListener('click', function () {
+    hideContent();
+  });
+});
+
+function showContent() {
+  localStorage.setItem('visibleImg', 'enable');
+  const contentImgs = document.querySelectorAll('.full-content__img img');
+  contentImgs.forEach(contentImg => {
+    const newURLSrc = contentImg.dataset.src;
+    const newURLSrcset = contentImg.dataset.srcset;
+    contentImg.src = newURLSrc;
+    contentImg.srcset = newURLSrcset;
+  });
+}
+
+const hideContent = () => {
+  localStorage.setItem('visibleImg', null);
+};
