@@ -65,16 +65,6 @@ topGalleryCards.forEach(card => {
   });
 });
 
-//close image when window click
-window.addEventListener('click', function (e) {
-  const wrappers = document.querySelectorAll('.full-content__wrapper');
-  wrappers.forEach(wrapper => {
-    if (e.target == wrapper) {
-      wrapper.closest('.full-content').classList.add('hide');
-    }
-  });
-});
-
 if (window.performance) {
   toggleBtn.checked = false;
 }
@@ -792,8 +782,9 @@ lazyImages.forEach(img => {
 
 //show images when card hover
 let viewImg = localStorage.getItem('visibleImg');
-
+const wrappers = document.querySelectorAll('.full-content__wrapper');
 const cards = document.querySelectorAll('.top-gallery-card');
+
 const imagesTopGalleryBack = document.querySelectorAll(
   '.top-gallery__img--back img'
 );
@@ -804,6 +795,9 @@ cards.forEach(card => {
     viewImg = localStorage.getItem('visibleImg');
     if (viewImg !== 'enable') {
       showContent();
+      wrappers.forEach(wrapper => {
+        wrapper.closest('.full-content').classList.remove('hide');
+      });
     } else {
       hideContent();
     }
@@ -815,6 +809,10 @@ if (
   viewImg == 'enable'
 ) {
   showContent();
+} else {
+  wrappers.forEach(wrapper => {
+    wrapper.closest('.full-content').classList.add('hide');
+  });
 }
 
 function rotateImg(e) {
@@ -863,3 +861,13 @@ function showContent() {
 const hideContent = () => {
   localStorage.setItem('visibleImg', null);
 };
+
+//close image when window click
+window.addEventListener('click', function (e) {
+  wrappers.forEach(wrapper => {
+    if (e.target == wrapper) {
+      hideContent();
+      wrapper.closest('.full-content').classList.add('hide');
+    }
+  });
+});

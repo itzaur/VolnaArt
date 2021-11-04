@@ -526,15 +526,6 @@
     }
   }
 
-  &__link--int {
-    display: block;
-
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
   &__img {
     display: block;
 
@@ -563,6 +554,10 @@
 .full-content.hide {
   visibility: hidden;
   opacity: 0;
+}
+
+.full-content.hide .full-content__img {
+  animation: moveDown 1.2s ease-in-out;
 }
 
 .layer {

@@ -1120,7 +1120,7 @@
         </figure>
       </div>
 
-      <input class="toggle-btn" type="checkbox" id="toggle-btn" />
+      <input class="toggle-btn" type="checkbox" id="toggle-btn" aria-label="toggle-btn" />
       <label class="toggle-icon" for="toggle-btn" id="toggle-icon">
         <span class="el1 element"></span>
         <span class="el2 element"></span>
@@ -1337,6 +1337,7 @@
                 loading="lazy"
               />
             </picture>
+            <a href="portrait.html">Link</a>
           </div>
           <div class="gallery-box__link">
             <a
@@ -1434,6 +1435,7 @@
                 loading="lazy"
               />
             </picture>
+            <a href="full-growth.html">Link</a>
           </div>
           <div class="gallery-box__link">
             <a
@@ -1531,6 +1533,7 @@
                 loading="lazy"
               />
             </picture>
+            <a href="multiple-characters.html">Link</a>
           </div>
           <div class="gallery-box__link">
             <a
@@ -1628,6 +1631,7 @@
                 loading="lazy"
               />
             </picture>
+            <a href="other.html">Link</a>
           </div>
           <div class="gallery-box__link">
             <a

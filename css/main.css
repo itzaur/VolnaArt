@@ -112,6 +112,32 @@ section {
   }
 }
 
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes wave {
   from {
     background-position: -773.91px -1px;
@@ -4255,15 +4281,6 @@ body.dark {
   }
 }
 
-.full-content__link--int {
-  display: block;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-
 .full-content__img {
   display: block;
   max-width: 95%;
@@ -4291,6 +4308,11 @@ body.dark {
 .full-content.hide {
   visibility: hidden;
   opacity: 0;
+}
+
+.full-content.hide .full-content__img {
+  -webkit-animation: moveDown 1.2s ease-in-out;
+          animation: moveDown 1.2s ease-in-out;
 }
 
 .layer {
@@ -7595,16 +7617,6 @@ p {
           backface-visibility: hidden;
 }
 
-.int-link > * + * {
-  padding-top: 2vw;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .int-link > * + * {
-    padding-top: 2rem;
-  }
-}
-
 .int-link :is(h2, p) {
   color: #e2d5d5;
   line-height: 1.5;
@@ -7621,8 +7633,9 @@ p {
 }
 
 .int-link h2 {
+  margin-bottom: 2rem;
   font-size: clamp(3rem, 3vw, 4rem);
-  line-height: 1.2;
+  line-height: 1;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -7750,7 +7763,7 @@ p {
   position: relative;
   width: 80%;
   height: 75%;
-  margin: 8rem auto;
+  margin: 0 auto;
   background: #fff2e5;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -7813,8 +7826,6 @@ p {
   height: 100%;
   padding: 4rem;
   border-radius: 2rem 0 0 2rem;
-  -webkit-transform: perspective(1px) translateZ(0);
-          transform: perspective(1px) translateZ(0);
 }
 
 .story__inner--home-page, .story__inner--home-page--2 {
@@ -7856,6 +7867,12 @@ p {
           transform: perspective(1px) translateZ(0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+
+.story__inner .full-content__img--null {
+  shape-outside: none;
+  -webkit-clip-path: none;
+          clip-path: none;
 }
 
 .dark .story__inner .full-content__img--null {
@@ -7942,5 +7959,26 @@ p {
   .story__text svg {
     height: 5rem;
   }
+}
+
+.full-content--int {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 /*# sourceMappingURL=main.css.map */

@@ -91,13 +91,13 @@ p {
 
   backface-visibility: hidden;
 
-  & > * + * {
-    padding-top: 2vw;
+  // & > * + * {
+  //   // padding-top: 2vw;
 
-    @include respond(phone) {
-      padding-top: 2rem;
-    }
-  }
+  //   @include respond(phone) {
+  //     padding-top: 2rem;
+  //   }
+  // }
 
   :is(h2, p) {
     color: $color-light;
@@ -113,8 +113,10 @@ p {
   }
 
   h2 {
+    margin-bottom: 2rem;
+
     font-size: clamp(3rem, 3vw, 4rem);
-    line-height: 1.2;
+    line-height: 1;
 
     @include respond(phone) {
       font-size: clamp(2.8rem, 3vw, 5rem);
@@ -244,7 +246,7 @@ p {
   width: 80%;
   height: 75%;
 
-  margin: 8rem auto;
+  margin: 0 auto;
 
   background: $color-background-stories;
 
@@ -311,8 +313,6 @@ p {
 
     border-radius: 2rem 0 0 2rem;
 
-    transform: perspective(1px) translateZ(0);
-
     &--home-page,
     &--home-page--2 {
       width: 80%;
@@ -360,6 +360,9 @@ p {
       backface-visibility: hidden;
 
       &--null {
+        shape-outside: none;
+        clip-path: none;
+
         .dark & {
           filter: invert(43%) sepia(59%) saturate(2703%) hue-rotate(164deg)
             brightness(90%) contrast(109%);
@@ -448,4 +451,15 @@ p {
       }
     }
   }
+}
+
+.full-content--int {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
 }
